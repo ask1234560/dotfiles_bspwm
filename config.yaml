@@ -90,6 +90,9 @@ dotfiles:
   d_dunst:
     src: config/dunst
     dst: ~/.config/dunst
+  d_alacritty:
+    src: config/alacritty
+    dst: ~/.config/alacritty
 profiles:
   arch:
     dotfiles:
@@ -116,3 +119,4 @@ profiles:
     - d_sxhkd
     - d_polybar
     - d_dunst
+    - d_alacritty
