@@ -57,18 +57,6 @@ dotfiles:
     - '*/__pycache__'
     upignore:
     - '*/__pycache__'
-  d_nvim:
-    src: config/nvim
-    dst: ~/.config/nvim
-    instignore:
-    - '*/plugged'
-    - '*/.git'
-    upignore:
-    - '*/plugged'
-    - '*/.git'
-  f_plug.vim:
-    src: local/share/nvim/site/autoload/plug.vim
-    dst: ~/.local/share/nvim/site/autoload/plug.vim
   d_sxiv:
     src: config/sxiv
     dst: ~/.config/sxiv
@@ -108,8 +96,6 @@ profiles:
     - d_htop
     - d_newsboat
     - d_ranger
-    - d_nvim
-    - f_plug.vim
     - d_sxiv
     - f_pacman.conf
     - f_update-resolv-conf
