@@ -1,0 +1,44 @@
+#!/bin/bash
+
+alias \
+	ls='exa --group-directories-first' \
+	la='exa -a --group-directories-first' \
+	ll='exa -alb --group-directories-first' \
+	tree='exa -T' \
+	bm='bashmount' \
+	rg='ranger' \
+	nv='nvim ' \
+	gc='chromium ' \
+	fx='firefox-developer-edition ' \
+	sclip="xclip -selection c" \
+	gclip="xclip -selection c -o" \
+	speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python - " \
+	grep='grep --colour=auto' \
+	nb='newsboat ' \
+	irc='irssi ' \
+	pc='pacman ' \
+	sudo='sudo ' \
+	watch='watch ' \
+	lynx='lynx -accept_all_cookies ' \
+	cip='curl ipinfo.io ' \
+	vpnc="sudo openvpn --config /home/ananthu/.config/vpnclients/arch.ovpn "  \
+	cp="cpg -g "  \
+	mv="mvg -g "
+
+alias -g -- --help="--help | less -FXi ; true "
+
+# dotdrop configs
+alias \
+	dotdrop="$DOTREPO/dotdrop.sh" \
+	dotgit="git -C $DOTREPO" \
+	dotsync="dotgit pull && dotgit add -A && dotgit commit && dotgit push; dotdrop install"
+
+
+# alias ls='ls --color=auto --group-directories-first'
+# alias la='ls -A --group-directories-first'
+# alias ll='ls -lAh --group-directories-first'
+# alias pst='patch -o config.h -i '
+# alias v='vim '
+# alias gv='gvim '
+# alias egrep='egrep --colour=auto'
+# alias fgrep='fgrep --colour=auto'

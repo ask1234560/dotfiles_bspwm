@@ -1,0 +1,9 @@
+state.txt file
+# this is a comment
+file 'file1.mp4'
+file '/path/to/file2.mp4'
+file 'file3.mp4'
+
+
+
+ffmpeg -f concat -safe 0 -i state.txt -c copy output.mp4 

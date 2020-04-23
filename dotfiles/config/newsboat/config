@@ -1,0 +1,6 @@
+include "~/.config/newsboat/colorschemes/nord"
+auto-reload yes
+macro o set browser "chromium %u"; open-in-browser ; set browser "lynx %u"
+macro m set browser "mpv %u"; open-in-browser ; set browser "lynx %u"
+
+player 'mpv'

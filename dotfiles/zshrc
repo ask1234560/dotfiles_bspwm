@@ -1,0 +1,89 @@
+source ~/.zplug/init.zsh
+
+# Plugins
+# Supports oh-my-zsh plugins and the like
+zplug "plugins/git",   from:oh-my-zsh
+zplug "plugins/z",   from:oh-my-zsh
+
+# Make sure to use double quotes
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-autosuggestions"
+
+# Load theme file
+zplug 'themes/agnoster', as:theme, from:oh-my-zsh
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load 
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+setopt auto_cd
+
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
+
+weather() {
+    curl wttr.in/${1:-kothamangalam}
+}
+
+set -o vi
+
+#Key bindings
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+#bindkey "^F" forward-word
+#bindkey "^B" backward-word
+bindkey "^L" clear-screen
+bindkey "^U" backward-kill-line
+#bindkey "^U" kill-whole-line
+bindkey "^Y" yank
+#bindkey "^W" backward-kill-word
+#bindkey "^X^B" vi-match-bracket
+#bindkey "^X^F" vi-find-next-char
+bindkey '^R' history-incremental-search-backward
+bindkey '^[[3~' delete-char-or-list
+
+# ext - archive extractor
+# usage: ext <file>
+ext ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.tar.xz)    tar xJf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.iso)	   if [ $# -ne 2 ]
+      		   then
+		   	echo "specify the destination directory"
+		   else
+		   	7z x -o$2 $1
+		   fi
+		   ;;
+      *)           echo "'$1' cannot be extracted via ext()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+source ~/.config/.aliasrc
+
