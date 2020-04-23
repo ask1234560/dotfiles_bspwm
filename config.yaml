@@ -19,9 +19,6 @@ dotfiles:
   d_irssi:
     src: irssi
     dst: ~/.irssi
-  d_fonts:
-    src: local/share/fonts
-    dst: ~/.local/share/fonts
   d_xdman:
     src: xdman
     dst: ~/.xdman
@@ -100,7 +97,6 @@ profiles:
     - f_bashrc
     - f_xinitrc
     - d_irssi
-    - d_fonts
     - d_xdman
     - f_gitconfig
     - d_breeze-red
