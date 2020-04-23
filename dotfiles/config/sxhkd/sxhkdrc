@@ -1,0 +1,111 @@
+#
+# wm independent hotkeys
+#
+
+# terminal emulator
+super + Return
+	alacritty
+
+# program launcher
+super + @space
+	dmenu_run
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+#
+# bspwm hotkeys
+#
+
+# quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+# close and kill
+super + {_,shift + }c
+	bspc node -{c,k}
+
+#
+# state/flags
+#
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+#
+# focus/swap
+#
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+#
+# move/resize
+#
+
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#
+# Personal
+#
+
+super + alt + c
+	bg-changer
+
+super + alt + s
+    scrot -z 'Screenshot_from_%F_%X.png' -e 'mv $f ~/Pictures/Screenshots/'
+
+super + alt + f
+    chromium
+
+super + F2
+    cbacklight --dec 5
+
+super + F3
+    cbacklight --inc 5
+
+super + alt + t
+    alacritty -e htop
+
+super + alt + i
+    alacritty -e ranger
+
+super + alt + e
+    toggle-nightlight day
+
+super + shift + e
+    toggle-nightlight night
+
+# audio raise volume
+XF86AudioRaiseVolume
+	amixer set Master 5%+
+
+# audio lower volume
+XF86AudioLowerVolume
+	amixer set Master 5%-
+
+# audio mute
+XF86AudioMute
+	amixer set Master toggle
+
+super + alt + v
+	alacritty -e sudo openvpn --config /home/ananthu/.config/vpnclients/arch.ovpn 
+
+super + alt + n
+	betterlockscreen -l blur
+
+super + alt + z
+	betterlockscreen -s blur

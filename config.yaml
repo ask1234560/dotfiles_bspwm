@@ -81,6 +81,18 @@ dotfiles:
   f_xresources:
     src: Xresources
     dst: ~/.Xresources
+  d_bspwm:
+    src: config/bspwm
+    dst: ~/.config/bspwm
+  d_sxhkd:
+    src: config/sxhkd
+    dst: ~/.config/sxhkd
+  d_polybar:
+    src: config/polybar
+    dst: ~/.config/polybar
+  d_dunst:
+    src: config/dunst
+    dst: ~/.config/dunst
 profiles:
   arch:
     dotfiles:
@@ -104,3 +116,7 @@ profiles:
     - f_xprofile
     - f_xmodmap
     - f_xresources
+    - d_bspwm
+    - d_sxhkd
+    - d_polybar
+    - d_dunst
