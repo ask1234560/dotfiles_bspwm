@@ -55,8 +55,8 @@ dotfiles_bspwm/dotfiles
 * pipenv install -r dotdrop/requirements.txt
 * pipenv shell
 * cp config.yaml config.yaml.bak
-* substitute username 
-   * awk '{gsub(/arch/,"username")} {print $0}' config.yaml.bak | tee config.yaml
+* substitute hostname
+   * awk '{gsub(/arch/,"hostname")} {print $0}' config.yaml.bak | tee config.yaml
 * ./dotdrop.sh install
 * (optional) to remove backup files
    * find ~ -regextype grep -regex '.*/*dotdropbak' -exec rm {} \\;
