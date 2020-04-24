@@ -33,7 +33,7 @@ dotfiles_bspwm/dotfiles
 ```
 
 ## Screenshots
-<img src="Screenshots/Screenshot_from_2020-04-24_16:12:39.png" width=1000px>
+<img src="Screenshots/Screenshot_from_2020-04-24_18:12:13.png" width=1000px>
 
 
 ## Requirements
