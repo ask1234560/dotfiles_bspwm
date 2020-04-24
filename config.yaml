@@ -50,10 +50,12 @@ dotfiles:
   d_ranger:
     src: config/ranger
     dst: ~/.config/ranger
-    instignore:
-    - '*/__pycache__'
-    upignore:
-    - '*/__pycache__'
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
+  f_plug.vim:
+    src: local/share/nvim/site/autoload/plug.vim
+    dst: ~/.local/share/nvim/site/autoload/plug.vim
   d_sxiv:
     src: config/sxiv
     dst: ~/.config/sxiv

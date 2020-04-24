@@ -1,6 +1,11 @@
+[submodule "ranger_devicons"]
+	path = dotfiles/config/ranger/plugins/ranger_devicons
+	url = https://github.com/alexanderjeurissen/ranger_devicons
+
 [submodule "nvim"]
 	path = dotfiles/config/nvim
 	url = https://github.com/ask1234560/neovim-config.git
+
 [submodule "dotdrop"]
 	path = dotdrop
 	url = https://github.com/deadc0de6/dotdrop.git
