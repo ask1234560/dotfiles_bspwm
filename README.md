@@ -55,5 +55,5 @@ dotfiles_bspwm/dotfiles
 * substitute username 
    * awk '{gsub(/arch/,"username")} {print $0}' config.yaml.bak | tee config.yaml
 * ./dotdrop.sh install
-* (optional) to remove backup files2
+* (optional) to remove backup files
    * find ~ -regextype grep -regex '.*/*dotdropbak' -exec rm {} \\;
