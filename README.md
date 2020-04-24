@@ -1,5 +1,5 @@
 # dotfiles_bspwm
-
+```
 dotfiles_bspwm/dotfiles
 ├── bashrc
 ├── config
@@ -30,7 +30,7 @@ dotfiles_bspwm/dotfiles
 ├── xprofile
 ├── Xresources
 └── zshrc
-
+```
 
 
 ## Requirements
@@ -55,5 +55,5 @@ dotfiles_bspwm/dotfiles
 * substitute username 
    * awk '{gsub(/arch/,"username")} {print $0}' config.yaml.bak | tee config.yaml
 * ./dotdrop.sh install
-* (optional) to remove backup files
+* (optional) to remove backup files2
    * find ~ -regextype grep -regex '.*/*dotdropbak' -exec rm {} \\;
