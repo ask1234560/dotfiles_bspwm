@@ -1,7 +1,8 @@
-# dotfiles
+# dotfiles_bspwm
 configs, scripts, themes and wallpapers included 
 
 ## Requirements
+* working arch linux with bspwm
 * pipenv
 * zsh
 * change shell to zsh
@@ -9,7 +10,7 @@ configs, scripts, themes and wallpapers included
 
 ## Installation 
 * cd ~
-* git clone https://github.com/ask1234560/dotfiles 
+* git clone https://github.com/ask1234560/dotfiles_bspwm
 * cd dotfiles
 * pipenv --three
 * git submodule init 
@@ -17,7 +18,7 @@ configs, scripts, themes and wallpapers included
 * pipenv install -r dotdrop/requirements.txt
 * pipenv shell
 * substitute username 
-   * < config.yaml |  awk '{gsub(/manjaro/,"kali")} {print $0}' | tee config.yaml
+   * < config.yaml |  awk '{gsub(/arch/,"username")} {print $0}' | tee config.yaml
 * ./dotdrop.sh install
 * to remove backup files
    * find ~ -regextype grep -regex '.*/*dotdropbak' -exec rm {} \\;
