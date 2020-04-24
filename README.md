@@ -32,6 +32,9 @@ dotfiles_bspwm/dotfiles
 └── zshrc
 ```
 
+## Screenshots
+<img src="Screenshots/Screenshot_from_2020-04-24_16:12:39.png" width=1000px>
+
 
 ## Requirements
 * working arch linux with bspwm
