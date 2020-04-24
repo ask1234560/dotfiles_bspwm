@@ -3,7 +3,7 @@ while read file
 do
         case "$1" in
         "d")
-                mv "$file" ~/.local/share/Trash/files/ ;;
+                trash "$file" ;;
         "g")
 				gimp "$file" & ;;
         "r")

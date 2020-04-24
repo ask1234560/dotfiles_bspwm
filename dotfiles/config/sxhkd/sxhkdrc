@@ -65,6 +65,9 @@ super + {Left,Down,Up,Right}
 super + alt + c
 	bg-changer
 
+super + alt + w
+    scrot -uz 'Screenshot_from_%F_%X.png' -e 'mv $f ~/Pictures/Screenshots/'
+
 super + alt + s
     scrot -z 'Screenshot_from_%F_%X.png' -e 'mv $f ~/Pictures/Screenshots/'
 
