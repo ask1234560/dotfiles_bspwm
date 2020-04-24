@@ -5,5 +5,5 @@ export MAILTO="ask1234560@gmail.com"
 #export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # dotdrop
-export DOTREPO="~/.config/dotfiles"
+export DOTREPO="~/.config/dotfiles_bspwm"
 
