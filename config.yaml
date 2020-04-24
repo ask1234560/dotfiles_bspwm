@@ -19,19 +19,6 @@ dotfiles:
   d_irssi:
     src: irssi
     dst: ~/.irssi
-  d_xdman:
-    src: xdman
-    dst: ~/.xdman
-    instignore:
-    - '*/temp'
-    - '*/metadata'
-    - '*/downloads.txt'
-    - '*/queues.txt'
-    upignore:
-    - '*/temp'
-    - '*/metadata'
-    - '*/downloads.txt'
-    - '*/queues.txt'
   f_gitconfig:
     src: gitconfig
     dst: ~/.gitconfig
@@ -102,7 +89,6 @@ profiles:
     - f_bashrc
     - f_xinitrc
     - d_irssi
-    - d_xdman
     - f_gitconfig
     - d_breeze-red
     - d_mpv
