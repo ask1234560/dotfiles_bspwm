@@ -39,6 +39,7 @@ dotfiles_bspwm/dotfiles
 
 ## Requirements
 * working arch linux with bspwm
+* firacode nerd font
 * pipenv
 * zsh
 * change shell to zsh
@@ -61,3 +62,9 @@ dotfiles_bspwm/dotfiles
 * ./dotdrop.sh install
 * (optional) to remove backup files
    * find ~ -regextype grep -regex '.*/*dotdropbak' -exec rm {} \\;
+   
+   
+## (Optional) Explicitly installed packages  
+```
+yay -S adapta-gtk-theme alacritty alsa-firmware alsa-utils autoconf automake base bc betterlockscreen binutils bison broadcom-wl-dkms bspwm chromium cronie dmenu dosfstools dunst efibootmgr evince exa exiv2 fakeroot file findutils flex gawk gcc gettext gimp git grep groff grub gtk-engine-murrine gzip hsetroot htop imagemagick libreoffice-fresh libtool linux-firmware linux-lts linux-lts-headers lynx m4 make man-db mlocate mpv neofetch neovim networkmanager newsboat noto-fonts npm numlockx openresolv openvpn pacman pacman-contrib papirus-icon-theme patch pavucontrol picom pkgconf polybar pulseaudio pulseaudio-alsa python-pip ranger redshift-minimal rmtrash scrot sed simplenote-electron-bin sudo sxhkd sxiv syncthing texinfo thunar timeshift trash-cli ttf-indic-otf ttf-ms-fonts ttf-roboto ttf-vista-fonts vi which xclip xdg-user-dirs xdman xorg-server xorg-xev xorg-xinit xorg-xsetroot yay zsh
+```
