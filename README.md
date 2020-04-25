@@ -37,7 +37,7 @@
 
 ## Screenshots
 <img src="Screenshots/Screenshot_from_2020-04-25_22:10:55.png" width=1000px>
-<img src="Screenshots/Screenshot_from_2020-04-25_22:11:23.png" width=1000px>
+<img src="Screenshots/Screenshots/Screenshot_from_2020-04-25_22:21:50.png" width=1000px>
 <img src="Screenshots/Screenshot_from_2020-04-25_22:11:23.png" width=1000px>
 
 
