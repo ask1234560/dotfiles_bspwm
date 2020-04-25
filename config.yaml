@@ -82,6 +82,18 @@ dotfiles:
   d_alacritty:
     src: config/alacritty
     dst: ~/.config/alacritty
+  f_gtkrc-2.0:
+    src: gtkrc-2.0
+    dst: ~/.gtkrc-2.0
+  d_gtk-3.0:
+    src: config/gtk-3.0
+    dst: ~/.config/gtk-3.0
+  d_default:
+    src: icons/default
+    dst: ~/.icons/default
+  f_fira-code-bold-nerd-font-complete.ttf:
+    src: local/share/fonts/Fira Code Bold Nerd Font Complete.ttf
+    dst: ~/.local/share/fonts/Fira Code Bold Nerd Font Complete.ttf
 profiles:
   arch:
     dotfiles:
@@ -108,3 +120,7 @@ profiles:
     - d_polybar
     - d_dunst
     - d_alacritty
+    - f_gtkrc-2.0
+    - d_gtk-3.0
+    - d_default
+    - f_fira-code-bold-nerd-font-complete.ttf

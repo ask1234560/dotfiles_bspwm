@@ -18,6 +18,10 @@ super + Escape
 # bspwm hotkeys
 #
 
+# flaot windows switch
+super + Tab
+	bspc node -f next.local
+
 # quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}

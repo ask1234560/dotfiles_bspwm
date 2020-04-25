@@ -1,11 +1,12 @@
 # dotfiles_bspwm
 ```
-dotfiles_bspwm/dotfiles
+.config/dotfiles_bspwm/dotfiles
 ├── bashrc
 ├── config
 │  ├── alacritty
 │  ├── bspwm
 │  ├── dunst
+│  ├── gtk-3.0
 │  ├── htop
 │  ├── mpv
 │  ├── newsboat
@@ -19,8 +20,10 @@ dotfiles_bspwm/dotfiles
 │  ├── openvpn
 │  └── pacman.conf
 ├── gitconfig
+├── gtkrc-2.0
 ├── icons
-│  └── Breeze-Red
+│  ├── Breeze-Red
+│  └── default
 ├── irssi
 │  └── config
 ├── local
@@ -33,14 +36,14 @@ dotfiles_bspwm/dotfiles
 ```
 
 ## Screenshots
-<img src="Screenshots/Screenshot_from_2020-04-25_13:53:02.png" width=1000px>
-<img src="Screenshots/Screenshot_from_2020-04-25_13:56:11.png" width=1000px>
+<img src="Screenshots/Screenshot_from_2020-04-25_22:10:55.png" width=1000px>
+<img src="Screenshots/Screenshot_from_2020-04-25_22:11:23.png" width=1000px>
+<img src="Screenshots/Screenshot_from_2020-04-25_22:11:23.png" width=1000px>
 
 
 ## Requirements
 * working arch linux with bspwm
-* firacode nerd font
-* pipenv
+* python3, pipenv
 * zsh
 * change shell to zsh
   * chsh -s $(which zsh)
