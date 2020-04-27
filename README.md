@@ -39,7 +39,7 @@
 ## Screenshots
 <img src="Screenshots/Screenshot_from_2020-04-27_17:56:52.png" width=1000px>
 <img src="Screenshots/Screenshot_from_2020-04-27_17:58:16.png" width=1000px>
-<img src="Screenshots/Screenshot_from_2020-04-27_18:00:29.png" width=1000px>
+<img src="Screenshots/Screenshot_from_2020-04-27_18:38:06.png" width=1000px>
 
 
 ## Requirements

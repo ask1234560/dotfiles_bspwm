@@ -27,13 +27,13 @@ fg = #839496
 background-alt = #444
 foreground-alt = #555
 primary = #ffb52a
-alert = #bd2c40
+alert = #dc322f
 
-adapta-cyan = #00BCD4
-adapta-red = #FF5252
-adapta-yellow = #C9BC0E
-adapta-lightgreen = #4DB6AC
-adapta-green = #009688
+adapta-cyan = #2aa198
+adapta-red = #dc322f
+adapta-yellow = #b58900
+adapta-lightgreen = #586e75
+adapta-green = #859900
 adapta-grey = #475359
 
 [margin]
