@@ -64,6 +64,7 @@
 * substitute hostname
    * awk '{gsub(/arch/,"hostname")} {print $0}' config.yaml.bak | tee config.yaml
 * ./dotdrop.sh install
+* place wallpapers in ~/Pictures/.wallpaper for selecting random wallpapers during startup, and in ~/Pictures/Wallpapers for selecting wallpapers using sxiv
 * (optional) to remove backup files
    * find ~ -regextype grep -regex '.*/*dotdropbak' -exec rm {} \\;
    
