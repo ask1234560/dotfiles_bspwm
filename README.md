@@ -3,6 +3,7 @@
 .config/dotfiles_bspwm/dotfiles
 ├── bashrc
 ├── config
+│  ├── .aliasrc
 │  ├── alacritty
 │  ├── bspwm
 │  ├── dunst
