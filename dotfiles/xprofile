@@ -7,3 +7,5 @@ export MAILTO="ask1234560@gmail.com"
 # dotdrop
 export DOTREPO="~/.config/dotfiles_bspwm"
 
+# zsh autosuggest
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5e6d6e"

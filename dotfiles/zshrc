@@ -27,13 +27,9 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 setopt auto_cd
 
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
-fi
-
 
 weather() {
-    curl wttr.in/${1:-kothamangalam}
+    curl wttr.in/${1:-paravur,kollam}
 }
 
 set -o vi

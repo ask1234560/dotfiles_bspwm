@@ -18,10 +18,11 @@
 
 ;====General Settings======================================
 [colors]
-;bg = #222D32
-bg = #222
-;fg = #CFD8DC
-fg = #dfdfdf
+;bg = #222
+bg = #002b36
+
+;fg = #dfdfdf
+fg = #839496
 
 background-alt = #444
 foreground-alt = #555
