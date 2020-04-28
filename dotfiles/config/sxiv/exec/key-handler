@@ -3,16 +3,16 @@ while read file
 do
         case "$1" in
         "d")
-                trash "$file" ;;
+				trash "$file" ;;
         "g")
 				gimp "$file" & ;;
         "r")
-                convert -rotate 90 "$file" "$file" ;;
+				convert -rotate 90 "$file" "$file" ;;
         "R")
-                convert -rotate -90 "$file" "$file" ;;
+				convert -rotate -90 "$file" "$file" ;;
         "w")
 				hsetroot -fill "$file"  -tint '#9ccfe6' ;;
         "y")
-                echo -n "$file" | xclip -selection clipboard ;;
+				echo -n "$file" | xclip -selection clipboard ;;
         esac
 done
