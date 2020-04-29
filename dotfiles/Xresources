@@ -1,22 +1,6 @@
 Xcursor.theme: Breeze-Red
 
 
-
-
-! urxvt configs
-URxvt.depth: 32
-URxvt.background: [90]#282A36
-
-URxvt.font: xft:FiraCode Nerd Font:bold:size=10
-
-URxvt.letterSpace: -1
-
-URxvt.scrollBar: false
-
-
-
-
-
 ! dracula Xresources palette
 ! *.foreground: #F8F8F2
 ! *.background: #282A36
@@ -37,8 +21,7 @@ URxvt.scrollBar: false
 ! *.color7:     #BFBFBF
 ! *.color15:    #E6E6E6
 
-
-
+ 
 ! solarized dark
 #define S_base03        #002b36
 #define S_base02        #073642

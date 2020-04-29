@@ -18,23 +18,20 @@
 
 ;====General Settings======================================
 [colors]
-;bg = #222
-bg = #002b36
 
-;fg = #dfdfdf
-fg = #839496
+bg = ${xrdb:background:#002b36}
+fg = ${xrdb:foreground:#839496}
 
-background-alt = #444
-foreground-alt = #555
-primary = #ffb52a
-alert = #dc322f
+;foreground-alt = ${xrdb:colorX:#555}
+;primary = ${xrdb:colorX:#ffb52a}
+alert = ${xrdb:color1:#dc322f}
 
-adapta-cyan = #2aa198
-adapta-red = #dc322f
-adapta-yellow = #b58900
-adapta-lightgreen = #586e75
-adapta-green = #859900
-adapta-grey = #475359
+adapta-cyan = ${xrdb:color6:#2aa198}
+adapta-red = ${xrdb:color1:#dc322f}
+adapta-yellow = ${xrdb:color3:#b58900}
+adapta-lightgreen = ${xrdb:color10:#586e75}
+adapta-green = ${xrdb:color2:#859900}
+adapta-grey = ${xrdb:colorX:#475359}
 
 [margin]
 for-modules = 1
@@ -105,7 +102,7 @@ content-underline = ${colors.adapta-cyan}
 type = internal/bspwm
 
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
+label-focused-background = ${colors.adapta-grey}
 label-focused-underline= ${colors.adapta-cyan} 
 label-focused-padding = 2
 
@@ -117,7 +114,7 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
 label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
+label-empty-foreground = ${colors.adapta-grey}
 label-empty-padding = 2
 
 ; Separator in between workspaces
