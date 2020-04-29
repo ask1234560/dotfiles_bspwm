@@ -47,9 +47,10 @@
 * python3, pipenv
 * zsh
 * change shell to zsh
-  * chsh -s $(which zsh)
+  * ```chsh -s $(which zsh)```
 
 ## Installation 
+ ```
 * cd ~/.config
 * git clone https://github.com/ask1234560/dotfiles_bspwm
 * cd dotfiles_bspwm
@@ -67,7 +68,7 @@
 * place wallpapers in ~/Pictures/.wallpaper for selecting random wallpapers during startup, and in ~/Pictures/Wallpapers for selecting wallpapers using sxiv
 * (optional) to remove backup files
    * find ~ -regextype grep -regex '.*/*dotdropbak' -exec rm {} \;
-   
+```
    
 ## (Optional) Explicitly installed packages  
 ```
