@@ -34,11 +34,3 @@ alias \
 	dotsync="dotgit pull && dotgit add -A && dotgit commit && dotgit push; dotdrop install"
 
 
-# alias ls='ls --color=auto --group-directories-first'
-# alias la='ls -A --group-directories-first'
-# alias ll='ls -lAh --group-directories-first'
-# alias pst='patch -o config.h -i '
-# alias v='vim '
-# alias gv='gvim '
-# alias egrep='egrep --colour=auto'
-# alias fgrep='fgrep --colour=auto'
