@@ -1,5 +1,10 @@
 source ~/.zplug/init.zsh
 
+# History in cache directory:
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.cache/zsh/history
+
 # Plugins
 # Supports oh-my-zsh plugins and the like
 zplug "plugins/git",   from:oh-my-zsh
@@ -27,6 +32,8 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 setopt auto_cd
 
+# Include hidden files.
+_comp_options+=(globdots)		
 
 weather() {
     curl wttr.in/${1:-paravur,kollam}
@@ -48,6 +55,11 @@ bindkey "^Y" yank
 #bindkey "^X^F" vi-find-next-char
 bindkey '^R' history-incremental-search-backward
 bindkey '^[[3~' delete-char-or-list
+
+# Edit line in vim with ctrl-e:
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^n' edit-command-line
+
 
 # ext - archive extractor
 # usage: ext <file>

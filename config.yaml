@@ -34,6 +34,10 @@ dotfiles:
   d_newsboat:
     src: config/newsboat
     dst: ~/.config/newsboat
+    upignore:
+    - cache.db
+    instignore:
+    - cache.db
   d_ranger:
     src: config/ranger
     dst: ~/.config/ranger
@@ -97,6 +101,9 @@ dotfiles:
   d_zathura:
     src: config/zathura
     dst: ~/.config/zathura
+  f_user-dirs.dirs:
+    src: config/user-dirs.dirs
+    dst: ~/.config/user-dirs.dirs
 profiles:
   arch:
     dotfiles:
@@ -128,3 +135,4 @@ profiles:
     - d_default
     - f_fira-code-bold-nerd-font-complete.ttf
     - d_zathura
+    - f_user-dirs.dirs

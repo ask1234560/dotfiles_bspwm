@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	alacritty
+	$TERMINAL
 
 # program launcher
 super + @space
@@ -93,10 +93,10 @@ super + F3
     cbacklight --inc 5
 
 super + alt + t
-    alacritty -e htop
+    $TERMINAL -e htop
 
 super + alt + i
-    alacritty -e ranger
+    $TERMINAL -e ranger
 
 super + alt + e
     toggle-nightlight day
@@ -117,7 +117,7 @@ XF86AudioMute
 	amixer set Master toggle
 
 super + alt + v
-	alacritty -e sudo openvpn --config /home/ananthu/.config/vpnclients/arch.ovpn 
+	$TERMINAL -e sudo openvpn --config /home/ananthu/.config/vpnclients/arch.ovpn 
 
 super + alt + n
 	betterlockscreen -l blur

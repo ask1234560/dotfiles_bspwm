@@ -4,6 +4,11 @@
 
 [[ $- != *i* ]] && return
 
+# History in cache directory:
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.cache/bash/history
+
 colors() {
 	local fgc bgc vals seq0
 
