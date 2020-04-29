@@ -94,6 +94,9 @@ dotfiles:
   f_fira-code-bold-nerd-font-complete.ttf:
     src: local/share/fonts/Fira Code Bold Nerd Font Complete.ttf
     dst: ~/.local/share/fonts/Fira Code Bold Nerd Font Complete.ttf
+  d_zathura:
+    src: config/zathura
+    dst: ~/.config/zathura
 profiles:
   arch:
     dotfiles:
@@ -124,3 +127,4 @@ profiles:
     - d_gtk-3.0
     - d_default
     - f_fira-code-bold-nerd-font-complete.ttf
+    - d_zathura
