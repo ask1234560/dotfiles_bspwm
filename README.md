@@ -16,7 +16,8 @@
 │  ├── ranger
 │  ├── scripts
 │  ├── sxhkd
-│  └── sxiv
+│  ├── sxiv
+│  └── zathura
 ├── etc
 │  ├── openvpn
 │  └── pacman.conf

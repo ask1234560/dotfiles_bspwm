@@ -28,6 +28,10 @@ dotfiles:
   d_mpv:
     src: config/mpv
     dst: ~/.config/mpv
+    upignore:
+    - watch_later
+    instignore:
+    - watch_later
   d_htop:
     src: config/htop
     dst: ~/.config/htop
@@ -101,9 +105,6 @@ dotfiles:
   d_zathura:
     src: config/zathura
     dst: ~/.config/zathura
-  f_user-dirs.dirs:
-    src: config/user-dirs.dirs
-    dst: ~/.config/user-dirs.dirs
 profiles:
   arch:
     dotfiles:
@@ -135,4 +136,3 @@ profiles:
     - d_default
     - f_fira-code-bold-nerd-font-complete.ttf
     - d_zathura
-    - f_user-dirs.dirs
