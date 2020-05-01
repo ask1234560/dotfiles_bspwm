@@ -38,9 +38,9 @@
 ```
 
 ## Screenshots
-<img src="Screenshots/Screenshot_from_2020-04-27_19:31:00.png" width=1000px>
-<img src="Screenshots/Screenshot_from_2020-04-27_19:29:44.png" width=1000px>
-<img src="Screenshots/Screenshot_from_2020-04-27_19:30:53.png" width=1000px>
+<img src="Screenshots/Screenshot_from_2020-05-01_13:03:56.png" width=1000px>
+<img src="Screenshots/Screenshot_from_2020-05-01_12:06:45.png" width=1000px>
+<img src="Screenshots/Screenshot_from_2020-05-01_13:04:51.png" width=1000px>
 
 
 ## Requirements

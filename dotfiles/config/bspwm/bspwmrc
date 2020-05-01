@@ -1,26 +1,28 @@
 #! /bin/sh
 
-#Autostart
 
+# Autostart
+# system
 sxhkd &
 pulseaudio &
 compton &
 numlockx &
 dunst &
 $HOME/.config/polybar/launch.sh &
+# screensaver/bleep off
+xset -dpms -b &
+# fixing cursor 
+xsetroot -cursor_name left_ptr &
 
+# user
 syncthing &
 bg-changer random &
-xset -dpms -b &
 
 
-# fixing cursor issue
-xsetroot -cursor_name left_ptr
-
-
+# bspwm
 bspc monitor -d I II III IV V
 
-#border rule
+# border rule
 bspc config border_width       3
 bspc config window_gap         9
 # bspc config bottom_padding     -3
@@ -28,23 +30,21 @@ bspc config window_gap         9
 # bspc config right_padding      -3
 bspc config top_padding        33
 
-
 # Border colors
 bspc config normal_border_color "#484848"
 bspc config focused_border_color "#1F8999"
 bspc config urgent_border_color "#B58900"
 bspc config presel_border_color "#26E2FF"
 
-#window rule
+# window rule
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+# rules
 bspc rule -a Chromium desktop='^3'
 bspc rule -a Simplenote desktop='^4'
 bspc rule -a mpv desktop='^5' state=floating
 bspc rule -a Gimp desktop='^5' state=floating follow=on
 bspc rule -a libreoffice-startcenter desktop='^5' state=floating follow=on
 bspc rule -a Soffice desktop='^5' state=floating follow=on
-
-

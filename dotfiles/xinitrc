@@ -13,8 +13,7 @@ if [ -f "$usermodmap" ]; then
 fi
 
 
-# start some nice programs
-
+# run xprofile
 [ -f ~/.xprofile ] && . ~/.xprofile
 
 exec bspwm
