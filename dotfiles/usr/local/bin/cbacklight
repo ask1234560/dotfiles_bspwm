@@ -1,0 +1,137 @@
+#!/usr/bin/python3
+# Nico Schottelius
+# 2018-03-30
+# Copying: GPLv3
+#
+#
+# Set / increase brightness to sysfs directly
+#
+
+import glob
+import os
+import argparse
+import re
+import sys
+
+class BackLight(object):
+    basepath="/sys/class/backlight/"
+
+    def __init__(self, name):
+        self.name = name
+        self.dirname = os.path.join(self.basepath, name)
+        self.brightness_file = os.path.join(self.dirname, "brightness")
+        self.max_brightness_file = os.path.join(self.dirname, "max_brightness")
+
+    @staticmethod
+    def read_value(filename):
+        with open(filename, "r") as fd:
+            val = int("".join(fd.readlines()))
+        return val
+
+    @staticmethod
+    def write_value(filename, value):
+        try:
+            with open(filename, "w") as fd:
+                fd.write(str(value))
+        except PermissionError as e:
+            print("Cannot write to {}: {}".format(filename, e))
+            sys.exit(1)
+
+    @classmethod
+    def get_dirs(cls):
+        return glob.glob("{}*".format(cls.basepath))
+
+    @classmethod
+    def get_driver_from_dir(cls, directory):
+        regexp = r"{}(?P<driver>.+)".format(cls.basepath)
+        return re.match(regexp, directory).groupdict()['driver']
+
+    @classmethod
+    def get_drivers(cls):
+        return [ cls(cls.get_driver_from_dir(x)) for x in cls.get_dirs() ]
+
+    def get_value(self):
+        return self.read_value(self.brightness_file)
+
+    def get_max_value(self):
+        return self.read_value(self.max_brightness_file)
+
+    def get_percentage(self):
+        val = self.get_value()
+        maxval = self.get_max_value()
+
+        percent = (val/maxval)*100
+
+        return percent
+
+    def get_percentage_points(self, percent):
+        """Return integer equivalent to percent"""
+        points = int((percent * self.get_max_value()) / 100)
+
+        return points
+
+    def inc_percent(self, percent):
+        points = self.get_percentage_points(percent)
+        new_value = self.get_value() + points
+        self.set_value(new_value)
+
+    def dec_percent(self, percent):
+        points = self.get_percentage_points(percent)
+        new_value = self.get_value() - points
+        self.set_value(new_value)
+
+    def set_percent(self, percent):
+        new_value = int((percent * self.get_max_value()) / 100)
+
+        self.set_value(new_value)
+
+    def set_value(self, value):
+        if value < 0:
+            value = 0
+        if value > self.get_max_value():
+            value = self.get_max_value()
+
+        self.write_value(self.brightness_file, value)
+
+    def is_readable(self):
+        return os.access(self.max_brightness_file, os.R_OK)
+
+    def __str__(self):
+        return self.name
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='cbacklight')
+    group = parser.add_mutually_exclusive_group()
+
+    group.add_argument('--inc', help='Increment by percentage (points)')
+    group.add_argument('--dec', help='Decrement by percentage (points)')
+    group.add_argument('--set', help='Set to percentage')
+
+    parser.add_argument('--get', help='Get percentage (default)', action='store_true')
+
+    args = parser.parse_args()
+
+    anyarg = args.inc or args.dec or args.set
+
+    drivers = BackLight.get_drivers()
+
+    method = None
+    if args.inc:
+        method = "inc_percent"
+        val    = args.inc
+    if args.dec:
+        method = "dec_percent"
+        val    = args.dec
+    if args.set:
+        method = "set_percent"
+        val    = args.set
+
+    if method:
+        for d in drivers:
+            func = getattr(d, method)
+            func(int(val))
+
+
+    if not anyarg or args.get:
+        for d in drivers:
+            print("{}: {:.2f}%".format(d, d.get_percentage()))

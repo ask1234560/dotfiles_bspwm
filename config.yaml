@@ -105,6 +105,9 @@ dotfiles:
   d_zathura:
     src: config/zathura
     dst: ~/.config/zathura
+  d_bin:
+    src: usr/local/bin
+    dst: /usr/local/bin
 profiles:
   arch:
     dotfiles:
@@ -136,3 +139,4 @@ profiles:
     - d_default
     - f_fira-code-bold-nerd-font-complete.ttf
     - d_zathura
+    - d_bin
