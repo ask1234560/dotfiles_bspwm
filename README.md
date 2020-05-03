@@ -55,12 +55,11 @@
 * cd ~/.config
 * git clone https://github.com/ask1234560/dotfiles_bspwm
 * cd dotfiles_bspwm
-* pipenv --three
 * git submodule init 
 * git submodule update --recursive 
 * update submodules(dotdrop, nvim, ranger_devicons)
    * git submodule foreach git pull origin master
-* pipenv install -r dotdrop/requirements.txt
+* pipenv sync
 * pipenv shell
 * cp config.yaml config.yaml.bak
 * substitute hostname
