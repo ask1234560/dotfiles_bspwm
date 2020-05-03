@@ -47,6 +47,8 @@
 * working arch linux with bspwm
 * python3, pipenv
 * zsh
+* install zplug
+  * ```curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh```
 * change shell to zsh
   * ```chsh -s $(which zsh)```
 
