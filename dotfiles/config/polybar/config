@@ -237,30 +237,37 @@ click-left = xdg-open https://www.youtube.com/ &
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
-warn-temperature = 65
+interval = 1
+thermal-zone = 1
+base-temperature = 58
+warn-temperature = 70
 
-format =  <label>
+format = <ramp> <label>
 format-underline = ${colors.adapta-cyan}
-format-warn =  <label-warn>
+format-warn = <ramp> <label-warn>
 format-warn-underline = ${colors.adapta-cyan}
 
 format-padding = 1
 format-margin = ${margin.for-modules}
 format-warn-padding = 1
 format-warn-margin = ${margin.for-modules}
-format-warn-foreground = ${colors.adapta-red}
 
 label = %temperature-c%
 label-warn = %temperature-c%
-;label-warn-foreground = ${colors.adapta-red}
+
+ramp-0 = 
+ramp-0-foreground = ${colors.fg}
+ramp-1 = 
+ramp-1-foreground = ${colors.adapta-yellow}
+ramp-2 = 
+ramp-2-foreground = ${colors.adapta-red}
 
 
 [module/date]
 type = internal/date
 interval = 5
 
-date =
+date = 
 date-alt = " %a %d %b %Y"
 
 time = " %H:%M"
@@ -270,7 +277,7 @@ label-padding = 1
 ;label-background = ${colors.shade1}
 label-underline = ${colors.adapta-cyan}
 
-label = %date% %time%
+label = "%date% %time%"
 ;label-margin = ${margin.for-modules}
 ;==========================================================
 

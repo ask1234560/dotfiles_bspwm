@@ -658,7 +658,7 @@ key_bindings:
   # Scroll up and down
   - { key: K,    mods: Alt,   action: ScrollPageUp }
   - { key: J,    mods: Alt,   action: ScrollPageDown }
-  # - { key: PageUp,    mods: Shift,   action: ScrollPageUp,   mode: ~Alt       }
-  # - { key: PageDown,  mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
+  #- { key: PageUp,    mods: Shift,   action: ScrollPageUp,   mode: ~Alt       }
+  #- { key: PageDown,  mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
   #- { key: Home,      mods: Shift,   action: ScrollToTop,    mode: ~Alt       }
   #- { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
