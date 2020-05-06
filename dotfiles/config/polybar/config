@@ -249,10 +249,11 @@ format-padding = 1
 format-margin = ${margin.for-modules}
 format-warn-padding = 1
 format-warn-margin = ${margin.for-modules}
+format-warn-foreground = ${colors.adapta-red}
 
 label = %temperature-c%
 label-warn = %temperature-c%
-label-warn-foreground = ${colors.adapta-red}
+;label-warn-foreground = ${colors.adapta-red}
 
 
 [module/date]
