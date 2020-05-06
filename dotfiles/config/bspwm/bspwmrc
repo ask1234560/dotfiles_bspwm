@@ -29,6 +29,7 @@ bspc config window_gap         9
 # bspc config left_padding       -3
 # bspc config right_padding      -3
 bspc config top_padding        33
+bspc config focus_follows_pointer true
 
 # Border colors
 bspc config normal_border_color "#484848"
