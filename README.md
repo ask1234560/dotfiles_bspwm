@@ -75,7 +75,7 @@ dotfiles
    * sudo make install
 * (optional) to remove backup files
    * find ~ -regextype grep -regex '.*/*dotdropbak' -exec rm {} \;
-* For changing theme, change in alacritty, nvim, ~/.Xresources, dmenu, polybar(reads Xresources) 
+* For changing theme, change in alacritty, nvim, ~/.Xresources, dmenu, dunst, polybar(reads Xresources).
 ```
    
 ## (Optional) Explicitly installed packages  

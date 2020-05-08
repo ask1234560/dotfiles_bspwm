@@ -10,7 +10,7 @@ if [ "$stat" == "Discharging" ]
 then
 		if [ "$cap" -lt 25 ]
 		then
-				dunstify   -t 10000 'Critical battery threshold' 'Connect a power source.'  --icon="/usr/share/icons/Adwaita/32x32/status/battery-level-10-symbolic.symbolic.png"
+				dunstify -t 10000 'Critical battery threshold' 'Connect a power source.'  --icon="battery-level-10-symbolic.symbolic" -u low
 				if [ "$cap" -lt 15  ]
 				then
 						logger "Critical battery threshold"
