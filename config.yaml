@@ -108,6 +108,15 @@ dotfiles:
   d_bin:
     src: usr/local/bin
     dst: /usr/local/bin
+    upignore:
+    - dmenu*
+    - stest
+    instignore:
+    - dmenu*
+    - stest
+  d_dmenu-4.9:
+    src: Downloads/dmenu-4.9
+    dst: ~/Downloads/dmenu-4.9
 profiles:
   arch:
     dotfiles:
@@ -140,3 +149,4 @@ profiles:
     - f_fira-code-bold-nerd-font-complete.ttf
     - d_zathura
     - d_bin
+    - d_dmenu-4.9
