@@ -115,8 +115,8 @@ dotfiles:
     - dmenu*
     - stest
   d_dmenu-4.9:
-    src: Downloads/dmenu-4.9
-    dst: ~/Downloads/dmenu-4.9
+    src: config/dmenu-4.9
+    dst: ~/.config/dmenu-4.9
 profiles:
   arch:
     dotfiles:

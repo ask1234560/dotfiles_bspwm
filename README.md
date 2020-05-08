@@ -6,6 +6,7 @@ dotfiles
 │  ├── .aliasrc
 │  ├── alacritty
 │  ├── bspwm
+│  ├── dmenu-4.9
 │  ├── dunst
 │  ├── gtk-3.0
 │  ├── htop
@@ -18,8 +19,6 @@ dotfiles
 │  ├── sxhkd
 │  ├── sxiv
 │  └── zathura
-├── Downloads
-│  └── dmenu-4.9
 ├── etc
 │  ├── openvpn
 │  └── pacman.conf
@@ -71,7 +70,7 @@ dotfiles
 * ./dotdrop.sh install
 * place wallpapers in ~/Pictures/.wallpaper for selecting random wallpapers during startup, and in ~/Pictures/Wallpapers for selecting wallpapers using sxiv
 * build dmenu
-   * cd ~/Downloads/dmenu-4.9/
+   * cd ~/.config/dmenu-4.9/
    * sudo make install
 * (optional) to remove backup files
    * find ~ -regextype grep -regex '.*/*dotdropbak' -exec rm {} \;
