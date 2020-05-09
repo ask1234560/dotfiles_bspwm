@@ -22,8 +22,9 @@ alias \
 	lynx='lynx -accept_all_cookies ' \
 	cip='curl ipinfo.io ' \
 	vpnc="sudo openvpn --config /home/ananthu/.config/vpnclients/arch.ovpn "  \
-	cp="cpg -g "  \
-	mv="mvg -g "
+	cp="cpg -g " \
+	mv="mvg -g " \
+	wget="wget --hsts-file ~/.cache/.wget-hsts "
 
 alias -g -- --help="--help | less -FXi ; true "
 
@@ -32,5 +33,3 @@ alias \
 	dotdrop="$DOTREPO/dotdrop.sh" \
 	dotgit="git -C $DOTREPO" \
 	dotsync="dotgit pull && dotgit add -A && dotgit commit && dotgit push; dotdrop install"
-
-

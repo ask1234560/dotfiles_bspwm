@@ -22,9 +22,6 @@ dotfiles:
   f_gitconfig:
     src: gitconfig
     dst: ~/.gitconfig
-  d_breeze-red:
-    src: icons/Breeze-Red
-    dst: ~/.icons/Breeze-Red
   d_mpv:
     src: config/mpv
     dst: ~/.config/mpv
@@ -99,9 +96,6 @@ dotfiles:
   d_default:
     src: icons/default
     dst: ~/.icons/default
-  f_fira-code-bold-nerd-font-complete.ttf:
-    src: local/share/fonts/Fira Code Bold Nerd Font Complete.ttf
-    dst: ~/.local/share/fonts/Fira Code Bold Nerd Font Complete.ttf
   d_zathura:
     src: config/zathura
     dst: ~/.config/zathura
@@ -117,6 +111,9 @@ dotfiles:
   d_dmenu-4.9:
     src: config/dmenu-4.9
     dst: ~/.config/dmenu-4.9
+  d_breeze-blue:
+    src: icons/Breeze-Blue
+    dst: ~/.icons/Breeze-Blue
 profiles:
   arch:
     dotfiles:
@@ -125,7 +122,6 @@ profiles:
     - f_xinitrc
     - d_irssi
     - f_gitconfig
-    - d_breeze-red
     - d_mpv
     - d_htop
     - d_newsboat
@@ -146,7 +142,7 @@ profiles:
     - f_gtkrc-2.0
     - d_gtk-3.0
     - d_default
-    - f_fira-code-bold-nerd-font-complete.ttf
     - d_zathura
     - d_bin
     - d_dmenu-4.9
+    - d_breeze-blue

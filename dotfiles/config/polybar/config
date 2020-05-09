@@ -52,10 +52,6 @@ background = ${colors.bg}
 foreground = ${colors.fg}
 
 font-0 = "FiraCode Nerd Font:style=Bold:pixelsize=10;3"
-;font-0 = "Fantasque Sans Mono:pixelsize=10;3"
-font-1 = "Iosevka Nerd Font:pixelsize=14;3"
-font-2 = "Iosevka Nerd Font:pixelsize=11;3"
-
 cursor-click = pointer
 ;==========================================================
 
@@ -280,10 +276,10 @@ animation-charging-framerate = 750
 type = internal/date
 interval = 5
 
-date = 
-date-alt = " %a %d %b %Y"
+date = "" 
+date-alt = " %a %d %b %Y"
 
-time = " %H:%M"
+time = "%H:%M"
 time-alt = "%H:%M:%S"
 
 format = <label>
