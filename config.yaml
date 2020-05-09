@@ -93,9 +93,6 @@ dotfiles:
   d_gtk-3.0:
     src: config/gtk-3.0
     dst: ~/.config/gtk-3.0
-  d_default:
-    src: icons/default
-    dst: ~/.icons/default
   d_zathura:
     src: config/zathura
     dst: ~/.config/zathura
@@ -141,7 +138,6 @@ profiles:
     - d_alacritty
     - f_gtkrc-2.0
     - d_gtk-3.0
-    - d_default
     - d_zathura
     - d_bin
     - d_dmenu-4.9
