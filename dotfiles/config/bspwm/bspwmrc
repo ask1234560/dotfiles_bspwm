@@ -24,7 +24,7 @@ bspc monitor -d I II III IV V
 
 # border rule
 bspc config border_width       3
-bspc config window_gap         9
+bspc config window_gap         5
 # bspc config bottom_padding     -3
 # bspc config left_padding       -3
 # bspc config right_padding      -3

@@ -105,12 +105,12 @@ dotfiles:
     instignore:
     - dmenu*
     - stest
-  d_dmenu-4.9:
-    src: config/dmenu-4.9
-    dst: ~/.config/dmenu-4.9
   d_breeze-blue:
     src: icons/Breeze-Blue
     dst: ~/.icons/Breeze-Blue
+  d_dmenu-4.9:
+    src: config/dmenu-4.9
+    dst: ~/.config/dmenu-4.9
 profiles:
   arch:
     dotfiles:
@@ -140,5 +140,5 @@ profiles:
     - d_gtk-3.0
     - d_zathura
     - d_bin
-    - d_dmenu-4.9
     - d_breeze-blue
+    - d_dmenu-4.9

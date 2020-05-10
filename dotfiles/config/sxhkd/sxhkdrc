@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run  -fn 'FiraCode Nerd Font-10' -nb '#002b36' -sf '#002b36' -sb '#2aa198' -nf '#839496'  
+	dmenu_run -i -p "run"
 
 # make sxhkd reload its configuration files:
 super + Escape
