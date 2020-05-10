@@ -35,7 +35,7 @@ mountusb() { \
 mountandroid() { \
 	chosen="$(echo "$anddrives" | dmenu -i -p "Which Android device?")" || exit 1
 	chosen="$(echo "$chosen" | cut -d : -f 1)"
-	getmount "$HOME -maxdepth 3 -type d"
+	getmount "/home/ananthu/Public $HOME -maxdepth 3 -type d"
 	simple-mtpfs --device "$chosen" "$mp"
 	echo "OK" | dmenu -i -p "Tap Allow on your phone if it asks for permission and then press enter" || exit 1
 	simple-mtpfs --device "$chosen" "$mp"

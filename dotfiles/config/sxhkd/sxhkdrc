@@ -127,7 +127,7 @@ super + alt + z
 
 #mount/umount using dmenu
 super + alt + m
-	sudo dmount
+	dmount
 
 super + alt + u
-	sudo dumount
+	dumount

@@ -14,3 +14,6 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5e6d6e"
 
 # less hist file
 export LESSHISTFILE="~/.cache/.lesshst"
+
+# sudo -A 
+export SUDO_ASKPASS="/usr/local/bin/dpass"
