@@ -124,3 +124,10 @@ super + alt + n
 
 super + alt + z
 	betterlockscreen -s blur
+
+#mount/umount using dmenu
+super + alt + m
+	sudo dmount
+
+super + alt + u
+	sudo dumount

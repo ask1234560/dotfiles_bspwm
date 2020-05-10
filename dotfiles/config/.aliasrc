@@ -32,4 +32,5 @@ alias -g -- --help="--help | less -FXi ; true "
 alias \
 	dotdrop="$DOTREPO/dotdrop.sh" \
 	dotgit="git -C $DOTREPO" \
-	dotsync="dotgit pull && dotgit add -A && dotgit commit && dotgit push; dotdrop install"
+	dotsync="dotgit pull && dotgit add -A && dotgit commit && dotgit push; dotdrop install" \
+	dotglob='sudo ./dotdrop.sh --cfg=global-config.yaml '

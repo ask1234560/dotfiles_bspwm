@@ -1,0 +1,37 @@
+config:
+  backup: true
+  create: true
+  dotpath: global-dotfiles
+dotfiles:
+  f_pacman.conf:
+    src: etc/pacman.conf
+    dst: /etc/pacman.conf
+  f_update-resolv-conf:
+    src: etc/openvpn/update-resolv-conf
+    dst: /etc/openvpn/update-resolv-conf
+  d_bin:
+    src: usr/local/bin
+    dst: /usr/local/bin
+    upignore:
+    - dmenu*
+    - stest
+    instignore:
+    - dmenu*
+    - stest
+  d_cron:
+    src: var/spool/cron
+    dst: /var/spool/cron
+  f_sudoers:
+    src: etc/sudoers
+    dst: /etc/sudoers
+    trans_read: _gpg
+trans_read:
+  _gpg: gpg2 -q --for-your-eyes-only --no-tty -d {0} > {1}
+profiles:
+  arch:
+    dotfiles:
+    - f_pacman.conf
+    - f_update-resolv-conf
+    - d_bin
+    - d_cron
+    - f_sudoers

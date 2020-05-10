@@ -51,12 +51,6 @@ dotfiles:
   d_sxiv:
     src: config/sxiv
     dst: ~/.config/sxiv
-  f_pacman.conf:
-    src: etc/pacman.conf
-    dst: /etc/pacman.conf
-  f_update-resolv-conf:
-    src: etc/openvpn/update-resolv-conf
-    dst: /etc/openvpn/update-resolv-conf
   f_aliasrc:
     src: config/.aliasrc
     dst: ~/.config/.aliasrc
@@ -96,15 +90,6 @@ dotfiles:
   d_zathura:
     src: config/zathura
     dst: ~/.config/zathura
-  d_bin:
-    src: usr/local/bin
-    dst: /usr/local/bin
-    upignore:
-    - dmenu*
-    - stest
-    instignore:
-    - dmenu*
-    - stest
   d_breeze-blue:
     src: icons/Breeze-Blue
     dst: ~/.icons/Breeze-Blue
@@ -124,8 +109,6 @@ profiles:
     - d_newsboat
     - d_ranger
     - d_sxiv
-    - f_pacman.conf
-    - f_update-resolv-conf
     - f_aliasrc
     - d_scripts
     - f_xprofile
@@ -139,6 +122,5 @@ profiles:
     - f_gtkrc-2.0
     - d_gtk-3.0
     - d_zathura
-    - d_bin
     - d_breeze-blue
     - d_dmenu-4.9

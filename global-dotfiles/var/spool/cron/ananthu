@@ -1,0 +1,5 @@
+# @reboot 	/home/ananthu/.config/scripts/keyboard_dis.sh 
+
+*/3 * * * *     /home/ananthu/.config/scripts/lowpower_hibernate_arch.sh
+
+# 0 */5 * * * 	echo " " > /home/ananthu/Desktop/xtra/sslkeys/sslkey.log 
