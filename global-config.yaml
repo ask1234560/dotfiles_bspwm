@@ -2,6 +2,10 @@ config:
   backup: true
   create: true
   dotpath: global-dotfiles
+  instignore:
+  - '*/sudoers'
+  upignore:
+  - '*/sudoers'
 dotfiles:
   f_pacman.conf:
     src: etc/pacman.conf
@@ -23,10 +27,7 @@ dotfiles:
     dst: /var/spool/cron
   f_sudoers:
     src: etc/sudoers
-    dst: /etc/sudoers.new
-    trans_read: _gpg
-trans_read:
-  _gpg: gpg2 -q --for-your-eyes-only --no-tty -d {0} > {1}
+    dst: /etc/sudoers
 profiles:
   arch:
     dotfiles:
