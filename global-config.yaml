@@ -6,6 +6,8 @@ config:
   - '*/sudoers'
   upignore:
   - '*/sudoers'
+  cmpignore:
+  - '*/sudoers'
 dotfiles:
   f_pacman.conf:
     src: etc/pacman.conf

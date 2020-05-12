@@ -22,7 +22,7 @@ mountusb() { \
 	# sudo -A mount "$chosen" 2>/dev/null && notify-send "💻 USB mounting" "$chosen mounted." && exit 0
 	sudo -A mount "$chosen" 2>/dev/null && echo "💻 USB mounting $chosen mounted." | dmenu && exit 0
 	alreadymounted=$(lsblk -nrpo "name,type,mountpoint" | awk '$3!~/\/boot|\/home$|SWAP/&&length($3)>1{printf "-not ( -path *%s -prune ) ",$3}')
-	getmount "/home/ananthu/Public /mnt /media /mount /home -maxdepth 5 -type d $alreadymounted"
+	getmount "$HOME/Public /mnt -maxdepth 1 -type d $alreadymounted"
 	partitiontype="$(lsblk -no "fstype" "$chosen")"
 	case "$partitiontype" in
 		"vfat") sudo -A mount -t vfat "$chosen" "$mp" -o rw,umask=0000;;
@@ -35,7 +35,7 @@ mountusb() { \
 mountandroid() { \
 	chosen="$(echo "$anddrives" | dmenu -i -p "Which Android device?")" || exit 1
 	chosen="$(echo "$chosen" | cut -d : -f 1)"
-	getmount "/home/ananthu/Public $HOME -maxdepth 3 -type d"
+	getmount "$HOME/Public -maxdepth 1 -type d"
 	simple-mtpfs --device "$chosen" "$mp"
 	echo "OK" | dmenu -i -p "Tap Allow on your phone if it asks for permission and then press enter" || exit 1
 	simple-mtpfs --device "$chosen" "$mp"
