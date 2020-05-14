@@ -5,7 +5,6 @@ alias \
 	la='exa -a --group-directories-first' \
 	ll='exa -alb --group-directories-first' \
 	tree='exa -T' \
-	bm='bashmount' \
 	rg='ranger' \
 	nv='nvim ' \
 	gc='chromium ' \

@@ -1,6 +1,6 @@
 -- Requires Subliminal version 1.0 or newer
 -- Make sure to specify your system's Subliminal location below:
-subliminal = '/home/ananthu/.local/bin/subliminal'
+subliminal = '/usr/bin/subliminal'
 language = 'en'
 local utils = require 'mp.utils'
 

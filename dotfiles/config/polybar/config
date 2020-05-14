@@ -24,6 +24,8 @@ fg = ${xrdb:foreground:#839496}
 
 ;foreground-alt = ${xrdb:colorX:#555}
 ;primary = ${xrdb:colorX:#ffb52a}
+;alert = ${xrdb:color1:#dc322f}
+; alert set as red
 alert = ${xrdb:color1:#dc322f}
 
 adapta-cyan = ${xrdb:color6:#2aa198}
