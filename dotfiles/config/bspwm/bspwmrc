@@ -50,4 +50,4 @@ bspc rule -a Gimp desktop='^5' state=floating
 bspc rule -a libreoffice-startcenter desktop='^5' state=floating 
 bspc rule -a Soffice desktop='^5' state=floating
 bspc rule -a VirtualBoxVM desktop='^5' state=fullscreen
-bspc rule -a VirtualBox\ Manager desktop='^5' state=floating
+bspc rule -a VirtualBox\ Manager desktop='^5'
