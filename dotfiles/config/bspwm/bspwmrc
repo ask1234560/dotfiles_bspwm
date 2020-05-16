@@ -46,6 +46,8 @@ bspc config gapless_monocle      true
 bspc rule -a Chromium desktop='^3'
 bspc rule -a Simplenote desktop='^4'
 bspc rule -a mpv desktop='^5' state=floating
-bspc rule -a Gimp desktop='^5' state=floating follow=on
-bspc rule -a libreoffice-startcenter desktop='^5' state=floating follow=on
-bspc rule -a Soffice desktop='^5' state=floating follow=on
+bspc rule -a Gimp desktop='^5' state=floating 
+bspc rule -a libreoffice-startcenter desktop='^5' state=floating 
+bspc rule -a Soffice desktop='^5' state=floating
+bspc rule -a VirtualBoxVM desktop='^5' state=fullscreen
+bspc rule -a VirtualBox\ Manager desktop='^5' state=floating

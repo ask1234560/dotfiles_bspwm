@@ -115,7 +115,7 @@ label-disconnected = 睊
 
 [module/temperature]
 type = internal/temperature
-interval = 0.5
+interval = 1
 thermal-zone = 0
 base-temperature = 49
 warn-temperature = 80
@@ -215,7 +215,7 @@ ramp-coreload-font = 3
 
 [module/memory]
 type = internal/memory
-interval = 0.1
+interval = 1
 format-prefix = " "
 format-underline = ${colors.adapta-cyan}
 ;format-margin = ${margin.for-modules}
