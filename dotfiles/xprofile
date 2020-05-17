@@ -1,9 +1,11 @@
 export EDITOR='nvim'
 export VISUAL='nvim'
+export PAGER="less"
 export MAILTO="ask1234560@gmail.com"
 export TERMINAL="alacritty"
 
 #export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+# qt5 theme conf
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # dotdrop
