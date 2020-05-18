@@ -70,7 +70,7 @@ dotfiles
 * set qt theme to Adapta Nokto(kvantum, qt5ct).
 * (optional) to remove backup files
    * find ~ -regextype grep -regex '.*/*dotdropbak' -exec rm {} \;
-* For changing theme, change in alacritty, nvim, nvim quick scope pluggin(init.vim), ~/.Xresources, dmenu, dunst, polybar(reads Xresources).
+* For changing theme, change in alacritty, nvim, nvim quick scope pluggin(init.vim), ~/.Xresources, dmenu, dunst, polybar(reads Xresources), cursor.
 ```
    
 ## (Optional) Explicitly installed packages  
