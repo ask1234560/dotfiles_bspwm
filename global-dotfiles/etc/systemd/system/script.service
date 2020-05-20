@@ -1,0 +1,8 @@
+[Unit]
+Description=Startup_script
+
+[Service]
+ExecStart=/usr/local/bin/startup_script
+
+[Install]
+WantedBy=multi-user.target 

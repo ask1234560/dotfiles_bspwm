@@ -30,6 +30,9 @@ dotfiles:
   f_sudoers:
     src: etc/sudoers
     dst: /etc/sudoers
+  f_script.service:
+    src: etc/systemd/system/script.service
+    dst: /etc/systemd/system/script.service
 profiles:
   arch:
     dotfiles:
@@ -38,3 +41,4 @@ profiles:
     - d_bin
     - d_cron
     - f_sudoers
+    - f_script.service
