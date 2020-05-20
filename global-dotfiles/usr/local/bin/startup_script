@@ -1,0 +1,4 @@
+#!/bin/bash
+
+
+echo EHC2 > /proc/acpi/wakeup

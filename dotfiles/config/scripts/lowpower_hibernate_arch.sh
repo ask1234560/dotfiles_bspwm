@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 eval "export $(egrep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep -u $LOGNAME bspwm)/environ)"
 export DISPLAY=:0.0
