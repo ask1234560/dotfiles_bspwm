@@ -84,7 +84,7 @@ super + alt + s
     scrot -z 'Screenshot_from_%F_%X.png' -e 'mv $f ~/Pictures/Screenshots/'
 
 super + alt + f
-    chromium
+    brave
 
 super + F2
     cbacklight --dec 5

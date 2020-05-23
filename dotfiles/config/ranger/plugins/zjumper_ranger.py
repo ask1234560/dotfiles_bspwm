@@ -11,7 +11,7 @@ class z(Command):
 
         # return directories satisfying the querry
         #  ~/.z file to be present in home, if file in different location change the below command at the end
-        cmd = """awk -F "|" -v q=\""""+" ".join(self.args[1:])+"""\" 'BEGIN{gsub(/ /, ".*", q)}  { if(tolower($1) ~ q){ print $1} }'  ~/.z"""
+        cmd = """awk -F "|" -v q=\""""+" ".join(self.args[1:])+"""\" 'BEGIN{gsub(/ /, ".*", q)}  { if(tolower($1) ~ q){ print $1} }'  ~/.config/.z"""
 
 
         directories,error = subprocess.Popen(cmd, shell=True, executable="/bin/bash", stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
