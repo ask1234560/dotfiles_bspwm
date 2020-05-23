@@ -58,6 +58,9 @@ SPACESHIP_RPROMPT_ORDER=(
   # time          # Time stamps section
   exec_time     # Execution time
 )
+SPACESHIP_VI_MODE_COLOR=#586e75
+SPACESHIP_VI_MODE_INSERT=[i]	
+SPACESHIP_VI_MODE_NORMAL=[n]	
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
