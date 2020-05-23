@@ -1,21 +1,63 @@
-source ~/.zplug/init.zsh
-
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
-# Plugins
-# Supports oh-my-zsh plugins and the like
-zplug "plugins/git",   from:oh-my-zsh
-zplug "plugins/z",   from:oh-my-zsh
+# zplug
+export ZPLUG_HOME="$HOME/.config/.zplug"
+source ~/.config/.zplug/init.zsh
 
-# Make sure to use double quotes
+# Plugins
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
+zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+zplug "rupa/z"
 
-# Load theme file
-zplug 'themes/agnoster', as:theme, from:oh-my-zsh
+# z
+export _Z_DATA="$HOME/.config/.z"
+source ~/.config/.zplug/repos/rupa/z/z.sh
+
+# autosuggestions
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5e6d6e"
+
+# spaceship 
+SPACESHIP_PROMPT_ORDER=(
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  # hg            # Mercurial section (hg_branch  + hg_status)
+  # package       # Package version
+  # node          # Node.js section
+  # ruby          # Ruby section
+  # elixir        # Elixir section
+  # xcode         # Xcode section
+  # swift         # Swift section
+  # golang        # Go section
+  # php           # PHP section
+  # rust          # Rust section
+  # haskell       # Haskell Stack section
+  # julia         # Julia section
+  # docker        # Docker section
+  # aws           # Amazon Web Services section
+  venv          # virtualenv section
+  # conda         # conda virtualenv section
+  # pyenv         # Pyenv section
+  # dotnet        # .NET section
+  # ember         # Ember.js section
+  # kubectl       # Kubectl context section
+  # terraform     # Terraform workspace section
+  line_sep      # Line break
+  # battery       # Battery level and status
+  vi_mode       # Vi-mode indicator
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
+SPACESHIP_RPROMPT_ORDER=(
+  # time          # Time stamps section
+  exec_time     # Execution time
+)
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -39,27 +81,18 @@ weather() {
     curl wttr.in/${1:-paravur,kollam}
 }
 
-set -o vi
-
 #Key bindings
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
-#bindkey "^F" forward-word
-#bindkey "^B" backward-word
 bindkey "^L" clear-screen
 bindkey "^U" backward-kill-line
-#bindkey "^U" kill-whole-line
 bindkey "^Y" yank
-#bindkey "^W" backward-kill-word
-#bindkey "^X^B" vi-match-bracket
-#bindkey "^X^F" vi-find-next-char
 bindkey '^R' history-incremental-search-backward
 bindkey '^[[3~' delete-char-or-list
 
-# Edit line in vim with ctrl-e:
+# Edit line in vim with ctrl-n:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^n' edit-command-line
-
 
 # ext - archive extractor
 # usage: ext <file>
@@ -71,7 +104,7 @@ ext ()
       *.tar.gz)    tar xzf $1   ;;
       *.tar.xz)    tar xJf $1   ;;
       *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1     ;;
+      *.rar)       unrar x $1   ;;
       *.gz)        gunzip $1    ;;
       *.tar)       tar xf $1    ;;
       *.tbz2)      tar xjf $1   ;;
@@ -80,12 +113,12 @@ ext ()
       *.Z)         uncompress $1;;
       *.7z)        7z x $1      ;;
       *.iso)	   if [ $# -ne 2 ]
-      		   then
-		   	echo "specify the destination directory"
-		   else
-		   	7z x -o$2 $1
-		   fi
-		   ;;
+				   then
+						echo "specify the destination directory"
+				   else
+						7z x -o$2 $1
+				   fi
+				   ;;
       *)           echo "'$1' cannot be extracted via ext()" ;;
     esac
   else
@@ -93,5 +126,8 @@ ext ()
   fi
 }
 
+# load aliases
 source ~/.config/.aliasrc
 
+# vi mode
+spaceship_vi_mode_enable
