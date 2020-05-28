@@ -58,9 +58,6 @@ dotfiles
 * pipenv sync
 * pipenv shell
 * add the required dotfiles in config.yaml below the system's hostname.
-<!-- * cp config.yaml config.yaml.bak -->
-<!-- * substitute hostname -->
-<!--    * awk '{gsub(/arch/,"hostname")} {print $0}' config.yaml.bak | tee config.yaml -->
 * ./dotdrop.sh install
 * install zplug
   * ```curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh```

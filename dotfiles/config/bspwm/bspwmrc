@@ -25,9 +25,6 @@ bspc monitor -d I II III IV V
 # border rule
 bspc config border_width       3
 bspc config window_gap         5
-# bspc config bottom_padding     -3
-# bspc config left_padding       -3
-# bspc config right_padding      -3
 bspc config top_padding        33
 bspc config focus_follows_pointer true
 
@@ -41,6 +38,11 @@ bspc config presel_border_color "#26E2FF"
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+
+# scratchpad
+bspc rule -a scratchpad sticky=on state=floating hidden=on
+# check scratchpad already running
+[[ "$(ps -x | grep -c 'class=scratchpad,scratchpad')" -eq "1" ]] && $TERMINAL --class=scratchpad,scratchpad  -e ~/.config/bspwm/scratch &
 
 # rules
 bspc rule -a Brave-browser desktop='^3'

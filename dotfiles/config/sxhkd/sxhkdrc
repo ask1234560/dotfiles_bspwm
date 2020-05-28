@@ -1,133 +1,119 @@
 #
 # wm independent hotkeys
 #
-
 # terminal emulator
 super + Return
 	$TERMINAL
-
 # program launcher
-super + @space
+super + space
 	drecent -p "run"
-
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
 
+
 #
 # bspwm hotkeys
 #
-
-# flaot windows switch
+# focus the last desktop
+super + grave
+	bspc desktop -f last
+# focus the last node in current desktop
 super + Tab
-	bspc node -f next.local
-
+	bspc node -f last.local
+# focus the next/previous node in the current desktop
+super + bracket{left,right}
+	bspc node -f {next,prev}.local
 # quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}
-
 # close and kill
 super + {_,shift + }c
 	bspc node -{c,k}
-
 # alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
 
+
 #
 # state/flags
 #
-
 # set the window state
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
+
 #
 # focus/swap
 #
-
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
-
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
+# swap the current node and the biggest node
+super + g
+	bspc node -s biggest.local
+
 
 #
 # move/resize
 #
-
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-
 # contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+
+#
+# preselect
+#
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
 #
 # Personal
 #
-
-super + alt + c
-	bg-changer
-
-super + alt + w
-    scrot -uz 'Screenshot_from_%F_%X.png' -e 'mv $f ~/Pictures/Screenshots/'
-
-super + alt + s
-    scrot -z 'Screenshot_from_%F_%X.png' -e 'mv $f ~/Pictures/Screenshots/'
-
-super + alt + f
-    brave
-
-super + F2
-    cbacklight --dec 5
-
-super + F3
-    cbacklight --inc 5
-
-super + alt + t
-    $TERMINAL -e htop
-
-super + alt + i
-    $TERMINAL -e ranger
-
-super + alt + e
-    toggle-nightlight day
-
-super + alt + shift + e
-    toggle-nightlight night
-
-# audio raise volume
-XF86AudioRaiseVolume
-	amixer set Master 5%+
-
-# audio lower volume
-XF86AudioLowerVolume
-	amixer set Master 5%-
-
+# screenshot win/full screen
+super + alt + {s,w}
+    scrot -{_,u}z 'Screenshot_from_%F_%X.png' -e 'mv $f ~/Pictures/Screenshots/'
+# brightness dec/inc
+super + {F2,F3}
+    cbacklight --{dec,inc} 5
+# run terminal commands
+super + alt + {i,t}
+    $TERMINAL -e {ranger,htop}
+# nightlight
+super + alt + {_,shift + }e
+    toggle-nightlight {day,night}
+# audio raise/lower volume
+{XF86AudioRaiseVolume,XF86AudioLowerVolume}
+	amixer set Master 5%{+,-}
 # audio mute
 XF86AudioMute
 	amixer set Master toggle
-
-super + alt + v
-	$TERMINAL -e sudo openvpn --config /home/ananthu/.config/vpnclients/arch.ovpn 
-
-super + alt + n
-	betterlockscreen -l blur
-
-super + alt + z
-	betterlockscreen -s blur
-
-#mount/umount using dmenu
-super + alt + m
-	dmount
-
-super + alt + u
-	dumount
+# screen lock/suspend
+super + alt + {n,z}
+	betterlockscreen -{l,s} blur
+# commands: background change/brave/mount/umount using dmenu
+super + alt + {c,f,m,u}
+	{bg-changer,brave,dmount,dumount}
+# scratchpad
+super + alt + space
+	id=$(cat /tmp/scratchid);bspc node $id --flag hidden;bspc node -f $id
