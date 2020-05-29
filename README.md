@@ -40,9 +40,8 @@ dotfiles
 
 ## Requirements
 * working arch linux with bspwm
-* install [yay](https://github.com/Jguer/yay)
-* python3, pip
-* zsh
+* ```pacman -S python python-pip zsh```
+* [yay](https://github.com/Jguer/yay)
 * change shell to zsh
   * ```chsh -s $(which zsh)```
 * ```sudo pip3 install pipenv subliminal ueberzug``` virtual environment/downloading subtitles using mpv/image preview ranger.
