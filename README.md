@@ -41,7 +41,7 @@ dotfiles
 ## Requirements
 * working arch linux with bspwm
 * install [yay](https://github.com/Jguer/yay)
-* python3
+* python3, pip
 * zsh
 * change shell to zsh
   * ```chsh -s $(which zsh)```
