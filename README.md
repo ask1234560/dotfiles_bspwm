@@ -40,6 +40,7 @@ dotfiles
 
 ## Requirements
 * working arch linux with bspwm
+* install [yay](https://github.com/Jguer/yay)
 * python3
 * zsh
 * change shell to zsh
