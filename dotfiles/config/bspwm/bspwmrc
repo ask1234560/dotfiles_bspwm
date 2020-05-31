@@ -4,13 +4,12 @@
 # Autostart
 # system
 sxhkd &
-pulseaudio &
 compton &
 numlockx &
 dunst &
 $HOME/.config/polybar/launch.sh &
-# screensaver/bleep off
-xset -dpms -b &
+# xset key press rate/disable bell/diable dpms
+xset r rate 300 50 -b -dpms &
 # fixing cursor 
 xsetroot -cursor_name left_ptr &
 
