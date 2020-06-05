@@ -9,6 +9,7 @@ verify_ssl = true
 docopt = "*"
 Jinja2 = "*"
 "ruamel.yaml" = "*"
+neovim = "*"
 
 [requires]
 python_version = "3.8"
