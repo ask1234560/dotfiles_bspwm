@@ -3,10 +3,10 @@
 
 # Autostart
 # system
-pgrep sxhkd || sxhkd &
-pgrep compton || compton &
+pgrep -x sxhkd || sxhkd &
+pgrep -x picom || picom &
 numlockx &
-pgrep dunst || dunst &
+pgrep -x dunst || dunst &
 $HOME/.config/polybar/launch.sh &
 # xset key press rate/disable bell/diable dpms
 xset r rate 300 50 -b -dpms &
@@ -14,7 +14,7 @@ xset r rate 300 50 -b -dpms &
 xsetroot -cursor_name left_ptr &
 
 # user
-pgrep syncthing || syncthing &
+pgrep -x syncthing || syncthing &
 bg-changer random &
 
 

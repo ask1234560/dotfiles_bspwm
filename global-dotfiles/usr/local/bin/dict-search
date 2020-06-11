@@ -1,0 +1,23 @@
+#!/bin/python
+import os
+import sys
+import requests
+import json
+
+app_id = os.getenv('OXFORD_app_id')
+app_key = os.getenv('OXFORD_app_key')
+language = 'en'
+word_id = input("\nSearch dictionary...\n")
+url = 'https://od-api.oxforddictionaries.com:443/api/v2/entries/'  + language + '/'  + word_id.lower()
+#url Normalized frequency
+urlFR = 'https://od-api.oxforddictionaries.com:443/api/v2/stats/frequency/word/'  + language + '/?corpus=nmc&lemma=' + word_id.lower()
+r = requests.get(url, headers = {'app_id' : app_id, 'app_key' : app_key})
+data = r.json()
+if r.status_code != 200:
+    sys.exit(1)
+results = data["results"][0]["lexicalEntries"][0]["entries"][0]["senses"]
+#  print(results)
+for j,i in enumerate(results,1):
+    print(j,"=>")
+    print("Definitions :- {}".format(i.get("definitions")), "Domains :- {}".format(i.get("domains")), "Examples :- {}".format(i.get("examples")), "Synonyms :- {}".format(i.get("synonyms")), sep="\n",end="\n\n")
+input()

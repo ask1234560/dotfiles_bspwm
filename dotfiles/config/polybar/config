@@ -146,13 +146,13 @@ ramp-2-foreground = ${colors.adapta-red}
 ;====Right modules=========================================
 [module/pkg]
 type = custom/script
+interval = 3600
 exec = bash ~/.config/polybar/checkupdates.sh
 ;format-background = ${colors.shade2}
 format-underline = ${colors.adapta-cyan}
 format-padding = 1
 format-margin = ${margin.for-modules}
 click-left = alacritty -e bash ~/.config/polybar/updates.sh &
-interval = 3600
 
 
 [module/volume]

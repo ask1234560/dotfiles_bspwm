@@ -4,10 +4,13 @@ config:
   dotpath: global-dotfiles
   instignore:
   - '*/sudoers'
+  - '*/profile'
   upignore:
   - '*/sudoers'
+  - '*/profile'
   cmpignore:
   - '*/sudoers'
+  - '*/profile'
 dotfiles:
   f_pacman.conf:
     src: etc/pacman.conf
@@ -33,6 +36,9 @@ dotfiles:
   f_script.service:
     src: etc/systemd/system/script.service
     dst: /etc/systemd/system/script.service
+  f_profile:
+    src: etc/profile
+    dst: /etc/profile
 profiles:
   arch:
     dotfiles:
@@ -42,3 +48,4 @@ profiles:
     - d_cron
     - f_sudoers
     - f_script.service
+    - f_profile

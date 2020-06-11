@@ -97,8 +97,8 @@ super + alt + {s,w}
 super + {F2,F3}
     cbacklight --{dec,inc} 5
 # run terminal commands
-super + alt + {i,t}
-    $TERMINAL -e {ranger,htop}
+super + alt + {i,t,d}
+    $TERMINAL -e {ranger,htop,dict-search}
 # nightlight
 super + alt + {_,shift + }e
     toggle-nightlight {day,night}
@@ -112,8 +112,8 @@ XF86AudioMute
 super + alt + {n,z}
 	betterlockscreen -{l,s} blur
 # commands: background change/brave/mount/umount using dmenu
-super + alt + {c,f,m,u}
-	{bg-changer,brave,dmount,dumount}
+super + alt + {c,f,m,u,y}
+	{bg-changer,brave,dmount,dumount,drecord}
 # scratchpad
 super + alt + space
-	id=$(cat /tmp/scratchid);bspc node $id --flag hidden;bspc node -f $id
+	id=$(sed -n '1p' /tmp/scratchid);bspc node $id --flag hidden;bspc node -f $id
