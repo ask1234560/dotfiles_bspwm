@@ -36,9 +36,6 @@ dotfiles:
     - cache.db
     instignore:
     - cache.db
-  d_ranger:
-    src: config/ranger
-    dst: ~/.config/ranger
   d_nvim:
     src: config/nvim
     dst: ~/.config/nvim
@@ -103,7 +100,6 @@ profiles:
     - d_mpv
     - d_htop
     - d_newsboat
-    - d_ranger
     - d_sxiv
     - f_aliasrc
     - d_scripts
