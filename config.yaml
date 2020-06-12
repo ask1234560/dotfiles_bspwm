@@ -90,6 +90,9 @@ dotfiles:
   d_dmenu-4.9:
     src: config/dmenu-4.9
     dst: ~/.config/dmenu-4.9
+  d_ranger:
+    src: config/ranger
+    dst: ~/.config/ranger
 profiles:
   arch:
     dotfiles:
@@ -116,3 +119,4 @@ profiles:
     - d_zathura
     - d_breeze-blue
     - d_dmenu-4.9
+    - d_ranger
