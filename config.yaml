@@ -16,9 +16,6 @@ dotfiles:
   f_xinitrc:
     src: xinitrc
     dst: ~/.xinitrc
-  d_irssi:
-    src: irssi
-    dst: ~/.irssi
   f_gitconfig:
     src: gitconfig
     dst: ~/.gitconfig
@@ -102,7 +99,6 @@ profiles:
     - f_zshrc
     - f_bashrc
     - f_xinitrc
-    - d_irssi
     - f_gitconfig
     - d_mpv
     - d_htop

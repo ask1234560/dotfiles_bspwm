@@ -6,7 +6,7 @@ super + Return
 	$TERMINAL
 # program launcher
 super + space
-	drecent -p "run"
+	drecent -p "Run:"
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
