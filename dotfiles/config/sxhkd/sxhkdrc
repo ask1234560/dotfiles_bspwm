@@ -97,8 +97,8 @@ super + alt + {s,w}
 super + {F2,F3}
     cbacklight --{dec,inc} 5
 # run terminal commands
-super + alt + {i,t,d}
-    $TERMINAL -e {ranger,htop,dict-search}
+super + alt + {d,i,t}
+    $TERMINAL -e {dict-search,ranger,htop}
 # nightlight
 super + alt + {_,shift + }e
     toggle-nightlight {day,night}
@@ -116,4 +116,4 @@ super + alt + {c,f,m,u,y}
 	{bg-changer,brave,dmount,dumount,drecord}
 # scratchpad
 super + alt + space
-	id=$(sed -n '1p' /tmp/scratchid);bspc node $id --flag hidden;bspc node -f $id
+	id=$(cat /tmp/scratchid);bspc node $id --flag hidden;bspc node -f $id
