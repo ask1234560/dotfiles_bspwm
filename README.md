@@ -43,6 +43,7 @@ dotfiles
 * change shell to zsh
   * ```chsh -s $(which zsh)```
 * ```sudo pip3 install pipenv subliminal ueberzug``` virtual environment/downloading subtitles using mpv/image preview ranger.
+* place (wallpapers)[https://github.com/ask1234560/wallpapers] in ~/Pictures for selecting wallpapers using sxiv and during startup
 
 ## Installation 
 ```
@@ -60,7 +61,6 @@ dotfiles
 * install zplug
   * curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 * sudo cp ~/.config/dotfiles_bspwm/dotdrop/completion/_dotdrop.sh-completion.zsh /usr/share/zsh/functions/Completion
-* place wallpapers in ~/Pictures/.wallpaper for selecting random wallpapers during startup, and in ~/Pictures/Wallpapers for selecting wallpapers using sxiv
 * build dmenu
    * cd ~/.config/dmenu-4.9/
    * sudo make install

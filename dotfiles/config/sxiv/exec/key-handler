@@ -12,6 +12,8 @@ do
 				convert -rotate -90 "$file" "$file" ;;
         "w")
 				hsetroot -fill "$file"  -tint '#9ccfe6' ;;
+        "x")
+				hsetroot -fill "$file" ;;
         "y")
 				echo -n "$file" | xclip -selection clipboard ;;
         esac
