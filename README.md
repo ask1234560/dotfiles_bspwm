@@ -43,7 +43,7 @@ dotfiles
 * change shell to zsh
   * ```chsh -s $(which zsh)```
 * ```sudo pip3 install pipenv subliminal ueberzug``` virtual environment/downloading subtitles using mpv/image preview ranger.
-* place (wallpapers)[https://github.com/ask1234560/wallpapers] in ~/Pictures for selecting wallpapers using sxiv and during startup
+* place [wallpapers](https://github.com/ask1234560/wallpapers) in ~/Pictures for selecting wallpapers using sxiv and during startup
 
 ## Installation 
 ```
