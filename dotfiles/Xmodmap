@@ -1,1 +1,5 @@
-
+!swap esc and caps-lock 
+clear lock
+keycode 9 = Caps_Lock
+keycode 66 = Escape
+add lock = Caps_Lock
