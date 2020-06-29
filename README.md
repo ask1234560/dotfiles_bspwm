@@ -33,7 +33,7 @@ dotfiles
 ```
 
 ## Screenshots
-<img src="Screenshots/Screenshot_from_2020-06-29_13:27:11.png" width=1000px>
+<img src="Screenshots/result.png" width=1000px>
 
 
 ## Requirements
