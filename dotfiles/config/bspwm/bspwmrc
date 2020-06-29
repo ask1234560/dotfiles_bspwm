@@ -48,6 +48,7 @@ bspc rule -a scratchpad sticky=on state=floating hidden=on
 [[ "$(ps -x | grep -c 'class=scratchpad,scratchpad')" -eq "1" ]] && $TERMINAL --class=scratchpad,scratchpad  -e ~/.config/bspwm/scratch &
 
 # rules
+bspc rule -a MEGAsync state=floating
 bspc rule -a Brave-browser desktop='^3'
 bspc rule -a xdman-Main desktop='^3' state=floating
 bspc rule -a Simplenote desktop='^4'

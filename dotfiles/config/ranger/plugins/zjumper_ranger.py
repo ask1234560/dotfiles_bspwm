@@ -1,22 +1,30 @@
 import ranger.api
-import subprocess
 from ranger.api.commands import *
+from os import getenv
 
 
 class z(Command):
     """:z
-    Uses z to set the current directory.
+    Uses .z file to set the current directory.
     """
     def execute(self):
 
-        # return directories satisfying the querry
-        #  ~/.z file to be present in home, if file in different location change the below command at the end
-        cmd = """awk -F "|" -v q=\""""+" ".join(self.args[1:])+"""\" 'BEGIN{gsub(/ /, ".*", q)}  { if(tolower($1) ~ q){ print $1} }'  ~/.config/.z"""
+        # location of .z file
+        z_loc = getenv("HOME")+"/.config/.z"
+        with open(z_loc,"r") as fobj:
+            flists = fobj.readlines()
 
+        # user given directory
+        req = self.args[1]
+        req_lists = []
+        for i in flists:
+            if req in i:
+                req_lists.append(i)
 
-        directories,error = subprocess.Popen(cmd, shell=True, executable="/bin/bash", stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
-        directories = directories.decode("utf-8", "ignore")
-        directories = directories.rstrip('\n').split("\n")
+        directories = map(lambda x: x.split("|")[0],req_lists)
 
-        #  smallest directory will be the directory required
-        self.fm.execute_console("cd " + min(directories))
+        try:
+            #  smallest(length) directory will be the directory required
+            self.fm.execute_console("cd " + min(directories,key=lambda x: len(x)))
+        except Exception as e:
+            raise Exception("Directory not found")
