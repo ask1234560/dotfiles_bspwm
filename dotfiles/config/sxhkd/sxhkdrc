@@ -101,7 +101,7 @@ super + alt + {d,i,t}
     $TERMINAL -e {dict-search,ranger,htop}
 # nightlight
 super + alt + {_,shift + }e
-    toggle-nightlight {day,night}
+    redshift -P -O {3000,6500}K
 # audio raise/lower volume
 {XF86AudioRaiseVolume,XF86AudioLowerVolume}
 	amixer set Master 5%{+,-}

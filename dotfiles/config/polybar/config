@@ -50,7 +50,8 @@ wm-restack = bspwm
 
 fixed-center = true
 line-size = 2
-background = ${colors.bg}
+;background = ${colors.bg}
+background = #aa002b36
 foreground = ${colors.fg}
 
 font-0 = "FiraCode Nerd Font:style=Bold:pixelsize=10;3"
@@ -103,7 +104,7 @@ format-connected = <label-connected>
 ;format-connected-background = ${colors.shade2}
 format-connected-underline = ${colors.adapta-cyan}
 format-connected-padding = 1
-label-connected = %downspeed:9%  %upspeed:9%  
+label-connected = " %downspeed%   %upspeed%"
 
 format-disconnected = <label-disconnected>
 format-disconnected-padding = 1
