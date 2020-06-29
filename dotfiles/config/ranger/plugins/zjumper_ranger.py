@@ -16,12 +16,10 @@ class z(Command):
 
         # user given directory
         req = self.args[1]
-        req_lists = []
+        directories = []
         for i in flists:
             if req in i:
-                req_lists.append(i)
-
-        directories = map(lambda x: x.split("|")[0],req_lists)
+                directories.append(i.split("|")[0])
 
         try:
             #  smallest(length) directory will be the directory required
