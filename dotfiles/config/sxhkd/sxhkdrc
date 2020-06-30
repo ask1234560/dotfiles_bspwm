@@ -96,6 +96,9 @@ super + alt + {s,w}
 # brightness dec/inc
 super + {F2,F3}
     cbacklight --{dec,inc} 5
+# adaptive brightness
+super + F1
+    adaptive-brightness
 # run terminal commands
 super + alt + {d,i,t}
     $TERMINAL -e {dict-search,ranger,htop}

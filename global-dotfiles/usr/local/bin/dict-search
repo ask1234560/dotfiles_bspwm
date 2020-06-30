@@ -8,7 +8,7 @@ language, cont = sys.argv[2] if len(sys.argv) == 3 else 'en', 'y'
 
 while cont != 'n':
     word_id = sys.argv[1] if len(sys.argv) > 1 else input("\nSearch dictionary...\n")
-    url = 'https://od-api.oxforddictionaries.com:443/api/v2/entries/'  + language + '/'  + word_id.lower()
+    url = 'https://od-api.oxforddictionaries.com:443/api/v2/entries/'  + language + '/'  + word_id.strip().lower()
 
     try:
         r = requests.get(url, headers = {'app_id' : app_id, 'app_key' : app_key})
