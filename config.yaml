@@ -93,6 +93,9 @@ dotfiles:
   d_ranger:
     src: config/ranger
     dst: ~/.config/ranger
+  d_picom:
+    src: config/picom
+    dst: ~/.config/picom
 profiles:
   arch:
     dotfiles:
@@ -120,3 +123,4 @@ profiles:
     - d_breeze-blue
     - d_dmenu-4.9
     - d_ranger
+    - d_picom
