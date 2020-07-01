@@ -1,6 +1,10 @@
 #!/bin/bash
 
-eval "export $(egrep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep -u $LOGNAME bspwm)/environ)"
+# for multiple instances of bspwm
+for id in $(pgrep -u $LOGNAME bspwm)
+do
+    eval "export $(egrep -z DBUS_SESSION_BUS_ADDRESS /proc/$id/environ)"
+done
 export DISPLAY=:0.0
 
 read stat < /sys/class/power_supply/BAT1/status
@@ -20,6 +24,3 @@ then
                 fi
         fi
 fi
-
-
-
