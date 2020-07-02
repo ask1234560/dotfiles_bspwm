@@ -3,15 +3,8 @@
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 
-
-if [ -f "$userresources" ]; then
-    xrdb -merge "$userresources"
-fi
-
-if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
-fi
-
+[ -f "$userresources" ] && xrdb -merge "$userresources"
+[ -f "$usermodmap" ] && xmodmap "$usermodmap"
 
 # run xprofile
 [ -f ~/.xprofile ] && . ~/.xprofile
