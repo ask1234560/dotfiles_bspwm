@@ -4,3 +4,6 @@
 [submodule "dotfiles/config/nvim"]
 	path = dotfiles/config/nvim
 	url = https://github.com/ask1234560/neovim-config
+[submodule "dotfiles/config/dmenu"]
+	path = dotfiles/config/dmenu
+	url = https://github.com/ask1234560/dmenu

@@ -87,15 +87,15 @@ dotfiles:
   d_breeze-blue:
     src: icons/Breeze-Blue
     dst: ~/.icons/Breeze-Blue
-  d_dmenu-4.9:
-    src: config/dmenu-4.9
-    dst: ~/.config/dmenu-4.9
   d_ranger:
     src: config/ranger
     dst: ~/.config/ranger
   d_picom:
     src: config/picom
     dst: ~/.config/picom
+  d_dmenu:
+    src: config/dmenu
+    dst: ~/.config/dmenu
 profiles:
   arch:
     dotfiles:
@@ -121,6 +121,6 @@ profiles:
     - d_gtk-3.0
     - d_zathura
     - d_breeze-blue
-    - d_dmenu-4.9
     - d_ranger
     - d_picom
+    - f_plug.vim

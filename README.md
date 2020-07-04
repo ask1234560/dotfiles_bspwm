@@ -6,7 +6,7 @@ dotfiles
 │  ├── .aliasrc
 │  ├── alacritty
 │  ├── bspwm
-│  ├── dmenu-4.9
+│  ├── dmenu
 │  ├── dunst
 │  ├── gtk-3.0
 │  ├── htop
@@ -53,7 +53,7 @@ dotfiles
 * cd dotfiles_bspwm
 * git submodule init 
 * git submodule update --recursive 
-* update submodules(dotdrop, nvim)
+* update submodules(dotdrop, dmenu, nvim)
    * git submodule foreach git pull origin master
 * pipenv sync
 * pipenv shell
@@ -63,7 +63,7 @@ dotfiles
   * curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 * sudo cp ~/.config/dotfiles_bspwm/dotdrop/completion/_dotdrop.sh-completion.zsh /usr/share/zsh/functions/Completion
 * build dmenu
-   * cd ~/.config/dmenu-4.9/
+   * cd ~/.config/dmenu
    * sudo make install
 * set qt theme to Adapta Nokto(kvantum, qt5ct).
 * (optional) to remove backup files
