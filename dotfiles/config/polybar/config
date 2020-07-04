@@ -44,7 +44,7 @@ height = 22
 
 ;radius = 4
 ;border-size = 2
-offset-y = 4
+offset-y = 5
 override-redirect = true
 wm-restack = bspwm
 
