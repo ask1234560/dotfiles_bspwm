@@ -139,3 +139,6 @@ source ~/.config/.aliasrc
 
 # vi mode
 spaceship_vi_mode_enable
+
+# elfman
+colorscript -e 18

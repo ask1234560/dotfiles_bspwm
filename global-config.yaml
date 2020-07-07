@@ -39,6 +39,9 @@ dotfiles:
   f_profile:
     src: etc/profile
     dst: /etc/profile
+  f__dotdrop.sh-completion.zsh:
+    src: usr/share/zsh/site-functions/_dotdrop.sh-completion.zsh
+    dst: /usr/share/zsh/site-functions/_dotdrop.sh-completion.zsh
 profiles:
   arch:
     dotfiles:
@@ -49,3 +52,4 @@ profiles:
     - f_sudoers
     - f_script.service
     - f_profile
+    - f__dotdrop.sh-completion.zsh

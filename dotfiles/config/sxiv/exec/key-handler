@@ -2,6 +2,8 @@
 while read file
 do
         case "$1" in
+        "c")
+				cp "$file" ~/.cache/default_wall ;;
         "d")
 				trash "$file" ;;
         "g")

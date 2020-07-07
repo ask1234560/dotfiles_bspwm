@@ -385,7 +385,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.96
+# background_opacity: 0.96
 
 selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -658,10 +658,14 @@ key_bindings:
   #- { key: Copy,                     action: Copy                             }
   #- { key: L,         mods: Control, action: ClearLogNotice                   }
   #- { key: L,         mods: Control, chars: "\x0c"                            }
-  # Scroll up and down
-  - { key: K,    mods: Alt,   action: ScrollPageUp }
-  - { key: J,    mods: Alt,   action: ScrollPageDown }
   #- { key: PageUp,    mods: Shift,   action: ScrollPageUp,   mode: ~Alt       }
   #- { key: PageDown,  mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
   #- { key: Home,      mods: Shift,   action: ScrollToTop,    mode: ~Alt       }
   #- { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
+  #
+  # custom
+  # Scroll up and down
+  - { key: K,    mods: Alt,   action: ScrollPageUp }
+  - { key: J,    mods: Alt,   action: ScrollPageDown }
+  # spawn new instance in same directory
+  - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }

@@ -4,7 +4,7 @@
 # Autostart
 # system
 pgrep -x sxhkd || sxhkd &
-pgrep -x picom || picom &
+pgrep -x picom || picom --experimental-backends &
 numlockx &
 pgrep -x dunst || dunst &
 # hide mouse pointer
@@ -21,9 +21,10 @@ bg-changer random &
 
 
 # bspwm
+# monitors
 bspc monitor -d I II III IV V
 
-# border rule
+# general rules
 bspc config border_width        3
 bspc config window_gap          5
 bspc config top_padding         38

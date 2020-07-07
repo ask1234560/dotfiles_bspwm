@@ -117,7 +117,7 @@ fade-out-step = 0.03;
 
 # Opacity of inactive windows. (0.1 - 1.0, defaults to 1.0)
 # inactive-opacity = 1
-inactive-opacity = 0.75;
+inactive-opacity = 0.9;
 
 # Opacity of window titlebars and borders. (0.1 - 1.0, disabled by default)
 frame-opacity = 1.0;
@@ -130,14 +130,20 @@ inactive-opacity-override = true;
 # inactive-opacity-override = false;
 
 # Default opacity for active windows. (0.0 - 1.0, defaults to 1.0)
-active-opacity = 0.75;
+active-opacity = 0.9;
 
 # Dim inactive windows. (0.0 - 1.0, defaults to 0.0)
 # inactive-dim = 0.0
 
 # Specify a list of conditions of windows that should always be considered focused.
 # focus-exclude = []
-focus-exclude = [];
+focus-exclude = [
+  "class_g = 'Brave-browser'",
+  "class_g = 'Gimp'",
+  "class_g = 'mpv'",
+  "class_g = 'Sxiv'",
+  "class_g = 'Zathura'"
+];
 
 # Use fixed inactive dim value, instead of adjusting according to window opacity.
 # inactive-dim-fixed = 1.0
@@ -150,8 +156,12 @@ focus-exclude = [];
 #    opacity-rule = [ "80:class_g = 'URxvt'" ];
 #
 opacity-rule = [
+  "100:class_g = 'Brave-browser'",
+  "100:class_g = 'Gimp'",
   "100:class_g = 'mpv'",
-  "75:class_g = 'Polybar'",
+  "100:class_g = 'Sxiv'",
+  "100:class_g = 'Zathura'",
+  "90:class_g = 'Polybar'",
   "100:window_type = 'desktop'"
 ];
 
@@ -163,7 +173,6 @@ opacity-rule = [
 # Parameters for background blurring, see the *BLUR* section for more information.
 blur-method = "dual_kawase"
 blur-size = 8
-# blur-strength = 7
 #
 # blur-deviation = false
 
@@ -416,9 +425,9 @@ log-level = "warn";
 #
 wintypes:
 {
-  tooltip = { fade = true; shadow = true; opacity = 0.75; focus = true; full-shadow = false; };
+  tooltip = { fade = true; shadow = true; opacity = 0.85; focus = true; full-shadow = false; };
   dock = { shadow = false; }
   dnd = { shadow = false; }
-  popup_menu = { opacity = 0.75; }
-  dropdown_menu = { opacity = 0.75; }
+  popup_menu = { opacity = 0.95; }
+  dropdown_menu = { opacity = 0.95; }
 };

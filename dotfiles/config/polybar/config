@@ -50,8 +50,7 @@ wm-restack = bspwm
 
 fixed-center = true
 line-size = 2
-;background = ${colors.bg}
-background = #aa002b36
+background = ${colors.bg}
 foreground = ${colors.fg}
 
 font-0 = "FiraCode Nerd Font:style=Bold:pixelsize=10;3"
