@@ -1,64 +1,54 @@
 #! /bin/sh
 
-
 # Autostart
-# system
-pgrep -x sxhkd || sxhkd &
-pgrep -x picom || picom --experimental-backends &
-numlockx &
-pgrep -x dunst || dunst &
-# hide mouse pointer
+pgrep -x dunst     || dunst &
+pgrep -x picom     || picom --experimental-backends &
+pgrep -x sxhkd     || sxhkd &
+# pgrep -x syncthing || syncthing &
 pgrep -x unclutter || unclutter &
 $HOME/.config/polybar/launch.sh &
-# xset key press rate/disable bell/diable dpms
-xset r rate 300 50 -b -dpms &
-# fixing cursor 
-xsetroot -cursor_name left_ptr &
-
-# user
-pgrep -x syncthing || syncthing &
 bg-changer random &
-
+numlockx &
+xset r rate 300 50 -b -dpms &
+xsetroot -cursor_name left_ptr &
 
 # bspwm
 # monitors
 bspc monitor -d I II III IV V
 
-# general rules
-bspc config border_width        3
-bspc config window_gap          5
-bspc config top_padding         38
-bspc config bottom_padding      0
-bspc config left_padding        0
-bspc config right_padding       0
-bspc config focus_follows_pointer true
-
-# Border colors
-# bspc config normal_border_color "#484848"
-bspc config normal_border_color "#839496"
-bspc config focused_border_color "#1F8999"
-bspc config urgent_border_color "#B58900"
-bspc config presel_border_color "#26E2FF"
-
-# window rule
-bspc config automatic_scheme     spiral
-bspc config split_ratio          0.50
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
-
-# scratchpad
-bspc rule -a scratchpad sticky=on state=floating hidden=on
-# check scratchpad already running
-[[ "$(ps -x | grep -c 'class=scratchpad,scratchpad')" -eq "1" ]] && $TERMINAL --class=scratchpad,scratchpad  -e ~/.config/bspwm/scratch &
+# general
+bspc config border_width                3
+bspc config bottom_padding              0
+bspc config left_padding                0
+bspc config right_padding               0
+bspc config split_ratio                 0.50
+bspc config top_padding                 38
+bspc config window_gap                  5
+bspc config automatic_scheme            spiral
+bspc config borderless_monocle          true
+bspc config focus_follows_pointer       true
+bspc config gapless_monocle             true
+bspc config initial_polarity            first_child
+bspc config pointer_follows_focus       true
+# colors
+bspc config focused_border_color        "#1F8999"
+bspc config normal_border_color         "#839496"
+bspc config presel_border_color         "#26E2FF"
+bspc config urgent_border_color         "#B58900"
 
 # rules
-bspc rule -a MEGAsync state=floating
-bspc rule -a Brave-browser desktop='^3'
-bspc rule -a xdman-Main desktop='^3' state=floating
-bspc rule -a Simplenote desktop='^4'
-bspc rule -a mpv desktop='^5' state=floating
-bspc rule -a Gimp desktop='^5' state=floating 
-bspc rule -a libreoffice-startcenter desktop='^5' state=floating 
-bspc rule -a Soffice desktop='^5' state=floating
-bspc rule -a VirtualBoxVM desktop='^5' state=fullscreen
-bspc rule -a VirtualBox\ Manager desktop='^5'
+bspc rule -a Brave-browser              desktop='^3'
+bspc rule -a Gimp                       desktop='^5' state=floating
+bspc rule -a libreoffice-startcenter    desktop='^5' state=floating
+bspc rule -a MEGAsync                                state=floating
+bspc rule -a mpv                        desktop='^5' state=floating
+bspc rule -a scratchpad                              state=floating sticky=on hidden=on
+bspc rule -a Simplenote                 desktop='^4'
+bspc rule -a Soffice                    desktop='^5' state=floating
+bspc rule -a VirtualBox\ Manager        desktop='^5'
+bspc rule -a VirtualBoxVM               desktop='^5' state=fullscreen
+bspc rule -a xdman-Main                 desktop='^3' state=floating
+
+# scratchpad
+# check scratchpad already running
+[[ "$(ps -x | grep -c 'class=scratchpad,scratchpad')" -eq "1" ]] && $TERMINAL --class=scratchpad,scratchpad  -e ~/.config/bspwm/scratch &
