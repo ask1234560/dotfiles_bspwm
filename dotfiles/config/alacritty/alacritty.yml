@@ -665,7 +665,7 @@ key_bindings:
   #
   # custom
   # Scroll up and down
-  - { key: K,    mods: Alt,   action: ScrollPageUp }
-  - { key: J,    mods: Alt,   action: ScrollPageDown }
+  - { key: K,    mods: Alt,   action: ScrollLineUp }
+  - { key: J,    mods: Alt,   action: ScrollLineDown }
   # spawn new instance in same directory
   - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }

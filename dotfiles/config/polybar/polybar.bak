@@ -60,8 +60,9 @@ cursor-click = pointer
 
 
 ;====Module settings+======================================
-modules-left = bspwm
-modules-right = pkg volume cpu-graph temperature memory wlan battery date
+modules-left = bspwm 
+modules-center = wlan temperature
+modules-right = pkg volume cpu-graph memory battery date
 ;==========================================================
 
 
@@ -71,23 +72,73 @@ modules-right = pkg volume cpu-graph temperature memory wlan battery date
 type = internal/bspwm
 
 label-focused = %index%
-;label-focused-background = ${colors.adapta-grey}
+label-focused-background = ${colors.adapta-grey}
 label-focused-underline= ${colors.adapta-cyan} 
-label-focused-padding = 1
+label-focused-padding = 2
 
 label-occupied = %index%
-label-occupied-padding = 1
+label-occupied-padding = 2
 
 label-urgent = %index%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 1
+label-urgent-padding = 2
 
 label-empty = %index%
 label-empty-foreground = ${colors.adapta-grey}
-label-empty-padding = 1
+label-empty-padding = 2
 
 ; Separator in between workspaces
 ; label-separator = |
+;==========================================================
+
+
+
+;====Center modules========================================
+[module/wlan]
+type = internal/network
+interface = wlp2s0
+interval = 1
+
+format-connected = <label-connected>
+;format-connected-background = ${colors.shade2}
+format-connected-underline = ${colors.adapta-cyan}
+format-connected-padding = 1
+label-connected = " %downspeed%   %upspeed%"
+
+format-disconnected = <label-disconnected>
+format-disconnected-padding = 1
+format-disconnected-underline = ${colors.adapta-cyan}
+label-disconnected = 睊
+;format-connected-margin = ${margin.for-modules}
+;format-disconnected-margin = ${margin.for-modules}
+
+
+[module/temperature]
+type = internal/temperature
+interval = 1
+thermal-zone = 0
+base-temperature = 49
+warn-temperature = 80
+
+format = <ramp> <label>
+format-underline = ${colors.adapta-cyan}
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${colors.adapta-cyan}
+
+format-padding = 1
+format-margin = ${margin.for-modules}
+format-warn-padding = 1
+format-warn-margin = ${margin.for-modules}
+
+label = %temperature-c%
+label-warn = %temperature-c%
+
+ramp-0 = 
+ramp-0-foreground = ${colors.fg}
+ramp-1 = 
+ramp-1-foreground = ${colors.adapta-yellow}
+ramp-2 = 
+ramp-2-foreground = ${colors.adapta-red}
 ;==========================================================
 
 
@@ -162,60 +213,14 @@ ramp-coreload-7-foreground = ${colors.adapta-red}
 ramp-coreload-font = 3
 
 
-[module/temperature]
-type = internal/temperature
-interval = 1
-thermal-zone = 0
-base-temperature = 49
-warn-temperature = 80
-
-format = <ramp> <label>
-format-underline = ${colors.adapta-cyan}
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${colors.adapta-cyan}
-
-format-padding = 1
-format-warn-padding = 1
-format-warn-margin = ${margin.for-modules}
-
-label = %temperature-c%
-label-warn = %temperature-c%
-
-ramp-0 = 
-ramp-0-foreground = ${colors.fg}
-ramp-1 = 
-ramp-1-foreground = ${colors.adapta-yellow}
-ramp-2 = 
-ramp-2-foreground = ${colors.adapta-red}
-
-
 [module/memory]
 type = internal/memory
 interval = 1
 format-prefix = " "
 format-underline = ${colors.adapta-cyan}
-format-margin = ${margin.for-modules}
+;format-margin = ${margin.for-modules}
 format-padding = 1
 label = %percentage_used:2%%
-
-
-[module/wlan]
-type = internal/network
-interface = wlp2s0
-interval = 1
-
-format-connected = <label-connected>
-;format-connected-background = ${colors.shade2}
-format-connected-underline = ${colors.adapta-cyan}
-format-connected-padding = 1
-label-connected = " %downspeed%  %upspeed%"
-
-format-disconnected = <label-disconnected>
-format-disconnected-padding = 1
-format-disconnected-underline = ${colors.adapta-cyan}
-label-disconnected = 睊
-;format-connected-margin = ${margin.for-modules}
-;format-disconnected-margin = ${margin.for-modules}
 
 
 [module/battery]
@@ -225,7 +230,6 @@ full-at = 99
 ;adapter = ADP1
 battery = BAT1
 adapter = ACAD
-format-margin = ${margin.for-modules}
 format-charging = <animation-charging> <label-charging>
 ;format-charging-background = ${colors.shade2}
 format-charging-underline = ${colors.adapta-cyan}
@@ -285,6 +289,7 @@ time = "%H:%M"
 format = <label>
 format-padding = 1
 format-underline = ${colors.adapta-cyan}
+;format-margin = ${margin.for-modules}
 ;label-padding = 1
 ;label-background = ${colors.shade1}
 
