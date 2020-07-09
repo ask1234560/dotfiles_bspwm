@@ -101,7 +101,7 @@ exec = bash ~/.config/polybar/checkupdates.sh
 format-underline = ${colors.adapta-cyan}
 format-padding = 1
 format-margin = ${margin.for-modules}
-click-left = alacritty -e bash ~/.config/polybar/updates.sh &
+click-left = $TERMINAL -e bash ~/.config/polybar/updates.sh &
 
 
 [module/volume]
@@ -203,17 +203,14 @@ label = %percentage_used:2%%
 type = internal/network
 interface = wlp2s0
 interval = 1
-
 format-connected = <label-connected>
-;format-connected-background = ${colors.shade2}
 format-connected-underline = ${colors.adapta-cyan}
 format-connected-padding = 1
 label-connected = " %downspeed%  %upspeed%"
-
 format-disconnected = <label-disconnected>
-format-disconnected-padding = 1
 format-disconnected-underline = ${colors.adapta-cyan}
-label-disconnected = 睊
+format-disconnected-padding = 1
+label-disconnected = ""
 ;format-connected-margin = ${margin.for-modules}
 ;format-disconnected-margin = ${margin.for-modules}
 

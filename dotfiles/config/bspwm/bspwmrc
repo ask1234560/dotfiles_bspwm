@@ -4,7 +4,6 @@
 pgrep -x dunst     || dunst &
 pgrep -x picom     || picom --experimental-backends &
 pgrep -x sxhkd     || sxhkd &
-# pgrep -x syncthing || syncthing &
 pgrep -x unclutter || unclutter &
 $HOME/.config/polybar/launch.sh &
 bg-changer random &
@@ -51,4 +50,4 @@ bspc rule -a xdman-Main                 desktop='^3' state=floating
 
 # scratchpad
 # check scratchpad already running
-[[ "$(ps -x | grep -c 'class=scratchpad,scratchpad')" -eq "1" ]] && $TERMINAL --class=scratchpad,scratchpad  -e ~/.config/bspwm/scratch &
+[ "$(ps -x | grep -c 'class=scratchpad,scratchpad')" -eq "1" ] && $TERMINAL --class=scratchpad,scratchpad  -e ~/.config/bspwm/scratch &
