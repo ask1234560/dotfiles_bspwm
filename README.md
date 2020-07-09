@@ -57,7 +57,7 @@ dotfiles
    * git submodule foreach git pull origin master
 * pipenv sync
 * pipenv shell
-* edit the required dotfiles in config.yaml below the system's hostname.
+* config.yaml is for user specific configs and global-config.yaml for system wide configs. Edit the yaml files, add the hostname and required configs in it
 * ./dotdrop.sh install
 * install zplug
   * curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
