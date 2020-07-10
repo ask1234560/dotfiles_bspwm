@@ -18,15 +18,8 @@
 
 ;====General Settings======================================
 [colors]
-
 bg = ${xrdb:background:#002b36}
 fg = ${xrdb:foreground:#839496}
-
-;foreground-alt = ${xrdb:colorX:#555}
-;primary = ${xrdb:colorX:#ffb52a}
-;alert = ${xrdb:color1:#dc322f}
-; alert set as red
-alert = ${xrdb:color1:#dc322f}
 
 adapta-cyan = ${xrdb:color6:#2aa198}
 adapta-red = ${xrdb:color1:#dc322f}
@@ -34,22 +27,27 @@ adapta-yellow = ${xrdb:color3:#b58900}
 adapta-lightgreen = ${xrdb:color10:#586e75}
 adapta-green = ${xrdb:color2:#859900}
 adapta-grey = ${xrdb:colorX:#475359}
+alert = ${xrdb:color1:#dc322f}
 
 [margin]
 for-modules = 1
 
 [bar/main]
-width = 100%
+width = 98%
 height = 22
 
-;radius = 4
-;border-size = 2
-offset-y = 5
+radius = 10
+fixed-center = false
+offset-y = 8
+offset-x = 1%
 override-redirect = true
 wm-restack = bspwm
 
-fixed-center = true
 line-size = 2
+
+padding-left = 2
+padding-right = 2
+
 background = ${colors.bg}
 foreground = ${colors.fg}
 
@@ -106,34 +104,18 @@ click-left = $TERMINAL -e bash ~/.config/polybar/updates.sh &
 
 [module/volume]
 type = internal/alsa
-format-volume = <label-volume> <bar-volume>
+format-volume = <ramp-volume> <label-volume>
 format-volume-underline = ${colors.adapta-cyan}
 format-volume-padding = 1
-label-volume = 墳
-label-muted = 婢
+label-volume = %percentage%%
+label-muted = ﱝ
 label-muted-underline = ${colors.adapta-cyan}
 label-muted-padding = 1
-bar-volume-width = 8
-bar-volume-foreground-0 = ${colors.adapta-lightgreen}
-bar-volume-foreground-1 = ${colors.adapta-lightgreen}
-bar-volume-foreground-2 = ${colors.adapta-lightgreen}
-bar-volume-foreground-3 = ${colors.adapta-lightgreen}
-bar-volume-foreground-4 = ${colors.adapta-lightgreen}
-bar-volume-foreground-5 = ${colors.adapta-yellow}
-bar-volume-foreground-6 = ${colors.adapta-yellow}
-bar-volume-foreground-7 = ${colors.adapta-red}
-bar-volume-gradient = false
-bar-volume-indicator = 
-bar-volume-indicator-foreground = ${colors.adapta-lightgreen}
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.adapta-grey}
-format-padding = 1
-;format-muted-margin = ${margin.for-modules}
-;format-volume-margin = ${margin.for-modules}
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-1-foreground = ${colors.adapta-yellow}
+ramp-volume-2 = 
+ramp-volume-2-foreground = ${colors.adapta-red}
 
 
 [module/cpu-graph]
