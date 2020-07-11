@@ -100,10 +100,10 @@ super + {F2,F3}
 super + F1
     adaptive-brightness
 # run terminal commands
-super + alt + {d,i,t}
-    $TERMINAL -e {dict-search,ranger,htop}
+super + alt + {i,t}
+    $TERMINAL -e {ranger,htop}
 # nightlight
-super + alt + {_,shift + }e
+super + {alt +,shift + }e
     redshift -P -O {3000,6500}K
 # audio raise/lower volume
 {XF86AudioRaiseVolume,XF86AudioLowerVolume}
@@ -117,6 +117,13 @@ super + alt + {n,z}
 # commands: background change/brave/mount/umount using dmenu
 super + alt + {c,f,m,u,y}
 	{bg-changer,brave,dmount,dumount,drecord}
-# scratchpad
+# scratchpads
+# terminal
 super + alt + space
-	id=$(cat /tmp/scratchid);bspc node $id --flag hidden;bspc node -f $id
+	id=$(cat /tmp/scratchterm);bspc node $id --flag hidden;bspc node -f $id
+# simplenote
+super + shift + space
+	id=$(cat /tmp/simplenote);bspc node $id --flag hidden;bspc node -f $id
+# dictionary
+super + alt + d
+	id=$(cat /tmp/dictionary);bspc node $id --flag hidden;bspc node -f $id
