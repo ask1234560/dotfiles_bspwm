@@ -39,7 +39,7 @@ dotfiles
 
 ## Requirements
 * working arch linux with bspwm
-* ```pacman -S python python-pip python-pipenv zsh```
+* ```pacman -S --needed python python-pip python-pipenv zsh```
 * [yay](https://github.com/Jguer/yay)
 * change shell to zsh
   * ```chsh -s $(which zsh)```
