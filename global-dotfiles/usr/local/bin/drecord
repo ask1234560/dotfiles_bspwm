@@ -80,13 +80,13 @@ audio() { \
 	}
 
 askrecording() { \
-	choice=$(printf "screencast\\nvideo\\naudio\\nwebcam\\nwebcam (hi-def)" | dmenu -i -p "Select recording style:")
+	choice=$(printf "screencast\\nvideo\\naudio\\nwebcam\\nwebcam(hi-def)" | dmenu -i -p "Select recording style:")
 	case "$choice" in
 		screencast) screencast;;
 		audio) audio;;
 		video) video;;
 		webcam) webcam;;
-		"webcam (hi-def)") webcamhidef;;
+		"webcam(hi-def)") webcamhidef;;
 	esac
 	}
 

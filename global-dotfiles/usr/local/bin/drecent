@@ -7,12 +7,12 @@ cache="$cachedir/dmenu_recent"
 
 touch "$cache"
 
-most_used=$(sort "$cache" | uniq -c | sort -r | awk '{if(NF>1)print $2}')
+most_used=$(sort "$cache" | uniq -c | sort -r | cut -d" " -f8)
 run=$((echo "$most_used"; dmenu_path | grep -vxF "$most_used") | dmenu -i "$@")
-(echo "$run"; head -n 99 "$cache") > "$cache.$$"
+([ -z "$run" ] || echo "$run"; head -n 99 "$cache") > "$cache.$$"
 mv "$cache.$$" "$cache"
 
 case "$run" in
-	*\;) exec $(echo $term "$run" | sed -e 's/;$//') ;;
+    *\;) exec $(echo $term "$run" | sed -e 's/;$//') ;;
     *)   exec "$run" ;;
 esac
