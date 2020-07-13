@@ -34,7 +34,7 @@ dotfiles
 ```
 
 ## Screenshots
-<img src="Screenshots/result_new3.png" width=1000px>
+<img src="Screenshots/result_new4.png" width=1000px>
 
 
 ## Requirements

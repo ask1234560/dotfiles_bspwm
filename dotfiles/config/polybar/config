@@ -33,13 +33,13 @@ alert = ${xrdb:color1:#dc322f}
 for-modules = 1
 
 [bar/main]
-width = 99%
+width = 76%
 height = 22
 
 radius = 10
 fixed-center = false
 offset-y = 8
-offset-x = 0.5%
+offset-x = 12%
 override-redirect = true
 wm-restack = bspwm
 
