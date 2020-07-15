@@ -13,6 +13,6 @@ run=$((echo "$most_used"; dmenu_path | grep -vxF "$most_used") | dmenu -i "$@")
 mv "$cache.$$" "$cache"
 
 case "$run" in
-    *\;) exec $(echo $term "$run" | sed -e 's/;$//') ;;
+    *\;) exec $(echo $term ${run%;}) ;;
     *)   exec "$run" ;;
 esac

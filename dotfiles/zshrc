@@ -4,7 +4,8 @@ SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
 # startx
-if [[ "$(tty)" = "/dev/tty1" ]]; then
+if [ "$(tty)" = "/dev/tty1" ]
+then
 		pgrep bspwm || startx
 fi
 
