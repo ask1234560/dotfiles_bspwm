@@ -1,4 +1,5 @@
-macro m set browser "/usr/bin/mpv %u" ; open-in-browser ; set browser "xdg-open"
+macro m set browser "mpv %u" ; open-in-browser ; set browser "lynx %u"
+macro o set browser "brave %u" ; open-in-browser ; set browser "lynx %u"
 
 #general stuff
 auto-reload no
@@ -10,9 +11,6 @@ feedlist-format "%4i %9u  %t"    #"%t %d %u %U %c %S %n"
 articlelist-format  "%4i %D %?T? %-10T   ?%t"
 feedlist-title-format ""
 articlelist-title-format ""
-# reload-threads 4
-# reload-time 90
-# reload-only-visible-feeds yes
 
 # notifications
 notify-format "Newsboat: %d new"

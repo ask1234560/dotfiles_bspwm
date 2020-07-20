@@ -1,36 +1,69 @@
 #!/bin/bash
 
+# custom aliases
 alias \
-	ls='exa --group-directories-first' \
-	la='exa -a --group-directories-first' \
-	ll='exa -alb --group-directories-first' \
-	tree='exa -T' \
-	rg='ranger' \
-	nv='nvim ' \
-	sclip="xclip -selection c" \
-	gclip="xclip -selection c -o" \
-	speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python - " \
-	grep='grep --colour=auto' \
-	nb='newsboat ' \
-	irc='irssi ' \
-	pc='pacman ' \
-	sudo='sudo ' \
-	watch='watch ' \
-	lynx='lynx -accept_all_cookies ' \
-	cip='curl ipinfo.io ' \
-	vpnc="sudo openvpn --config /home/ananthu/.config/vpnclients/arch.ovpn "  \
-	cp="cpg -g " \
-	mv="mvg -g " \
-	wget="wget --hsts-file ~/.cache/.wget-hsts "
-
+    cp='cpg -g ' \
+    dotdrop="$DOTREPO/dotdrop.sh" \
+    dotgit="git -C $DOTREPO" \
+    dotglob='sudo ./dotdrop.sh --cfg=global-config.yaml ' \
+    dotsync="dotgit pull && dotgit add -A && dotgit commit && dotgit push; dotdrop install" \
+    gclip='xclip -selection c -o' \
+    grep='grep --colour=auto' \
+    la='exa -a --group-directories-first' \
+    ll='exa -alb --group-directories-first' \
+    ls='exa --group-directories-first' \
+    lynx='lynx -accept_all_cookies ' \
+    mv='mvg -g ' \
+    nb='newsboat ' \
+    nv='nvim ' \
+    pc='pacman ' \
+    rg='ranger' \
+    sclip='xclip -selection c' \
+    speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python - ' \
+    sudo='sudo ' \
+    tree='exa -T' \
+    vpnc='sudo openvpn --config /home/ananthu/.config/vpnclients/arch.ovpn '  \
+    watch='watch ' \
+    wget='wget --hsts-file ~/.cache/.wget-hsts '
+# global
 alias -g -- --help="--help | less -FXi ; true "
 
-# dotdrop configs
-alias \
-	dotdrop="$DOTREPO/dotdrop.sh" \
-	dotgit="git -C $DOTREPO" \
-	dotsync="dotgit pull && dotgit add -A && dotgit commit && dotgit push; dotdrop install" \
-	dotglob='sudo ./dotdrop.sh --cfg=global-config.yaml '
+# Custom functions
+# ext - archive extractor
+# usage: ext <file>
+ext () {
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.tar.xz)    tar xJf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.iso)       if [ $# -ne 2 ]
+                   then
+                        echo "specify the destination directory"
+                   else
+                        7z x -o$2 $1
+                   fi
+                   ;;
+      *)           echo "'$1' cannot be extracted via ext()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+weather() {
+    curl wttr.in/${1:-paravur,kollam}
+}
+
+
 
 # git aliases and function (ohmyzsh git plugin)
 #

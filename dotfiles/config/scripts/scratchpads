@@ -1,13 +1,11 @@
 #!/bin/bash
 
-# simplenote
-pgrep -x simplenote || simplenote &
 # terminal
 [ "$(ps -x | grep -c 'scratchterm')" -eq "1" ] && $TERMINAL --class=scratchterm,scratchterm  -e $SHELL &
 # dictionary
 [ "$(ps -x | grep -c 'dictionary')" -eq "1" ] && $TERMINAL --class=dictionary,dictionary  -e dict-search &
 
-sleep 30
+sleep 10
 bspc_return_nodeid scratchterm /tmp/scratchterm
 bspc_return_nodeid dictionary /tmp/dictionary
-bspc_return_nodeid Simplenote /tmp/simplenote
+pgrep -x simplenote && bspc_return_nodeid Simplenote /tmp/simplenote

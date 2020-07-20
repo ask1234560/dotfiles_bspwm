@@ -86,10 +86,6 @@ setopt auto_cd
 # Include hidden files.
 _comp_options+=(globdots)		
 
-weather() {
-    curl wttr.in/${1:-paravur,kollam}
-}
-
 #Key bindings
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
@@ -102,38 +98,6 @@ bindkey '^[[3~' delete-char-or-list
 # Edit line in vim with ctrl-n:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^n' edit-command-line
-
-# ext - archive extractor
-# usage: ext <file>
-ext ()
-{
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.tar.xz)    tar xJf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *.iso)	   if [ $# -ne 2 ]
-				   then
-						echo "specify the destination directory"
-				   else
-						7z x -o$2 $1
-				   fi
-				   ;;
-      *)           echo "'$1' cannot be extracted via ext()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
-}
 
 # load aliases
 source ~/.config/.aliasrc
