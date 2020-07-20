@@ -51,7 +51,7 @@ padding-right = 2
 background = ${colors.bg}
 foreground = ${colors.fg}
 
-font-0 = "FiraCode Nerd Font:style=Bold:pixelsize=10;3"
+font-0 = "FiraCode Nerd Font:style=Medium:pixelsize=10;3"
 cursor-click = pointer
 ;==========================================================
 
