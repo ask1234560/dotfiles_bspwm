@@ -96,6 +96,9 @@ dotfiles:
   d_dmenu:
     src: config/dmenu
     dst: ~/.config/dmenu
+  d_custom:
+    src: config/.zplug/repos/custom
+    dst: ~/.config/.zplug/repos/custom
 profiles:
   arch:
     dotfiles:
@@ -124,3 +127,4 @@ profiles:
     - d_ranger
     - d_picom
     - f_plug.vim
+    - d_custom

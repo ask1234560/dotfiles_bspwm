@@ -8,10 +8,10 @@ export TERMINAL="alacritty"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # dotdrop
-export DOTREPO="~/.config/dotfiles_bspwm"
+export DOTREPO="$HOME/.config/dotfiles_bspwm"
 
 # less hist file
-export LESSHISTFILE="~/.cache/.lesshst"
+export LESSHISTFILE="$HOME/.cache/.lesshst"
 
 # sudo -A 
 export SUDO_ASKPASS="/usr/local/bin/dpass"
