@@ -79,8 +79,10 @@ bindkey -M vicmd '^[[1;5D' backward-word
 
 bindkey '^v' set-mark-command                         # set mark(vi mode highlight)
 bindkey '\ev' kill-region                             # [Esc-w] - Kill from the cursor to the mark
+bindkey -s '\ec' 'clear\n'                            # [Esc-c] - run command: clear
 bindkey -s '\el' 'la\n'                               # [Esc-l] - run command: la
 bindkey '^r' history-incremental-search-backward      # [Ctrl-r] - Search backward incrementally for a specified string. The string may begin with ^ to anchor the search to the beginning of the line.
+bindkey '^f' history-incremental-search-forward       # [Ctrl-f] - Search forward incrementally for a specified string.
 bindkey ' ' magic-space                               # [Space] - don't do history expansion
 
 

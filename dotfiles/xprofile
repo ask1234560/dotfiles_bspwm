@@ -18,3 +18,6 @@ export SUDO_ASKPASS="/usr/local/bin/dpass"
 
 # ranger use only user rc.conf
 export RANGER_LOAD_DEFAULT_RC="FALSE"
+
+# weechat irc
+export WEECHAT_HOME="$HOME/.config/weechat"

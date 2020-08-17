@@ -18,9 +18,7 @@ then
                 if [ "$cap" -lt 15  ]
                 then
                         logger "Critical battery threshold"
-                        betterlockscreen -l blur &
-                        sleep 10
-                        sudo systemctl hibernate
+                        /usr/local/bin/slock sudo systemctl hibernate
                 fi
         fi
 fi

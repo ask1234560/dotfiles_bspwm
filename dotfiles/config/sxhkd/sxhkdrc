@@ -15,15 +15,14 @@ super + Escape
 #
 # bspwm hotkeys
 #
-# focus the last desktop
+# focus the last node/desktop
 super + grave
-	bspc desktop -f last
-# focus the last node in current desktop
+	bspc desktop -f last.occupied
 super + Tab
 	bspc node -f last.local
 # focus the next/previous node in the current desktop
 super + bracket{left,right}
-	bspc node -f {next,prev}.local
+	bspc node -f {next,prev}.local.!hidden.window
 # quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}
@@ -113,7 +112,7 @@ XF86AudioMute
 	amixer set Master toggle
 # screen lock/suspend
 super + alt + {n,z}
-	betterlockscreen -{l,s} blur
+	{slock,systemctl suspend}
 # commands: background change/brave/mount/umount using dmenu
 super + alt + {c,f,m,u,y}
 	{bg-changer,brave,dmount,dumount,drecord}

@@ -99,6 +99,9 @@ dotfiles:
   d_custom:
     src: config/.zplug/repos/custom
     dst: ~/.config/.zplug/repos/custom
+  d_slock:
+    src: config/slock
+    dst: ~/.config/slock
 profiles:
   arch:
     dotfiles:
@@ -128,3 +131,4 @@ profiles:
     - d_picom
     - f_plug.vim
     - d_custom
+    - d_slock

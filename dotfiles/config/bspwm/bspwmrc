@@ -1,10 +1,10 @@
 #! /bin/sh
 
 # Autostart
-pgrep -x dunst     || dunst &
-pgrep -x picom     || picom --experimental-backends &
-pgrep -x sxhkd     || sxhkd &
-pgrep -x unclutter || unclutter &
+pgrep -x dunst > /dev/null     || dunst &
+pgrep -x picom > /dev/null     || picom --experimental-backends --no-fading-openclose &
+pgrep -x sxhkd > /dev/null     || sxhkd &
+pgrep -x unclutter > /dev/null || unclutter &
 $HOME/.config/polybar/launch.sh &
 bg-changer random &
 numlockx &
