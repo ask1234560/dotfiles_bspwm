@@ -1,4 +1,4 @@
-macro m set browser "mpv %u" ; open-in-browser ; set browser "lynx %u"
+macro m set browser "mpv %u --force-window=no --no-audio-display" ; open-in-browser ; set browser "lynx %u"
 macro o set browser "brave %u" ; open-in-browser ; set browser "lynx %u"
 
 #general stuff

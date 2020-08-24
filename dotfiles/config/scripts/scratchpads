@@ -3,7 +3,7 @@
 # terminal
 [ "$(ps -x | grep -c 'scratchterm')" -eq "1" ] && $TERMINAL --class=scratchterm,scratchterm  -e $SHELL &
 # dictionary
-[ "$(ps -x | grep -c 'dictionary')" -eq "1" ] && $TERMINAL --class=dictionary,dictionary  -e dict-search &
+[ "$(ps -x | grep -c 'dictionary')" -eq "1" ] && $TERMINAL --class=dictionary,dictionary  -e ~/.config/scripts/dict-startup.sh &
 
 sleep 10
 bspc_return_nodeid scratchterm /tmp/scratchterm

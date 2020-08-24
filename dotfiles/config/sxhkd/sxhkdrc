@@ -99,8 +99,8 @@ super + {F2,F3}
 super + F1
     adaptive-brightness
 # run terminal commands
-super + alt + {i,t}
-    $TERMINAL -e {ranger,htop}
+super + alt + {g,i,t}
+    $TERMINAL -e {neomutt,ranger,htop}
 # nightlight
 super + {alt +,shift + }e
     redshift -P -O {3000,6500}K
