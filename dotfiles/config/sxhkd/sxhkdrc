@@ -83,8 +83,8 @@ super + ctrl + {1-9}
 super + ctrl + space
 	bspc node -p cancel
 # cancel the preselection for the focused desktop
-super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+super + {_,ctrl + }shift + space
+	{$TERMINAL -e sncli,bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel}
 
 #
 # Personal
@@ -120,9 +120,6 @@ super + alt + {c,f,m,u,y}
 # terminal
 super + alt + space
 	id=$(cat /tmp/scratchterm);bspc node $id --flag hidden;bspc node -f $id
-# simplenote
-super + shift + space
-	id=$(cat /tmp/simplenote);bspc node $id --flag hidden;bspc node -f $id
 # dictionary
 super + alt + d
 	id=$(cat /tmp/dictionary);bspc node $id --flag hidden;bspc node -f $id

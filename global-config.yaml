@@ -57,6 +57,9 @@ dotfiles:
   f_83-gamingkeyboard.rules:
     src: etc/udev/rules.d/83-gamingkeyboard.rules
     dst: /etc/udev/rules.d/83-gamingkeyboard.rules
+  f_mutt-wizard.muttrc:
+    src: usr/share/mutt-wizard/mutt-wizard.muttrc
+    dst: /usr/share/mutt-wizard/mutt-wizard.muttrc
 profiles:
   arch:
     dotfiles:
@@ -72,3 +75,4 @@ profiles:
     - f_slock@.service
     - f_mirrorlist
     - f_83-gamingkeyboard.rules
+    - f_mutt-wizard.muttrc

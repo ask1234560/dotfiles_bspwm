@@ -1,0 +1,12 @@
+[sncli]
+cfg_sn_username = ask1234560@gmail.com
+cfg_sn_password_eval = pass simplenote-ask1234560
+
+
+cfg_db_path = /home/ananthu/.config/simplenote
+cfg_format_note_title = %D %F %-N %T
+cfg_format_strftime = %a %d %b
+kb_help = ?
+kb_quit = h
+kb_view_note_ext = l
+kb_view_log = meta l

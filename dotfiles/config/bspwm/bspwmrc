@@ -20,7 +20,7 @@ bspc config border_width                3
 bspc config bottom_padding              0
 bspc config left_padding                0
 bspc config right_padding               0
-bspc config split_ratio                 0.50
+bspc config split_ratio                 0.58
 bspc config top_padding                 41
 bspc config window_gap                  5
 bspc config automatic_scheme            spiral
@@ -43,7 +43,6 @@ bspc rule -a Gimp                       desktop='^5' state=floating
 bspc rule -a MEGAsync                                state=floating
 bspc rule -a mpv                        desktop='^5' state=tiled
 bspc rule -a scratchterm                             state=floating sticky=on hidden=on center=on
-bspc rule -a Simplenote                              state=floating sticky=on hidden=on center=on
 # bspc rule -a Soffice                    desktop='^5' state=tiled
 bspc rule -a VirtualBox\ Manager        desktop='^5'
 bspc rule -a VirtualBoxVM               desktop='^5' state=fullscreen

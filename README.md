@@ -18,6 +18,7 @@ dotfiles
 │  ├── polybar
 │  ├── ranger
 │  ├── scripts
+│  ├── simplenote
 │  ├── slock
 │  ├── sxhkd
 │  ├── sxiv
@@ -75,5 +76,5 @@ dotfiles
    
 ## (Optional) Explicitly installed packages  
 ```
-yay -S --needed adapta-gtk-theme alacritty alsa-firmware alsa-utils autoconf automake base bc binutils bison brave-bin broadcom-wl-dkms bspwm cronie dosfstools dunst efibootmgr exa exiv2 fakeroot ffmpegthumbnailer file findutils flex gawk gcc gettext gimp git google-cloud-sdk grep groff grub gtk-engine-murrine gzip hsetroot htop imagemagick kvantum-qt5 libreoffice-fresh libtool linux linux-custom linux-custom-headers linux-firmware linux-headers lynx m4 make man-db megasync mlocate mpv mutt-wizard-git neofetch neovim nerd-fonts-fira-code nerd-fonts-source-code-pro networkmanager newsboat noto-fonts npm ntfs-3g nudoku-git numlockx openresolv pacman pacman-contrib pam-gnupg-git papirus-icon-theme patch picom-tryone-git pkgconf polybar pulseaudio pulseaudio-alsa python-pip python-pipenv qt5ct ranger redshift-minimal rmtrash scrot sed shell-color-scripts simple-mtpfs simplenote-electron-bin subliminal-git sudo sxhkd sxiv syncthing texinfo thunar timeshift trash-cli ttf-ms-fonts ttf-roboto ttf-symbola ttf-vista-fonts ueberzug unclutter unrar virtualbox virtualbox-ext-oracle virtualbox-guest-iso weechat wget which wireguard-tools xclip xdg-user-dirs xdman xorg-server xorg-xinit xorg-xsetroot yay-bin youtube-dl zathura zathura-pdf-poppler zsh
+yay -S --needed adapta-gtk-theme alacritty alsa-firmware alsa-utils autoconf automake base bc binutils bison brave-bin broadcom-wl-dkms bspwm cronie dosfstools dunst efibootmgr exa exiv2 fakeroot ffmpegthumbnailer file findutils flex gawk gcc gettext gimp git google-cloud-sdk grep groff grub gtk-engine-murrine gzip hsetroot htop imagemagick kvantum-qt5 libreoffice-fresh libtool linux linux-custom linux-custom-headers linux-firmware linux-headers lynx m4 make man-db megasync mlocate mpv mutt-wizard-git neofetch neovim nerd-fonts-fira-code nerd-fonts-source-code-pro networkmanager newsboat noto-fonts npm ntfs-3g nudoku-git numlockx openresolv pacman pacman-contrib pam-gnupg-git papirus-icon-theme patch picom-git pkgconf polybar pulseaudio pulseaudio-alsa python-pip python-pipenv qt5ct ranger redshift-minimal rmtrash scrot sed shell-color-scripts simple-mtpfs sncli-git subliminal-git sudo sxhkd sxiv syncthing texinfo thunar timeshift trash-cli ttf-ms-fonts ttf-roboto ttf-symbola ttf-vista-fonts ueberzug unclutter unrar virtualbox virtualbox-ext-oracle virtualbox-guest-iso weechat wget which wireguard-tools xclip xdg-user-dirs xdman xorg-server xorg-xinit xorg-xrandr xorg-xsetroot yay-bin youtube-dl zathura zathura-pdf-poppler zsh
 ```

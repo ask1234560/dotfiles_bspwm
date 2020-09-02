@@ -1,11 +1,10 @@
 #!/bin/bash
 
 # terminal
-[ "$(ps -x | grep -c 'scratchterm')" -eq "1" ] && $TERMINAL --class=scratchterm,scratchterm  -e $SHELL &
+[ "$(ps -x | grep -c 'class=scratchterm,scratchterm')" -eq "1" ] && $TERMINAL --class=scratchterm,scratchterm  -e $SHELL &
 # dictionary
-[ "$(ps -x | grep -c 'dictionary')" -eq "1" ] && $TERMINAL --class=dictionary,dictionary  -e ~/.config/scripts/dict-startup.sh &
+[ "$(ps -x | grep -c 'class=dictionary,dictionary')" -eq "1" ] && $TERMINAL --class=dictionary,dictionary  -e dict-search &
 
 sleep 10
 bspc_return_nodeid scratchterm /tmp/scratchterm
 bspc_return_nodeid dictionary /tmp/dictionary
-pgrep -x simplenote && bspc_return_nodeid Simplenote /tmp/simplenote

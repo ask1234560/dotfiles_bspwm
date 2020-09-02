@@ -102,6 +102,9 @@ dotfiles:
   d_slock:
     src: config/slock
     dst: ~/.config/slock
+  f_config:
+    src: config/simplenote/config
+    dst: ~/.config/simplenote/config
 profiles:
   arch:
     dotfiles:
@@ -132,3 +135,4 @@ profiles:
     - f_plug.vim
     - d_custom
     - d_slock
+    - f_config

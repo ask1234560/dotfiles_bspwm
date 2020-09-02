@@ -34,7 +34,7 @@ color listnormal_unread  color6    default
 color listfocus          color4    default
 color listfocus_unread   color4    default
 color info               color6    default
-color article            color13   default
+# color article            color13   default
 
 # highlights
 highlight article "^(Title):.*$" red default

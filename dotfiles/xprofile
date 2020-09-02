@@ -21,3 +21,6 @@ export RANGER_LOAD_DEFAULT_RC="FALSE"
 
 # weechat irc
 export WEECHAT_HOME="$HOME/.config/weechat"
+
+# simplenote
+export SNCLIRC="$HOME/.config/simplenote/config"

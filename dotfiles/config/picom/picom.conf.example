@@ -7,7 +7,8 @@
 # (windows with '_NET_WM_WINDOW_TYPE_DESKTOP') never get shadow, 
 # unless explicitly requested using the wintypes option.
 #
-shadow = false;
+# shadow = false
+shadow = true;
 
 # The blur radius for shadows, in pixels. (defaults to 12)
 # shadow-radius = 12
@@ -24,16 +25,6 @@ shadow-offset-x = -7;
 # shadow-offset-y = -15
 shadow-offset-y = -7;
 
-# Avoid drawing shadows on dock/panel windows. This option is deprecated,
-# you should use the *wintypes* option in your config file instead.
-#
-# no-dock-shadow = false
-
-# Don't draw shadows on drag-and-drop windows. This option is deprecated, 
-# you should use the *wintypes* option in your config file instead.
-#
-# no-dnd-shadow = false
-
 # Red color value of shadow (0.0 - 1.0, defaults to 0).
 # shadow-red = 0
 
@@ -43,16 +34,8 @@ shadow-offset-y = -7;
 # Blue color value of shadow (0.0 - 1.0, defaults to 0).
 # shadow-blue = 0
 
-# Do not paint shadows on shaped windows. Note shaped windows 
-# here means windows setting its shape through X Shape extension. 
-# Those using ARGB background is beyond our control. 
-# Deprecated, use 
-#   shadow-exclude = 'bounding_shaped'
-# or 
-#   shadow-exclude = 'bounding_shaped && !rounded_corners'
-# instead.
-#
-# shadow-ignore-shaped = ''
+# Hex string color value of shadow (#000000 - #FFFFFF, defaults to #000000). This option will override options set shadow-(red/green/blue)
+# shadow-color = "#000000"
 
 # Specify a list of conditions of windows that should have no shadow.
 #
@@ -86,8 +69,8 @@ shadow-exclude = [
 
 # Fade windows in/out when opening/closing and when opacity changes,
 #  unless no-fading-openclose is used.
-fading = false
-# fading = true
+# fading = false
+fading = true
 
 # Opacity change between steps while fading in. (0.01 - 1.0, defaults to 0.028)
 # fade-in-step = 0.028
@@ -117,33 +100,25 @@ fade-out-step = 0.03;
 
 # Opacity of inactive windows. (0.1 - 1.0, defaults to 1.0)
 # inactive-opacity = 1
-inactive-opacity = 0.9;
+inactive-opacity = 0.8;
 
 # Opacity of window titlebars and borders. (0.1 - 1.0, disabled by default)
-frame-opacity = 1.0;
-
-# Default opacity for dropdown menus and popup menus. (0.0 - 1.0, defaults to 1.0)
-# menu-opacity = 1.0
+# frame-opacity = 1.0
+frame-opacity = 0.7;
 
 # Let inactive opacity set by -i override the '_NET_WM_OPACITY' values of windows.
-inactive-opacity-override = true;
-# inactive-opacity-override = false;
+# inactive-opacity-override = true
+inactive-opacity-override = false;
 
 # Default opacity for active windows. (0.0 - 1.0, defaults to 1.0)
-active-opacity = 0.9;
+# active-opacity = 1.0
 
 # Dim inactive windows. (0.0 - 1.0, defaults to 0.0)
 # inactive-dim = 0.0
 
 # Specify a list of conditions of windows that should always be considered focused.
 # focus-exclude = []
-focus-exclude = [
-  "class_g = 'Brave-browser'",
-  "class_g = 'Gimp'",
-  "class_g = 'mpv'",
-  "class_g = 'Sxiv'",
-  "class_g = 'Zathura'"
-];
+focus-exclude = [ "class_g = 'Cairo-clock'" ];
 
 # Use fixed inactive dim value, instead of adjusting according to window opacity.
 # inactive-dim-fixed = 1.0
@@ -155,15 +130,8 @@ focus-exclude = [
 # example:
 #    opacity-rule = [ "80:class_g = 'URxvt'" ];
 #
-opacity-rule = [
-  "100:class_g = 'Brave-browser'",
-  "100:class_g = 'Gimp'",
-  "100:class_g = 'mpv'",
-  "100:class_g = 'Sxiv'",
-  "100:class_g = 'Zathura'",
-  "90:class_g = 'Polybar'",
-  "100:window_type = 'desktop'"
-];
+# opacity-rule = []
+
 
 #################################
 #     Background-Blurring       #
@@ -171,10 +139,12 @@ opacity-rule = [
 
 
 # Parameters for background blurring, see the *BLUR* section for more information.
-blur-method = "dual_kawase"
-blur-size = 8
+# blur-method = 
+# blur-size = 12
 #
 # blur-deviation = false
+#
+# blur-strength = 5
 
 # Blur background of semi-transparent / ARGB windows. 
 # Bad in performance, with driver-dependent behavior. 
@@ -220,8 +190,8 @@ blur-background-exclude = [
 # Specify the backend to use: `xrender`, `glx`, or `xr_glx_hybrid`.
 # `xrender` is the default one.
 #
-# backend = 'glx';
-backend = "glx";
+# backend = 'glx'
+backend = "xrender";
 
 # Enable/disable VSync.
 # vsync = false
@@ -237,7 +207,8 @@ vsync = true
 mark-wmwin-focused = true;
 
 # Mark override-redirect windows that doesn't have a child window with 'WM_STATE' focused.
-mark-ovredir-focused = false;
+# mark-ovredir-focused = false
+mark-ovredir-focused = true;
 
 # Try to detect windows with rounded corners and don't consider them 
 # shaped windows. The accuracy is not very high, unfortunately.
@@ -256,14 +227,6 @@ detect-client-opacity = true;
 #
 # refresh-rate = 60
 refresh-rate = 0
-
-# Limit picom to repaint at most once every 1 / 'refresh_rate' second to 
-# boost performance. This should not be used with 
-#   vsync drm/opengl/opengl-oml
-# as they essentially does sw-opti's job already, 
-# unless you wish to specify a lower refresh rate than the actual value.
-#
-# sw-opti = 
 
 # Use EWMH '_NET_ACTIVE_WINDOW' to determine currently focused window, 
 # rather than listening to 'FocusIn'/'FocusOut' event. Might have more accuracy, 
@@ -319,7 +282,7 @@ detect-client-leader = true
 # practically happened) and may not work with blur-background. 
 # My tests show a 15% performance boost. Recommended.
 #
-glx-no-stencil = true
+# glx-no-stencil = false
 
 # GLX backend: Avoid rebinding pixmap on window damage. 
 # Probably could improve performance on rapid window content changes, 
@@ -425,9 +388,9 @@ log-level = "warn";
 #
 wintypes:
 {
-  tooltip = { fade = true; shadow = true; opacity = 0.85; focus = true; full-shadow = false; };
+  tooltip = { fade = true; shadow = true; opacity = 0.75; focus = true; full-shadow = false; };
   dock = { shadow = false; }
   dnd = { shadow = false; }
-  popup_menu = { opacity = 0.95; }
-  dropdown_menu = { opacity = 0.95; }
+  popup_menu = { opacity = 0.8; }
+  dropdown_menu = { opacity = 0.8; }
 };

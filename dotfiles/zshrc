@@ -13,7 +13,7 @@ setopt sharehistory                 # share history between sessions
 # startx
 if [ "$(tty)" = "/dev/tty1" ]
 then
-		pgrep bspwm || startx
+    pgrep bspwm || startx
 fi
 
 # zplug
@@ -79,8 +79,8 @@ then
     SPACESHIP_HOST_SHOW=always
 fi
 # SPACESHIP_VI_MODE_COLOR=#586e75
-# SPACESHIP_VI_MODE_INSERT=[i]	
-# SPACESHIP_VI_MODE_NORMAL=[n]	
+# SPACESHIP_VI_MODE_INSERT=[i]  
+# SPACESHIP_VI_MODE_NORMAL=[n]  
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -98,7 +98,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 setopt auto_cd
 
 # Include hidden files.
-_comp_options+=(globdots)		
+_comp_options+=(globdots)       
 
 # aliases
 source ~/.config/.aliasrc

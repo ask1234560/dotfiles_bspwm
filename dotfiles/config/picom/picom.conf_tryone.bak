@@ -24,6 +24,16 @@ shadow-offset-x = -7;
 # shadow-offset-y = -15
 shadow-offset-y = -7;
 
+# Avoid drawing shadows on dock/panel windows. This option is deprecated,
+# you should use the *wintypes* option in your config file instead.
+#
+# no-dock-shadow = false
+
+# Don't draw shadows on drag-and-drop windows. This option is deprecated, 
+# you should use the *wintypes* option in your config file instead.
+#
+# no-dnd-shadow = false
+
 # Red color value of shadow (0.0 - 1.0, defaults to 0).
 # shadow-red = 0
 
@@ -33,8 +43,16 @@ shadow-offset-y = -7;
 # Blue color value of shadow (0.0 - 1.0, defaults to 0).
 # shadow-blue = 0
 
-# Hex string color value of shadow (#000000 - #FFFFFF, defaults to #000000). This option will override options set shadow-(red/green/blue)
-# shadow-color = "#000000"
+# Do not paint shadows on shaped windows. Note shaped windows 
+# here means windows setting its shape through X Shape extension. 
+# Those using ARGB background is beyond our control. 
+# Deprecated, use 
+#   shadow-exclude = 'bounding_shaped'
+# or 
+#   shadow-exclude = 'bounding_shaped && !rounded_corners'
+# instead.
+#
+# shadow-ignore-shaped = ''
 
 # Specify a list of conditions of windows that should have no shadow.
 #
@@ -103,6 +121,9 @@ inactive-opacity = 0.8;
 
 # Opacity of window titlebars and borders. (0.1 - 1.0, disabled by default)
 frame-opacity = 1.0;
+
+# Default opacity for dropdown menus and popup menus. (0.0 - 1.0, defaults to 1.0)
+# menu-opacity = 1.0
 
 # Let inactive opacity set by -i override the '_NET_WM_OPACITY' values of windows.
 inactive-opacity-override = true;
@@ -233,6 +254,14 @@ detect-client-opacity = true;
 #
 # refresh-rate = 60
 refresh-rate = 0
+
+# Limit picom to repaint at most once every 1 / 'refresh_rate' second to 
+# boost performance. This should not be used with 
+#   vsync drm/opengl/opengl-oml
+# as they essentially does sw-opti's job already, 
+# unless you wish to specify a lower refresh rate than the actual value.
+#
+# sw-opti = 
 
 # Use EWMH '_NET_ACTIVE_WINDOW' to determine currently focused window, 
 # rather than listening to 'FocusIn'/'FocusOut' event. Might have more accuracy, 
