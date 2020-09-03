@@ -17,7 +17,7 @@ super + Escape
 #
 # focus the last node/desktop
 super + grave
-	bspc desktop -f last.occupied
+	bspc desktop -f last
 super + Tab
 	bspc node -f last.local
 # focus the next/previous node in the current desktop
@@ -91,7 +91,7 @@ super + {_,ctrl + }shift + space
 #
 # screenshot win/full screen
 super + alt + {s,w}
-    scrot -{_,u}z 'Screenshot_from_%F_%X.png' -e 'mv $f ~/Pictures/Screenshots/'
+    scrot -{_,u}z 'Screenshot_from_%F_%X.png' -e 'mv $f ~/Pictures/Screenshots/ ; sxiv ~/Pictures/Screenshots/$f'
 # brightness dec/inc
 super + {F2,F3}
     cbacklight --{dec,inc} 5
