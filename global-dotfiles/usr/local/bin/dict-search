@@ -1,5 +1,5 @@
 #!/bin/bash
-cache="$HOME/.cache/dict-output"
+cache="/home/ananthu/.cache/dict-output"
 
 while true
 do
@@ -15,7 +15,7 @@ do
         sed -n "/^$word/,/-----/p" $cache | tail -n+2 | head -n-1
         [ "$#" -eq 1 ] && exit 0
     else
-        result=$($HOME/.config/scripts/dict-search.py $word)
+        result=$(/home/ananthu/.config/scripts/dict-search.py $word)
         exit_code=$?
         if [ "$exit_code" -eq 0 ]
         then
