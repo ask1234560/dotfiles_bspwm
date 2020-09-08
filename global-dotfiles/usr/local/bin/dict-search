@@ -24,7 +24,9 @@ do
             echo -e "-----\n" >> $cache 
             [ "$#" -eq 1 ] && exit 0
         else
-            echo "$result"
+            echo "Searching in Google..."
+            # for multiple words separate with '+'
+            brave "https://www.google.com/search?q=$word+means" &> /dev/null
             [ "$#" -eq 1 ] && exit 1
         fi
     fi

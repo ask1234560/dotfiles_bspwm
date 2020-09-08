@@ -15,6 +15,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <X11/extensions/Xrandr.h>
+#include <X11/extensions/Xinerama.h>
 #include <X11/keysym.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
@@ -25,6 +26,9 @@
 #include "util.h"
 
 char *argv0;
+
+/* global count to prevent repeated error messages */
+int count_error = 0;
 
 enum {
 	INIT,
@@ -65,23 +69,58 @@ die(const char *errstr, ...)
 #include <linux/oom.h>
 
 static void
+dontkillme(void)
+{
+	FILE *f;
+	const char oomfile[] = "/proc/self/oom_score_adj";
+
+	if (!(f = fopen(oomfile, "w"))) {
+		if (errno == ENOENT)
+			return;
+		die("slock: fopen %s: %s\n", oomfile, strerror(errno));
+	}
+	fprintf(f, "%d", OOM_SCORE_ADJ_MIN);
+	if (fclose(f)) {
+		if (errno == EACCES)
+			die("slock: unable to disable OOM killer. "
+			    "Make sure to suid or sgid slock.\n");
+		else
+			die("slock: fclose %s: %s\n", oomfile, strerror(errno));
+	}
+}
+#endif
+
+static void
 writemessage(Display *dpy, Window win, int screen)
 {
-	int len, line_len, width, height, i, j, k, tab_replace, tab_size;
+	int len, line_len, width, height, s_width, s_height, i, j, k, tab_replace, tab_size;
 	XGCValues gr_values;
 	XFontStruct *fontinfo;
 	XColor color, dummy;
+	XineramaScreenInfo *xsi;
 	GC gc;
-	fontinfo = XLoadQueryFont(dpy, text_size);
+	fontinfo = XLoadQueryFont(dpy, font_name);
+
+	if (fontinfo == NULL) {
+		if (count_error == 0) {
+			fprintf(stderr, "slock: Unable to load font \"%s\"\n", font_name);
+			fprintf(stderr, "slock: Try listing fonts with 'slock -f'\n");
+			count_error++;
+		}
+		return;
+	}
+
 	tab_size = 8 * XTextWidth(fontinfo, " ", 1);
 
 	XAllocNamedColor(dpy, DefaultColormap(dpy, screen),
-			 text_color, &color, &dummy);
+		 text_color, &color, &dummy);
 
 	gr_values.font = fontinfo->fid;
 	gr_values.foreground = color.pixel;
 	gc=XCreateGC(dpy,win,GCFont+GCForeground, &gr_values);
 
+	/*  To prevent "Uninitialized" warnings. */
+	xsi = NULL;
 
 	/*
 	 * Start formatting and drawing text
@@ -105,8 +144,17 @@ writemessage(Display *dpy, Window win, int screen)
 	if (line_len == 0)
 		line_len = len;
 
-	height = DisplayHeight(dpy, screen)*3/7 - (k*20)/3;
-	width  = (DisplayWidth(dpy, screen) - XTextWidth(fontinfo, message, line_len))/2;
+	if (XineramaIsActive(dpy)) {
+		xsi = XineramaQueryScreens(dpy, &i);
+		s_width = xsi[0].width;
+		s_height = xsi[0].height;
+	} else {
+		s_width = DisplayWidth(dpy, screen);
+		s_height = DisplayHeight(dpy, screen);
+	}
+
+	height = s_height*3/7 - (k*20)/3;
+	width  = (s_width - XTextWidth(fontinfo, message, line_len))/2;
 
 	/* Look for '\n' and print the text between them. */
 	for (i = j = k = 0; i <= len; i++) {
@@ -126,30 +174,13 @@ writemessage(Display *dpy, Window win, int screen)
 			}
 		}
 	}
+
+	/* xsi should not be NULL anyway if Xinerama is active, but to be safe */
+	if (XineramaIsActive(dpy) && xsi != NULL)
+			XFree(xsi);
 }
 
 
-static void
-dontkillme(void)
-{
-	FILE *f;
-	const char oomfile[] = "/proc/self/oom_score_adj";
-
-	if (!(f = fopen(oomfile, "w"))) {
-		if (errno == ENOENT)
-			return;
-		die("slock: fopen %s: %s\n", oomfile, strerror(errno));
-	}
-	fprintf(f, "%d", OOM_SCORE_ADJ_MIN);
-	if (fclose(f)) {
-		if (errno == EACCES)
-			die("slock: unable to disable OOM killer. "
-			    "Make sure to suid or sgid slock.\n");
-		else
-			die("slock: fclose %s: %s\n", oomfile, strerror(errno));
-	}
-}
-#endif
 
 static const char *
 gethash(void)
@@ -280,6 +311,7 @@ readpw(Display *dpy, struct xrandr *rr, struct lock **locks, int nscreens,
 					XResizeWindow(dpy, locks[screen]->win,
 					              rre->width, rre->height);
 					XClearWindow(dpy, locks[screen]->win);
+					writemessage(dpy, locks[screen]->win, screen);
 				}
 			}
 		} else for (screen = 0; screen < nscreens; screen++)
@@ -371,7 +403,7 @@ lockscreen(Display *dpy, struct xrandr *rr, int screen)
 static void
 usage(void)
 {
-	die("usage: slock [-v] [-m message] [cmd [arg ...]]\n");
+	die("usage: slock [-v] [-f] [-m message] [cmd [arg ...]]\n");
 }
 
 int
@@ -384,7 +416,9 @@ main(int argc, char **argv) {
 	gid_t dgid;
 	const char *hash;
 	Display *dpy;
-	int s, nlocks, nscreens;
+	int i, s, nlocks, nscreens;
+	int count_fonts;
+	char **font_names;
 
 	ARGBEGIN {
 	case 'v':
@@ -393,6 +427,14 @@ main(int argc, char **argv) {
 	case 'm':
 		message = EARGF(usage());
 		break;
+	case 'f':
+		if (!(dpy = XOpenDisplay(NULL)))
+			die("slock: cannot open display\n");
+		font_names = XListFonts(dpy, "*", 10000 /* list 10000 fonts*/, &count_fonts);
+		for (i=0; i<count_fonts; i++) {
+			fprintf(stderr, "%s\n", *(font_names+i));
+		}
+		return 0;
 	default:
 		usage();
 	} ARGEND
