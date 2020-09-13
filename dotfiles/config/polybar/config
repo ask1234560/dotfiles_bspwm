@@ -51,7 +51,7 @@ padding-right = 2
 background = ${colors.bg}
 foreground = ${colors.fg}
 
-font-0 = "FiraCode Nerd Font:style=Medium:pixelsize=10;3"
+font-0 = "FiraCode Nerd Font:style=Medium:pixelsize=10;2:antialias=false"
 cursor-click = pointer
 ;==========================================================
 
@@ -59,7 +59,7 @@ cursor-click = pointer
 
 ;====Module settings+======================================
 modules-left = bspwm
-modules-right = pkg volume cpu-graph temperature memory wlan battery date
+modules-right = pkg volume cpu temperature memory wlan battery date
 ;==========================================================
 
 
@@ -67,23 +67,18 @@ modules-right = pkg volume cpu-graph temperature memory wlan battery date
 ;====Left modules==========================================
 [module/bspwm]
 type = internal/bspwm
-
+format = <label-state>
 label-focused = %index%
-;label-focused-background = ${colors.adapta-grey}
 label-focused-underline= ${colors.adapta-cyan} 
 label-focused-padding = 1
-
 label-occupied = %index%
 label-occupied-padding = 1
-
 label-urgent = %index%
-label-urgent-background = ${colors.alert}
+label-urgent-foreground = ${colors.alert}
 label-urgent-padding = 1
-
 label-empty = %index%
 label-empty-foreground = ${colors.adapta-grey}
 label-empty-padding = 1
-
 ; Separator in between workspaces
 ; label-separator = |
 ;==========================================================
@@ -112,10 +107,27 @@ label-muted = ﱝ
 label-muted-underline = ${colors.adapta-cyan}
 label-muted-padding = 1
 ramp-volume-0 = 
+ramp-volume-0-foreground = ${colors.fg}
 ramp-volume-1 = 
 ramp-volume-1-foreground = ${colors.adapta-yellow}
 ramp-volume-2 = 
 ramp-volume-2-foreground = ${colors.adapta-red}
+
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+format = <ramp-load> <label>
+format-underline = ${colors.adapta-cyan}
+format-margin = ${margin.for-modules}
+format-padding = 1
+label = "%percentage%%"
+ramp-load-0 = 
+ramp-load-0-foreground = ${colors.fg}
+ramp-load-1 = 
+ramp-load-1-foreground = ${colors.adapta-yellow}
+ramp-load-2 = 
+ramp-load-2-foreground = ${colors.adapta-red}
 
 
 [module/cpu-graph]
@@ -188,7 +200,7 @@ interval = 1
 format-connected = <label-connected>
 format-connected-underline = ${colors.adapta-cyan}
 format-connected-padding = 1
-label-connected = " %downspeed%  %upspeed%"
+label-connected = " %downspeed%"
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${colors.adapta-cyan}
 format-disconnected-padding = 1

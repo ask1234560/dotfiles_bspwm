@@ -73,6 +73,8 @@ SPACESHIP_RPROMPT_ORDER=(
   exec_time     # Execution time
 )
 SPACESHIP_CHAR_SYMBOL=" ➜ "
+SPACESHIP_GIT_STATUS_BEHIND=""
+SPACESHIP_GIT_STATUS_AHEAD=""
 if [ "$(hostname)" != "arch" ]
 then
     SPACESHIP_USER_SHOW=always
@@ -108,6 +110,3 @@ source ~/.config/.zplug/repos/custom/key-bindings.zsh
 
 # vi mode
 # spaceship_vi_mode_enable
-
-# elfman
-colorscript -e 18
