@@ -1,5 +1,5 @@
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR="nvim"
+export VISUAL="nvim"
 export PAGER="less"
 export MAILTO="ask1234560@gmail.com"
 export TERMINAL="alacritty"
