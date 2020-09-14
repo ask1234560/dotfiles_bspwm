@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sxiv -bf /home/ananthu/Pictures/wallpapers/szorenfein/connected.jpg &
+sxiv -bf /home/ananthu/Pictures/wallpapers/szorenfein/cybergirl.jpg &
 sxiv_pid=$!
 slock-base "$@"
 kill $sxiv_pid

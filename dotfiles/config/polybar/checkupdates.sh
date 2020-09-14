@@ -10,4 +10,4 @@ fi
 
 updates=$(("$updates_arch" + "$updates_aur"))
 
-echo " $updates"
+echo "󰮯 $updates"
