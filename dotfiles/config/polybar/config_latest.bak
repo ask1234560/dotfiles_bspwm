@@ -18,8 +18,7 @@
 
 ;====General Settings======================================
 [colors]
-; bg = ${xrdb:background:#002b36}
-bg = #00000000
+bg = ${xrdb:background:#002b36}
 fg = ${xrdb:foreground:#839496}
 
 adapta-cyan = ${xrdb:color6:#2aa198}
@@ -30,31 +29,30 @@ adapta-green = ${xrdb:color2:#859900}
 adapta-grey = ${xrdb:colorX:#475359}
 alert = ${xrdb:color1:#dc322f}
 
-; underline = ${colors.adapta-cyan}
-underline = ${colors.fg}
+underline = ${colors.adapta-cyan}
 [margin]
 for-modules = 1
 
 [bar/main]
 width = 76%
-height = 27
+height = 26
 
-; radius = 13
+radius = 13
 fixed-center = false
-offset-y = 3
+offset-y = 4
 offset-x = 12%
 override-redirect = true
 wm-restack = bspwm
 
 line-size = 2
 
-padding-left = 1
-padding-right = 1
+padding-left = 2
+padding-right = 2
 
 background = ${colors.bg}
 foreground = ${colors.fg}
 
-font-0 = "MaterialDesignIcons:size=15:style:Solid;2"
+font-0 = MaterialDesignIcons:pixelsize=15:style:Solid;3
 font-1 = "FiraCode Nerd Font:style=Medium:size=10;2:antialias=false"
 cursor-click = pointer
 ;==========================================================
@@ -72,13 +70,13 @@ modules-right = pkg volume cpu temperature memory wlan battery date
 [module/bspwm]
 type = internal/bspwm
 format = <label-state>
-label-focused = 󰻃
-; label-focused-foreground = ${colors.adapta-green}
+label-focused = 
+label-focused-foreground = ${colors.adapta-green}
 label-focused-underline= ${colors.underline} 
 label-focused-padding = 1
-label-occupied = 󰧞
+label-occupied = 
 label-occupied-padding = 1
-label-urgent = 󰧞
+label-urgent = 
 label-urgent-foreground = ${colors.alert}
 label-urgent-padding = 1
 label-empty = " "

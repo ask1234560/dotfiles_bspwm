@@ -71,7 +71,7 @@ dotfiles
 * (optional) to remove backup files
    * find ~ -regextype grep -regex '.*/*dotdropbak' -exec rm {} \;
 * for changing theme, change in alacritty, nvim, nvim quick scope pluggin(init.vim), ~/.Xresources, dmenu, dunst, polybar(reads Xresources), cursor.
-* Terminal font SauceCodePro Nerd Font Mono.
+* Terminal font JetBrainsMono Nerd Font.
 ```
    
 ## (Optional) Explicitly installed packages  
