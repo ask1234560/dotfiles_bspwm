@@ -51,15 +51,6 @@ dotfiles:
   d_scripts:
     src: config/scripts
     dst: ~/.config/scripts
-  f_xprofile:
-    src: xprofile
-    dst: ~/.xprofile
-  f_xmodmap:
-    src: Xmodmap
-    dst: ~/.Xmodmap
-  f_xresources:
-    src: Xresources
-    dst: ~/.Xresources
   d_bspwm:
     src: config/bspwm
     dst: ~/.config/bspwm
@@ -105,6 +96,9 @@ dotfiles:
   f_config:
     src: config/simplenote/config
     dst: ~/.config/simplenote/config
+  d_x11:
+    src: config/X11
+    dst: ~/.config/X11
 profiles:
   arch:
     dotfiles:
@@ -118,9 +112,6 @@ profiles:
     - d_sxiv
     - f_aliasrc
     - d_scripts
-    - f_xprofile
-    - f_xmodmap
-    - f_xresources
     - d_bspwm
     - d_sxhkd
     - d_polybar
@@ -136,3 +127,4 @@ profiles:
     - d_custom
     - d_slock
     - f_config
+    - d_x11

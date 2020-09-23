@@ -8,7 +8,7 @@ setopt histignorespace              # ignore line with leading space
 setopt incappendhistory             # append history at same time, not at shell exits
 setopt nobanghist                   # don't expand !
 setopt nobeep                       # nobeep in tty
-# setopt sharehistory                 # share history between sessions
+setopt sharehistory                 # share history between sessions
 
 # startx
 if [ "$(tty)" = "/dev/tty1" ]

@@ -1,0 +1,56 @@
+# xdg
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+
+export BROWSER="brave"
+export EDITOR="nvim"
+export MAILTO="ask1234560@gmail.com"
+export PAGER="less"
+export TERMINAL="alacritty"
+export VISUAL="nvim"
+
+# qt5 theme conf
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
+# dotdrop
+export DOTREPO="$XDG_CONFIG_HOME/dotfiles_bspwm"
+
+# less hist file
+export LESSHISTFILE="$XDG_CACHE_HOME/.lesshst"
+# Start blinking
+export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
+# Start bold
+export LESS_TERMCAP_md=$(tput bold; tput setaf 2) # green
+# Start stand out
+export LESS_TERMCAP_so=$(tput bold; tput setaf 3) # yellow
+# End standout
+export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
+# Start underline
+export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 1) # red
+# End Underline
+export LESS_TERMCAP_ue=$(tput sgr0)
+# End bold, blinking, standout, underline
+export LESS_TERMCAP_me=$(tput sgr0)
+
+# sudo -A 
+export SUDO_ASKPASS="/usr/local/bin/dpass"
+
+# ranger use only user rc.conf
+export RANGER_LOAD_DEFAULT_RC="FALSE"
+
+# weechat irc
+export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
+
+# simplenote
+export SNCLIRC="$XDG_CONFIG_HOME/simplenote/config"
+
+# pass
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
+
+# npm
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+
+# notmuch
+export NOTMUCH_CONFIG="$XDG_CONFIG_HOME/notmuch/notmuchrc"
+export NMBGIT="$XDG_DATA_HOME/notmuch/nmbug"

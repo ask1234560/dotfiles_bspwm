@@ -1,1 +1,1 @@
-ACTION=="add", KERNEL=="hidraw[0-9]*", SUBSYSTEM=="hidraw", SUBSYSTEMS=="usb", ATTRS{idVendor}=="04f3", ATTRS{idProduct}=="152e", RUN+="/home/ananthu/.config/scripts/keyboard_startup.sh"
+ACTION=="add", KERNEL=="hidraw[0-9]*", SUBSYSTEM=="hidraw", SUBSYSTEMS=="usb", ATTRS{idVendor}=="04f3", ATTRS{idProduct}=="152e", RUN+="/home/ananthu/.config/scripts/cosmicbyte_keyboard.sh"

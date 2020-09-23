@@ -3,20 +3,36 @@ while read file
 do
         case "$1" in
         "c")
-				cp "$file" ~/.cache/default_wall ;;
+                cp "$file" ~/.cache/default_wall
+                notify-send "Sxiv: set as default wall"
+                ;;
         "d")
-				trash "$file" ;;
+                trash "$file"
+                notify-send "Sxiv: wall trashed"
+                ;;
         "g")
-				gimp "$file" & ;;
+                gimp "$file" &
+                notify-send "Sxiv: opening in gimp"
+                ;;
         "r")
-				convert -rotate 90 "$file" "$file" ;;
+                convert -rotate 90 "$file" "$file"
+                notify-send "Sxiv: rotated 90 clockwise"
+                ;;
         "R")
-				convert -rotate -90 "$file" "$file" ;;
+                convert -rotate -90 "$file" "$file"
+                notify-send "Sxiv: rotated 90 anti-clockwise"
+                ;;
         "w")
-				hsetroot -fill "$file"  -tint '#9ccfe6' ;;
+                hsetroot -fill "$file"  -tint '#9ccfe6'
+                notify-send "Sxiv: wall with tint"
+                ;;
         "x")
-				hsetroot -fill "$file" ;;
+                hsetroot -fill "$file"
+                notify-send "Sxiv: exact wall"
+                ;;
         "y")
-				echo -n "$file" | xclip -selection clipboard ;;
+                echo -n "$file" | xclip -selection clipboard
+                notify-send "Sxiv: copied to clipboard"
+                ;;
         esac
 done

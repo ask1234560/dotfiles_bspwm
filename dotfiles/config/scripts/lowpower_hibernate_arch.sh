@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # for multiple instances of bspwm
-for id in $(pgrep -u $LOGNAME bspwm)
+for id in $(pgrep -u $LOGNAME -x bspwm)
 do
     eval "export $(egrep -z DBUS_SESSION_BUS_ADDRESS /proc/$id/environ)"
 done
-export DISPLAY=:0.0
+export DISPLAY=:0
 
-stat=$(< /sys/class/power_supply/BAT1/status)
-cap=$(< /sys/class/power_supply/BAT1/capacity)
+read stat < /sys/class/power_supply/BAT1/status
+read cap < /sys/class/power_supply/BAT1/capacity
 
 if [ "$stat" == "Discharging" ]
 then
@@ -18,7 +18,7 @@ then
                 if [ "$cap" -lt 15  ]
                 then
                         logger "Critical battery threshold"
-                        /usr/local/bin/slock sudo systemctl hibernate
+                        sudo systemctl hibernate
                 fi
         fi
 fi

@@ -1,12 +1,7 @@
 #!/bin/sh
 
-userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
-
-[ -f "$userresources" ] && xrdb -merge "$userresources"
-[ -f "$usermodmap" ] && xmodmap "$usermodmap"
-
-# run xprofile
-[ -f ~/.xprofile ] && . ~/.xprofile
+xrdb -merge "$HOME/.config/X11/xresources"
+xmodmap "$HOME/.config/X11/xmodmap"
+. "$HOME/.config/X11/xprofile"
 
 exec bspwm
