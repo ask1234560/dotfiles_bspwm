@@ -18,6 +18,7 @@ alias \
     nv='nvim ' \
     nvs='sudo -E nvim ' \
     pc='pacman ' \
+    pfetch="bspc rule -a Alacritty state=floating --one-shot && alacritty --hold -d 42 10 -e pfetch &; disown " \
     rg='ranger' \
     sclip='xclip -selection c' \
     speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python - ' \

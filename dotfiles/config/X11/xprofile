@@ -54,3 +54,6 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 # notmuch
 export NOTMUCH_CONFIG="$XDG_CONFIG_HOME/notmuch/notmuchrc"
 export NMBGIT="$XDG_DATA_HOME/notmuch/nmbug"
+
+# pfetch
+export PF_INFO="ascii os wm pkgs memory uptime palette"

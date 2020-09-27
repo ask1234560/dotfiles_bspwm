@@ -8,7 +8,7 @@ do
                 ;;
         "d")
                 trash "$file"
-                notify-send "Sxiv: wall trashed"
+                notify-send "Sxiv: trashed"
                 ;;
         "g")
                 gimp "$file" &
