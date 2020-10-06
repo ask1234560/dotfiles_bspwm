@@ -10,9 +10,9 @@ do
         echo -e "\nSearch dictionary..."
         read word
     fi
-    if grep -q "^$word" $cache
+    if grep -q "^$word$" $cache
     then
-        sed -n "/^$word/,/-----/p" $cache | tail -n+2 | head -n-1
+        sed -n "/^$word$/,/-----/p" $cache | tail -n+2 | head -n-1
         [ "$#" -eq 1 ] && exit 0
     else
         result=$(/home/ananthu/.config/scripts/dict-search.py $word)
