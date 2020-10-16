@@ -22,7 +22,7 @@ super + Tab
     bspc node -f last.local
 # focus the next/previous node in the current desktop
 super + bracket{left,right}
-    bspc node -f {next,prev}.local.!hidden.window
+    bspc node -f {next,prev}.local.!hidden.window.floating
 # quit/restart bspwm
 super + alt + {q,r}
     bspc {quit,wm -r}
@@ -102,9 +102,6 @@ super + {F2,F3}
 # adaptive brightness
 super + F1
     adaptive-brightness
-# run terminal commands
-super + alt + {g,i,t}
-    $TERMINAL -e {neomutt,ranger,htop}
 # nightlight
 super + {alt +,shift + }e
     redshift -P -O {3000,6500}K
@@ -121,9 +118,5 @@ super + alt + {n,z}
 super + alt + {c,f,m,u,y}
     {bg-changer,brave,dmount,dumount,drecord}
 # scratchpads
-# terminal
-super + alt + space
-    id=$(cat /tmp/scratchterm);bspc node $id --flag hidden;bspc node -f $id
-# dictionary
-super + alt + d
-    id=$(cat /tmp/dictionary);bspc node $id --flag hidden;bspc node -f $id
+super + alt + {d,g,i,space,t}
+    scratch {dictionary,neomutt,ranger,terminal,htop}

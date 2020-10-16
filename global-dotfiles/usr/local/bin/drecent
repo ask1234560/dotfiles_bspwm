@@ -12,6 +12,7 @@ run=$((echo "$most_used"; dmenu_path | grep -vxF "$most_used") | dmenu -i "$@")
 ([ -z "$run" ] || echo "$run"; head -n 99 "$cache") > "$cache.$$"
 mv "$cache.$$" "$cache"
 
+[ -z "$run" ] && exit 1
 case "$run" in
     *\;) exec $(echo $term ${run%;}) ;;
     *)   exec "$run" ;;

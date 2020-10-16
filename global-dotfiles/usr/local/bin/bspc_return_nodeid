@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# $1 - query item, $2 - location; All windows should be floating
-for i in $(bspc query -N -n .floating)
-do
-    bspc query  --node $i -T | grep -q $1 && echo $i > $2 && exit 0
-done

@@ -99,6 +99,9 @@ dotfiles:
   d_x11:
     src: config/X11
     dst: ~/.config/X11
+  f_muttrc:
+    src: config/mutt/muttrc
+    dst: ~/.config/mutt/muttrc
 profiles:
   arch:
     dotfiles:
@@ -128,3 +131,4 @@ profiles:
     - d_slock
     - f_config
     - d_x11
+    - f_muttrc

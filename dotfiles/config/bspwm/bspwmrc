@@ -39,17 +39,12 @@ bspc config presel_feedback_color       "#839496"
 
 # rules
 bspc rule -a Brave-browser              desktop='^3'
-bspc rule -a dictionary                              state=floating sticky=on hidden=on center=on
-bspc rule -a Gimp                       desktop='^5' state=floating
+bspc rule -a Gimp                       desktop='^5' state=tiled
 # bspc rule -a libreoffice-startcenter    desktop='^5' state=tiled
 bspc rule -a MEGAsync                                state=floating
 bspc rule -a mpv                        desktop='^5' state=tiled
-bspc rule -a scratchterm                             state=floating sticky=on hidden=on center=on
 # bspc rule -a Soffice                    desktop='^5' state=tiled
 bspc rule -a VirtualBox\ Manager        desktop='^5'
 bspc rule -a VirtualBoxVM               desktop='^5' state=fullscreen
 bspc rule -a xdman-Main                 desktop='^3' state=floating
 bspc rule -a Zathura                                 state=tiled
-
-# scratchpads
-$HOME/.config/scripts/scratchpads &
