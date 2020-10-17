@@ -107,7 +107,7 @@ super + {alt +,shift + }e
     redshift -P -O {3000,6500}K
 # audio raise/lower volume
 XF86Audio{RaiseVolume,LowerVolume}
-    amixer set Master 5%{+,-}
+    amixer set Master 3%{+,-}
 # audio mute
 XF86AudioMute
     amixer set Master toggle

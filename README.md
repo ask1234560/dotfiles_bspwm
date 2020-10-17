@@ -12,6 +12,7 @@ dotfiles
 │  ├── gtk-3.0
 │  ├── htop
 │  ├── mpv
+│  ├── mutt
 │  ├── newsboat
 │  ├── nvim
 │  ├── picom
@@ -74,5 +75,5 @@ dotfiles
    
 ## (Optional) Explicitly installed packages  
 ```
-yay -S --needed adapta-gtk-theme alacritty alsa-firmware alsa-utils autoconf automake base bc binutils bison brave-bin broadcom-wl-dkms bspwm cronie dosfstools dunst efibootmgr exa exiv2 fakeroot ffmpegthumbnailer file findutils flex gawk gcc gettext gimp git google-cloud-sdk grep groff grub gtk-engine-murrine gzip hsetroot htop-vim-git imagemagick kvantum-qt5 libreoffice-fresh libtool linux linux-firmware linux-headers linux-zen-custom linux-zen-custom-headers lynx m4 make man-db megasync-nopdfium mlocate mpv mutt-wizard-git neovim nerd-fonts-fira-code nerd-fonts-jetbrains-mono networkmanager newsboat noto-fonts npm ntfs-3g nudoku-git numlockx openresolv pacman pacman-contrib pam-gnupg-git papirus-icon-theme patch pfetch-git picom-git pkgconf polybar pulseaudio pulseaudio-alsa python-pip python-pipenv python-pynvim qt5ct ranger redshift-minimal rmtrash scrot sed simple-mtpfs sncli-git subliminal-git sudo sxhkd sxiv syncthing texinfo thunar timeshift trash-cli ttf-material-design-icons-git ttf-ms-fonts ttf-roboto ttf-symbola ttf-vista-fonts ueberzug unclutter unrar virtualbox virtualbox-ext-oracle virtualbox-guest-iso weechat wget which wireguard-tools xclip xdg-user-dirs xdman xorg-server xorg-xev xorg-xinit xorg-xrandr xorg-xsetroot yay-bin youtube-dl zathura zathura-pdf-poppler zsh
+yay -S --needed abook adapta-gtk-theme alacritty alsa-firmware alsa-utils autoconf automake base bc binutils bison brave-bin broadcom-wl-dkms bspwm cronie dosfstools dunst efibootmgr exa exiv2 fakeroot ffmpegthumbnailer file findutils flex gawk gcc gettext gimp git google-cloud-sdk grep groff grub gtk-engine-murrine gzip hsetroot htop-vim-git imagemagick kvantum-qt5 libreoffice-fresh libtool linux linux-firmware linux-headers linux-zen-custom linux-zen-custom-headers lsof lynx m4 make man-db megasync-nopdfium mlocate mpv mutt-wizard-git neovim nerd-fonts-fira-code nerd-fonts-jetbrains-mono networkmanager newsboat noto-fonts npm ntfs-3g nudoku-git numlockx openresolv pacman pacman-contrib papirus-icon-theme patch pfetch-git picom-git pkgconf polybar pulseaudio pulseaudio-alsa python-pip python-pipenv python-pynvim qt5ct ranger redshift-minimal rmtrash scrot sed simple-mtpfs sncli-git subliminal-git sudo sxhkd sxiv syncthing texinfo thunar timeshift trash-cli ttf-material-design-icons-git ttf-ms-fonts ttf-roboto ttf-symbola ttf-vista-fonts ueberzug unclutter unrar virtualbox virtualbox-ext-oracle virtualbox-guest-iso weechat wget which wireguard-tools xclip xdg-user-dirs xdman xorg-server xorg-xdpyinfo xorg-xev xorg-xinit xorg-xrandr xorg-xsetroot yay-bin youtube-dl zathura zathura-pdf-poppler zsh
 ```

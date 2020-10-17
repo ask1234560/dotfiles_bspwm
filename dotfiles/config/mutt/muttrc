@@ -8,3 +8,5 @@ macro index,pager i4 '<sync-mailbox><enter-command>source /home/ananthu/.config/
 
 # custom
 set date_format="%b %d %I:%M%p"
+set query_command = "abook --datafile "$XDG_DATA_HOME"/abook/addressbook --mutt-query '%s'"
+macro index,pager a "<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return><pipe-message>abook --datafile "$XDG_DATA_HOME"/abook/addressbook --add-email<return><enter-command>set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<return>" "add the sender address to abook"
