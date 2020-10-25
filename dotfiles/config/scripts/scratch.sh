@@ -22,19 +22,22 @@ then
     bspc rule -a "$name" --one-shot state=floating sticky=on hidden=on center=on
     case "$name" in
         "dictionary")
-            $TERMINAL --class="$name","$name"  -e dict-search &
+            $TERMINAL --class="$name","$name"  --position 19 72 -e dict-search &
             ;;
         "htop")
-            $TERMINAL --class="$name","$name"  -e htop &
+            $TERMINAL --class="$name","$name"  --position 19 72 -e htop &
             ;;
         "neomutt")
-            $TERMINAL --class="$name","$name"  -e neomutt &
+            $TERMINAL --class="$name","$name"  --position 19 72 -e neomutt &
+            ;;
+        "newsboat")
+            $TERMINAL --class="$name","$name"  --position 19 72 -e newsboat &
             ;;
         "ranger")
-            $TERMINAL --class="$name","$name"  -e ranger &
+            $TERMINAL --class="$name","$name"  --position 19 72 -e ranger &
             ;;
         "terminal")
-            $TERMINAL --class="$name","$name"  -e $SHELL &
+            $TERMINAL --class="$name","$name"  --position 19 72 -e $SHELL &
             ;;
         *)
             exit 1

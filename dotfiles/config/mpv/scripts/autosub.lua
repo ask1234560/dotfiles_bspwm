@@ -12,7 +12,7 @@ function log(string, secs)
 end
 
 function download_subs()
-    log('Searching subtitles ...', 10)
+    log('Searching subtitles...', 10)
 
     path = mp.get_property('path')
     filename = mp.get_property('filename')
@@ -20,13 +20,13 @@ function download_subs()
 
     conn_table = { args = {'ping','-c','1','google.com'} }
     conn_result = utils.subprocess(conn_table)
-    
+
     if string.find(conn_result.stdout, 'packets transmitted') then
         table = { args = {subliminal, 'download', '-s', '-l', language, '-d', save_dir, filename} }
         result = utils.subprocess(table)
         if string.find(result.stdout, 'Downloaded 1 subtitle') then
             -- Subtitles are downloaded successfully, so rescan to activate them:
-            mp.commandv('rescan_external_files') 
+            mp.commandv('rescan_external_files')
             log('Subtitles ready!')
         else
             log('No subtitles found', 3)
@@ -61,4 +61,4 @@ end
 -- For enabling auto download sub on startup uncomment below line
 -- mp.register_event('file-loaded', control_download)
 
-mp.add_key_binding('b', 'download_subs', download_subs)
+mp.add_key_binding(nil, 'download_subs', download_subs)

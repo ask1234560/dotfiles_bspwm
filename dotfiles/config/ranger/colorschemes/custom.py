@@ -65,14 +65,8 @@ class Default(ColorScheme):
                     fg = red
                 fg += BRIGHT
             if not context.selected and (context.cut or context.copied):
-                attr |= bold
-                fg = black
-                fg += BRIGHT
-                # If the terminal doesn't support bright colors, use dim white
-                # instead of black.
-                if BRIGHT == 0:
-                    attr |= dim
-                    fg = white
+                attr |= bold | dim
+                fg = white
             if context.main_column:
                 # Doubling up with BRIGHT here causes issues because it's
                 # additive not idempotent.

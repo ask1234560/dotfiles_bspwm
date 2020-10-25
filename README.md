@@ -9,6 +9,7 @@ dotfiles
 │  ├── bspwm
 │  ├── dmenu
 │  ├── dunst
+│  ├── git
 │  ├── gtk-3.0
 │  ├── htop
 │  ├── mpv
@@ -25,7 +26,6 @@ dotfiles
 │  ├── sxiv
 │  ├── X11
 │  └── zathura
-├── gitconfig
 ├── gtkrc-2.0
 ├── icons
 │  └── Breeze-Blue
@@ -47,13 +47,13 @@ dotfiles
   * ```chsh -s $(which zsh)```
 * place [wallpapers](https://github.com/ask1234560/wallpapers) in ```~/Pictures``` for selecting wallpapers using sxiv and during startup
 
-## Installation 
+## Installation
 ```
 * cd ~/.config
 * git clone https://github.com/ask1234560/dotfiles_bspwm
 * cd dotfiles_bspwm
-* git submodule init 
-* git submodule update --recursive 
+* git submodule init
+* git submodule update --recursive
 * update submodules(dotdrop, dmenu, nvim)
    * git submodule foreach git pull origin master
 * pipenv sync
@@ -69,11 +69,11 @@ dotfiles
 * set qt theme to Adapta Nokto(kvantum, qt5ct).
 * (optional) to remove backup files
    * find ~ -regextype grep -regex '.*/*dotdropbak' -exec rm {} \;
-* for changing theme, change in alacritty, nvim, nvim quick scope pluggin(init.vim), ~/.Xresources, dmenu, dunst, polybar(reads Xresources), cursor.
-* Terminal font JetBrainsMono Nerd Font.
+* for changing theme, change in alacritty, nvim, nvim quick scope pluggin(init.vim), ~/.Xresources, dmenu, dunst, polybar(reads Xresources), cursor, mpv.
+* Terminal font nerd-fonts-jetbrains-mono, nerd-fonts-fira-code for remaining app.
 ```
-   
-## (Optional) Explicitly installed packages  
+
+## (Optional) Explicitly installed packages
 ```
 yay -S --needed abook adapta-gtk-theme alacritty alsa-firmware alsa-utils autoconf automake base bc binutils bison brave-bin broadcom-wl-dkms bspwm cronie dosfstools dunst efibootmgr exa exiv2 fakeroot ffmpegthumbnailer file findutils flex gawk gcc gettext gimp git google-cloud-sdk grep groff grub gtk-engine-murrine gzip hsetroot htop-vim-git imagemagick kvantum-qt5 libreoffice-fresh libtool linux linux-firmware linux-headers linux-zen-custom linux-zen-custom-headers lsof lynx m4 make man-db megasync-nopdfium mlocate mpv mutt-wizard-git neovim nerd-fonts-fira-code nerd-fonts-jetbrains-mono networkmanager newsboat noto-fonts npm ntfs-3g nudoku-git numlockx openresolv pacman pacman-contrib papirus-icon-theme patch pfetch-git picom-git pkgconf polybar pulseaudio pulseaudio-alsa python-pip python-pipenv python-pynvim qt5ct ranger redshift-minimal rmtrash scrot sed simple-mtpfs sncli-git subliminal-git sudo sxhkd sxiv syncthing texinfo thunar timeshift trash-cli ttf-material-design-icons-git ttf-ms-fonts ttf-roboto ttf-symbola ttf-vista-fonts ueberzug unclutter unrar virtualbox virtualbox-ext-oracle virtualbox-guest-iso weechat wget which wireguard-tools xclip xdg-user-dirs xdman xorg-server xorg-xdpyinfo xorg-xev xorg-xinit xorg-xrandr xorg-xsetroot yay-bin youtube-dl zathura zathura-pdf-poppler zsh
 ```

@@ -179,4 +179,12 @@ function find_and_add_entries()
     add_files_at(pl_current, append[-1])
 end
 
+-- Log function: log to both terminal and mpv OSD (On-Screen Display)
+function log(string, secs)
+    secs = secs or 2     -- secs defaults to 2 when the secs parameter is absent
+    mp.msg.warn(string)          -- This logs to the terminal
+    mp.osd_message(string, secs) -- This logs to mpv screen
+end
+
 mp.register_event("start-file", find_and_add_entries)
+mp.add_key_binding(nil, 'update-playlist', function() log('Playlist updating...'); find_and_add_entries() end)

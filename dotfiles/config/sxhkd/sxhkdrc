@@ -23,9 +23,11 @@ super + Tab
 # focus the next/previous node in the current desktop
 super + bracket{left,right}
     bspc node -f {next,prev}.local.!hidden.window.floating
+super + brace{left,right}
+    bspc node -f {next,prev}.local.!hidden.window
 # quit/restart bspwm
 super + alt + {q,r}
-    bspc {quit,wm -r}
+    bspc {quit,wm -r; notify-send "Bspwm: reloaded"}
 # close and kill
 super + {_,shift + }c
     bspc node -{c,k}
@@ -118,5 +120,5 @@ super + alt + {n,z}
 super + alt + {c,f,m,u,y}
     {bg-changer,brave,dmount,dumount,drecord}
 # scratchpads
-super + alt + {d,g,i,space,t}
-    scratch {dictionary,neomutt,ranger,terminal,htop}
+super + alt + {b,d,g,i,space,t}
+    scratch {newsboat,dictionary,neomutt,ranger,terminal,htop}

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-bspc rule -a Sxiv desktop=\^5 follow=on --one-shot
-sxiv -bf /home/ananthu/Pictures/wallpapers/dt/0058.jpg &
+bspc rule -a Sxiv --one-shot desktop=\^5 follow=on
+sxiv -bf "$HOME"/Pictures/wallpapers/personal/red-seems-suspicious-bro-4k-1366×768.jpg &
 sxiv_pid=$!
 /usr/local/bin/slock-base "$@"
 kill $sxiv_pid

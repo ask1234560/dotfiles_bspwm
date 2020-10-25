@@ -1,5 +1,5 @@
 #!/bin/bash
-cache="/home/ananthu/.cache/dict-output"
+cache="$XDG_CACHE_HOME/dict-output"
 
 while true
 do
@@ -15,13 +15,13 @@ do
         sed -n "/^$word$/,/-----/p" $cache | tail -n+2 | head -n-1
         [ "$#" -eq 1 ] && exit 0
     else
-        result=$(/home/ananthu/.config/scripts/dict-search.py $word)
+        result=$("$XDG_CONFIG_HOME"/scripts/dict-search.py $word)
         exit_code=$?
         if [ "$exit_code" -eq 0 ]
         then
             echo "$word" >> $cache
             echo "$result" | tee -a $cache
-            echo -e "-----\n" >> $cache 
+            echo -e "-----\n" >> $cache
             [ "$#" -eq 1 ] && exit 0
         else
             echo "Searching in Google!"

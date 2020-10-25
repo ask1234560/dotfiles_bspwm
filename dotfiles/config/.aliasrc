@@ -26,7 +26,7 @@ alias \
     tree='exa -T' \
     vpnc='sudo openvpn --config /home/ananthu/.config/vpnclients/arch.ovpn '  \
     watch='watch ' \
-    wget='wget --hsts-file ~/.cache/.wget-hsts '
+    wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts" "
 # global
 alias -g -- --help="--help | less -FXi ; true "
 

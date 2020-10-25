@@ -16,9 +16,6 @@ dotfiles:
   f_xinitrc:
     src: xinitrc
     dst: ~/.xinitrc
-  f_gitconfig:
-    src: gitconfig
-    dst: ~/.gitconfig
   d_mpv:
     src: config/mpv
     dst: ~/.config/mpv
@@ -102,13 +99,15 @@ dotfiles:
   f_muttrc:
     src: config/mutt/muttrc
     dst: ~/.config/mutt/muttrc
+  d_git:
+    src: config/git
+    dst: ~/.config/git
 profiles:
   arch:
     dotfiles:
     - f_zshrc
     - f_bashrc
     - f_xinitrc
-    - f_gitconfig
     - d_mpv
     - d_htop
     - d_newsboat
@@ -132,3 +131,4 @@ profiles:
     - f_config
     - d_x11
     - f_muttrc
+    - d_git
