@@ -43,7 +43,7 @@ then
             exit 1
     esac
     notify-send "Scratch: starting $name"
-    sleep 1
+    sleep 3
     bspc_return_nodeid "$name" /tmp/"$name"
     toggle_hidden
 else

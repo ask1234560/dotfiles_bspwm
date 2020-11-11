@@ -1,8 +1,9 @@
-https://www.archlinux.org/feeds/news/ "-Updates Arch"
-http://vault.lunduke.com/LundukeShowMP3.xml
+https://www.archlinux.org/feeds/news/ "~Arch"
+https://blackarch.org/rss.xml "~Black Arch"
+https://www.kali.org/feed/ "~Kali"
+https://goinglinux.com/mp3podcast.xml
 https://notrelated.libsyn.com/rss "~Luke Smith"
 https://smlr.us/?feed=podcast "~Sunday Morning Linux Reviews"
-https://goinglinux.com/mp3podcast.xml
+http://vault.lunduke.com/LundukeShowMP3.xml
 https://tuxdigital.com/feed/thisweekinlinux-mp3
-https://www.kali.org/feed/ "~Kali"
 https://www1.kickassanime.rs/feed/latest "~Kickass"

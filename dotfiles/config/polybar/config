@@ -19,13 +19,13 @@ underline = ${colors.fg}
 for-modules = 1
 
 [bar/main]
-width = 76%
+width = 80%
 height = 27
 
 ; radius = 13
 fixed-center = false
 offset-y = 3
-offset-x = 12%
+offset-x = 10%
 override-redirect = true
 wm-restack = bspwm
 
@@ -46,7 +46,7 @@ cursor-click = pointer
 
 ;====Module settings+======================================
 modules-left = bspwm
-modules-right = pkg volume cpu temperature memory wlan battery date
+modules-right = mail pkg volume cpu temperature memory wlan battery date
 ;==========================================================
 
 
@@ -57,7 +57,7 @@ type = internal/bspwm
 format = <label-state>
 label-focused = 󰻃
 ; label-focused-foreground = ${colors.adapta-green}
-label-focused-underline= ${colors.underline} 
+label-focused-underline= ${colors.underline}
 label-focused-padding = 1
 label-occupied = 󰧞
 label-occupied-padding = 1
@@ -74,14 +74,24 @@ label-empty-padding = 1
 
 
 ;====Right modules=========================================
-[module/pkg]
+[module/mail]
 type = custom/script
-interval = 3600
-exec = bash ~/.config/polybar/checkupdates.sh
+interval = 600
+exec = bash $HOME/.config/polybar/mailbox.sh
 format-underline = ${colors.underline}
 format-padding = 1
 format-margin = ${margin.for-modules}
-click-left = $TERMINAL -e bash ~/.config/polybar/updates.sh &
+click-left = scratch neomutt &
+
+
+[module/pkg]
+type = custom/script
+interval = 3600
+exec = bash $HOME/.config/polybar/checkupdates.sh
+format-underline = ${colors.underline}
+format-padding = 1
+format-margin = ${margin.for-modules}
+click-left = $TERMINAL -e bash $HOME/.config/polybar/updates.sh &
 
 
 [module/volume]
