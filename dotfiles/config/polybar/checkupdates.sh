@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! updates_arch=$(checkupdates 2> /dev/null | wc -l ); then
     updates_arch=0
@@ -21,3 +21,5 @@ then
 else
     echo "%{F$fg}󰊠%{F-} $updates"
 fi
+
+sleep 1h

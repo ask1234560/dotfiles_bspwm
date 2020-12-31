@@ -62,5 +62,5 @@ ext() {
   fi
 }
 weather() {
-    curl wttr.in/${1:-paravur,kollam}
+    curl "wttr.in/${1:-paravur,kollam}?2mM"
 }

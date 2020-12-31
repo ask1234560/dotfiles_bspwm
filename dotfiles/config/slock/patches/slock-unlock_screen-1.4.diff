@@ -1,0 +1,41 @@
+From ccfc4c1ab41826b4bac99e53a844ca244fcfb330 Mon Sep 17 00:00:00 2001
+From: Arif Roktim <aroktim@stuy.edu>
+Date: Wed, 25 Apr 2018 21:27:59 -0400
+Subject: [PATCH] Lock input but don't lock screen
+
+This patch keeps the screen unlocked but keeps the input locked. 
+That is, the screen is not affected by slock, but users will not
+be able to interact with the X session unless they enter the correct password.
+
+There's a lot of extraneous code that can be removed since the goal is
+for input to be locked while at the same time allowing the screen to be
+updated and viewable. But this patch just works (tm) and I don't want to
+potentially introduce bugs.
+---
+ slock.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/slock.c b/slock.c
+index d2f0886..98f5d80 100644
+--- a/slock.c
++++ b/slock.c
+@@ -254,7 +254,7 @@ lockscreen(Display *dpy, struct xrandr *rr, int screen)
+ 			ptgrab = XGrabPointer(dpy, lock->root, False,
+ 			                      ButtonPressMask | ButtonReleaseMask |
+ 			                      PointerMotionMask, GrabModeAsync,
+-			                      GrabModeAsync, None, invisible, CurrentTime);
++			                      GrabModeAsync, None, None, CurrentTime);
+ 		}
+ 		if (kbgrab != GrabSuccess) {
+ 			kbgrab = XGrabKeyboard(dpy, lock->root, True,
+@@ -263,7 +263,6 @@ lockscreen(Display *dpy, struct xrandr *rr, int screen)
+ 
+ 		/* input is grabbed: we can lock the screen */
+ 		if (ptgrab == GrabSuccess && kbgrab == GrabSuccess) {
+-			XMapRaised(dpy, lock->win);
+ 			if (rr->active)
+ 				XRRSelectInput(dpy, lock->win, RRScreenChangeNotifyMask);
+ 
+-- 
+2.17.0
+

@@ -69,9 +69,11 @@ dotfiles:
   d_gtk-3.0:
     src: config/gtk-3.0
     dst: ~/.config/gtk-3.0
+    chmod: '700'
   d_zathura:
     src: config/zathura
     dst: ~/.config/zathura
+    chmod: '700'
   d_breeze-blue:
     src: icons/Breeze-Blue
     dst: ~/.icons/Breeze-Blue

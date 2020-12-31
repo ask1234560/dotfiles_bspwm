@@ -76,17 +76,18 @@ label-empty-padding = 1
 ;====Right modules=========================================
 [module/mail]
 type = custom/script
-interval = 600
+; interval = 120
+tail = true
 exec = bash $HOME/.config/polybar/mailbox.sh
 format-underline = ${colors.underline}
 format-padding = 1
-format-margin = ${margin.for-modules}
 click-left = scratch neomutt &
 
 
 [module/pkg]
 type = custom/script
-interval = 3600
+; interval = 3600
+tail = true
 exec = bash $HOME/.config/polybar/checkupdates.sh
 format-underline = ${colors.underline}
 format-padding = 1
@@ -167,7 +168,6 @@ format-warn-underline = ${colors.underline}
 
 format-padding = 1
 format-warn-padding = 1
-format-warn-margin = ${margin.for-modules}
 
 label = %temperature-c%
 label-warn = %temperature-c%
@@ -207,8 +207,6 @@ format-disconnected = <label-disconnected>
 format-disconnected-underline = ${colors.underline}
 format-disconnected-padding = 1
 label-disconnected = 󰀝
-;format-connected-margin = ${margin.for-modules}
-;format-disconnected-margin = ${margin.for-modules}
 
 
 [module/battery]
@@ -267,5 +265,4 @@ format = <label>
 format-padding = 1
 format-underline = ${colors.underline}
 label = "%date% %time%"
-;label-margin = ${margin.for-modules}
 ;==========================================================

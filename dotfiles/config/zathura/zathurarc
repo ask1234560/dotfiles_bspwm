@@ -50,7 +50,7 @@ set default-fg                  "#93a1a1" # base1
 # set render-loading-bg           "#073642" # base02
 
 # Recolor book content's color
-set recolor                     true
+set recolor                     false
 set recolor-lightcolor          "#073642" # base02
 set recolor-darkcolor           "#93a1a1" # base1
 # set recolor-keephue             true      # keep original color

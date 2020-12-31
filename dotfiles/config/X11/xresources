@@ -21,7 +21,7 @@ Xcursor.theme: Breeze-Blue
 ! *.color7:     #BFBFBF
 ! *.color15:    #E6E6E6
 
- 
+
 ! solarized dark
 #define S_base03        #002b36
 #define S_base02        #073642

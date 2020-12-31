@@ -1,8 +1,16 @@
 #!/bin/bash
 
-bspc rule -a Sxiv --one-shot desktop=\^5 follow=on
-sxiv -bf "$HOME"/Pictures/wallpapers/personal/red-seems-suspicious-bro-4k-1366×768.jpg &
+if [ ! -e "/home/ananthu/.cache"/lockscreen_update ] || [ $(date +%a) != $(<"/home/ananthu/.cache"/lockscreen_update) ]
+then
+    convert -font "Calvin-and-Hobbes-Normal" -pointsize 60 -fill '#2e3440ff' -draw "text 1300,900 '$(date +"%A, %d %B")'" "/home/ananthu"/Pictures/wallpapers/personal/lock-wallpaper.png "/home/ananthu/.cache"/lockscreen
+    date +%a > "/home/ananthu/.cache"/lockscreen_update
+fi
+
+desktops=$(bspc wm -g)
+current_desktop=$(echo ${desktops#*U} | cut -d':' -f1)
+bspc rule -a Sxiv --one-shot desktop='^5' follow=on
+sxiv -bf "/home/ananthu/.cache"/lockscreen &
 sxiv_pid=$!
 /usr/local/bin/slock-base "$@"
 kill $sxiv_pid
-bspc desktop -f last
+bspc desktop -f $current_desktop

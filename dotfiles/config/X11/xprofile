@@ -33,7 +33,7 @@ export LESS_TERMCAP_ue=$(tput sgr0)
 # End bold, blinking, standout, underline
 export LESS_TERMCAP_me=$(tput sgr0)
 
-# sudo -A 
+# sudo -A
 export SUDO_ASKPASS="/usr/local/bin/dpass"
 
 # ranger use only user rc.conf
@@ -57,3 +57,7 @@ export NMBGIT="$XDG_DATA_HOME/notmuch/nmbug"
 
 # pfetch
 export PF_INFO="ascii os wm pkgs memory uptime palette"
+
+# zsh
+# z
+export _Z_DATA="$HOME/.config/.z"

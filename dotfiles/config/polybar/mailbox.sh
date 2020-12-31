@@ -1,6 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
-mw -Y &>/dev/null
+date -Iseconds >/tmp/mutt.log
+mw -Y >/dev/null 2>>/tmp/mutt.log
 
 unread="$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new -type f | wc -l 2>/dev/null)"
 
@@ -17,3 +18,5 @@ then
 else
     echo "%{F$fg}󰇮%{F-} $unread"
 fi
+
+sleep 3m
