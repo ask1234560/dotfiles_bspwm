@@ -21,6 +21,14 @@ window:
     columns: 147
     lines: 37
 
+  # Window position (changes require restart)
+  #
+  # Specified in number of pixels.
+  # If the position is not set, the window manager will handle the placement.
+  position:
+    x: 19
+    y: 72
+
   # Window padding (changes require restart)
   #
   # Blank space added around the window in pixels. This padding is scaled

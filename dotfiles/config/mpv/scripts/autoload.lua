@@ -22,6 +22,17 @@ function Set (t)
     return set
 end
 
+-- Log function: log to both terminal and mpv OSD (On-Screen Display)
+function log(string, secs)
+    secs = secs or 2     -- secs defaults to 2 when the secs parameter is absent
+    mp.msg.warn(string)          -- This logs to the terminal
+    mp.osd_message(string, secs) -- This logs to mpv screen
+end
+
+function sleep(n)
+  os.execute("sleep " .. tonumber(n))
+end
+
 EXTENSIONS = Set {
     'mkv', 'avi', 'mp4', 'ogv', 'webm', 'rmvb', 'flv', 'wmv', 'mpeg', 'mpg', 'm4v', '3gp',
     'mp3', 'wav', 'ogm', 'flac', 'm4a', 'wma', 'ogg', 'opus',
@@ -177,14 +188,9 @@ function find_and_add_entries()
 
     add_files_at(pl_current + 1, append[1])
     add_files_at(pl_current, append[-1])
+
+    log('Playlist updated...')
 end
 
--- Log function: log to both terminal and mpv OSD (On-Screen Display)
-function log(string, secs)
-    secs = secs or 2     -- secs defaults to 2 when the secs parameter is absent
-    mp.msg.warn(string)          -- This logs to the terminal
-    mp.osd_message(string, secs) -- This logs to mpv screen
-end
-
-mp.register_event("start-file", find_and_add_entries)
-mp.add_key_binding(nil, 'update-playlist', function() log('Playlist updating...'); find_and_add_entries() end)
+-- mp.register_event("start-file", find_and_add_entries)
+mp.add_key_binding(nil, 'update-playlist', function() log('Playlist updating...'); sleep(5); find_and_add_entries() end)
