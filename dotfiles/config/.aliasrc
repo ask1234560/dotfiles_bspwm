@@ -19,11 +19,13 @@ alias \
     nvs='sudo -E nvim ' \
     pc='pacman ' \
     pfetch="bspc rule -a Alacritty state=floating --one-shot && alacritty --hold --option window.dimensions.columns=42 window.dimensions.lines=10 -e pfetch &; disown " \
-
     rg='ranger' \
     sclip='xclip -selection c' \
     speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python - ' \
     sudo='sudo ' \
+    tds='transmission-wrap ' \
+    tra='transmission-remote -a ' \
+    trl='watch -n1 transmission-remote -l ' \
     tree='exa -T' \
     vpnc='sudo openvpn --config /home/ananthu/.config/vpnclients/arch.ovpn '  \
     watch='watch ' \

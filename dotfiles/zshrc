@@ -33,7 +33,7 @@ source ~/.config/.zplug/repos/rupa/z/z.sh
 # autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5e6d6e"
 
-# spaceship 
+# spaceship
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   dir           # Current directory section
@@ -81,8 +81,8 @@ then
     SPACESHIP_HOST_SHOW=always
 fi
 # SPACESHIP_VI_MODE_COLOR=#586e75
-# SPACESHIP_VI_MODE_INSERT=[i]  
-# SPACESHIP_VI_MODE_NORMAL=[n]  
+# SPACESHIP_VI_MODE_INSERT=[i]
+# SPACESHIP_VI_MODE_NORMAL=[n]
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -93,14 +93,14 @@ if ! zplug check --verbose; then
 fi
 
 # Then, source plugins and add commands to $PATH
-zplug load 
+zplug load
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 setopt auto_cd
 
 # Include hidden files.
-_comp_options+=(globdots)       
+_comp_options+=(globdots)
 
 # aliases
 source ~/.config/.aliasrc

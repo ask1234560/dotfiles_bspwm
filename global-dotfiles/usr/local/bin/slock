@@ -8,7 +8,7 @@ fi
 
 desktops=$(bspc wm -g)
 current_desktop=$(echo ${desktops#*O} | cut -d':' -f1)
-bspc rule -a Sxiv --one-shot desktop='^5' follow=on
+bspc rule -a Sxiv --one-shot desktop='^6' follow=on
 sxiv -bf "/home/ananthu/.cache"/lockscreen &
 sxiv_pid=$!
 /usr/local/bin/slock-base "$@"

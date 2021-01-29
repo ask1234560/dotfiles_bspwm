@@ -100,7 +100,7 @@ super + alt + {s,w}
     scrot -{_,u}z 'Screenshot_from_%F_%X.png' -e 'mv $f ~/Pictures/Screenshots/ ; sxiv ~/Pictures/Screenshots/$f'
 # brightness dec/inc
 super + {F2,F3}
-    cbacklight --{dec,inc} 5
+    brightness-notify {down,up}
 # adaptive brightness
 super + F1
     adaptive-brightness
@@ -109,10 +109,10 @@ super + {alt +,shift + }e
     redshift -P -O {3000,6500}K
 # audio raise/lower volume
 XF86Audio{RaiseVolume,LowerVolume}
-    amixer set Master 3%{+,-}
+    volume-notify {up,down}
 # audio mute
 XF86AudioMute
-    amixer set Master toggle
+    volume-notify mute
 # screen lock/suspend
 super + alt + {n,z}
     {slock,systemctl suspend}

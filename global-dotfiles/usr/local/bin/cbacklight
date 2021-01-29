@@ -134,4 +134,5 @@ if __name__ == '__main__':
 
     if not anyarg or args.get:
         for d in drivers:
-            print("{}: {:.2f}%".format(d, d.get_percentage()))
+            #  print("{}: {:.2f}%".format(d, d.get_percentage()))
+            print("{:.0f}".format(d.get_percentage()))
