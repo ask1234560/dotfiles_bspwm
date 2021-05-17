@@ -2,12 +2,11 @@
 
 if [ ! -e "/home/ananthu/.cache"/lockscreen_update ] || [ $(date +%a) != $(<"/home/ananthu/.cache"/lockscreen_update) ]
 then
-    convert -font "Calvin-and-Hobbes-Normal" -pointsize 60 -fill '#2e3440ff' -draw "text 1300,900 '$(date +"%A, %d %B")'" "/home/ananthu"/Pictures/wallpapers/personal/lock-wallpaper.png "/home/ananthu/.cache"/lockscreen
+    convert -blur 0x4 -font "Calvin-and-Hobbes-Normal" -pointsize 60 -fill '#2e3440ff' -draw "text 1300,900 '$(date +"%A, %d %B")'" "/home/ananthu"/Pictures/wallpapers/personal/lock-wallpaper.png "/home/ananthu/.cache"/lockscreen
     date +%a > "/home/ananthu/.cache"/lockscreen_update
 fi
 
-desktops=$(bspc wm -g)
-current_desktop=$(echo ${desktops#*O} | cut -d':' -f1)
+current_desktop=$(bspc query -D -d focused --names)
 bspc rule -a Sxiv --one-shot desktop='^6' follow=on
 sxiv -bf "/home/ananthu/.cache"/lockscreen &
 sxiv_pid=$!

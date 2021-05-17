@@ -1,43 +1,40 @@
 # dotfiles_bspwm
 ```
-dotfiles
+dotfiles/
 ├── bashrc
 ├── config
-│  ├── .aliasrc
-│  ├── .zplug
-│  ├── alacritty
-│  ├── bspwm
-│  ├── dmenu
-│  ├── dunst
-│  ├── git
-│  ├── gtk-3.0
-│  ├── htop
-│  ├── mpv
-│  ├── mutt
-│  ├── newsboat
-│  ├── nvim
-│  ├── picom
-│  ├── polybar
-│  ├── ranger
-│  ├── scripts
-│  ├── simplenote
-│  ├── slock
-│  ├── sxhkd
-│  ├── sxiv
-│  ├── X11
-│  └── zathura
+│   ├── alacritty
+│   ├── .aliasrc
+│   ├── bspwm
+│   ├── dmenu
+│   ├── dunst
+│   ├── git
+│   ├── gtk-3.0
+│   ├── htop
+│   ├── mpv
+│   ├── mutt
+│   ├── newsboat
+│   ├── nvim
+│   ├── picom
+│   ├── polybar
+│   ├── ranger
+│   ├── scripts
+│   ├── simplenote
+│   ├── slock
+│   ├── sxhkd
+│   ├── sxiv
+│   ├── X11
+│   ├── yay
+│   ├── zathura
+│   └── .zplug
 ├── gtkrc-2.0
 ├── icons
-│  └── Breeze-Blue
+│   └── Breeze-Blue
 ├── local
-│  └── share
+│   └── share
 ├── xinitrc
 └── zshrc
 ```
-
-## Screenshots
-<img src="Screenshots/result_new5.png" width=1000px>
-
 
 ## Requirements
 * working arch linux with bspwm
@@ -70,10 +67,13 @@ dotfiles
 * (optional) to remove backup files
    * find ~ -regextype grep -regex '.*/*dotdropbak' -exec rm {} \;
 * for changing theme, change in alacritty, nvim, nvim quick scope pluggin(init.vim), ~/.Xresources, dmenu, dunst, polybar(reads Xresources), cursor, mpv.
-* Terminal font nerd-fonts-jetbrains-mono, nerd-fonts-fira-code for remaining app.
+* Terminal font nerd-fonts-source-code-pro, nerd-fonts-fira-code for remaining app.
 ```
 
 ## (Optional) Explicitly installed packages
 ```
-yay -S --needed abook adapta-gtk-theme alacritty alsa-firmware alsa-utils autoconf automake base bc binutils bison brave-bin broadcom-wl-dkms bspwm cronie dosfstools dunst efibootmgr exa exiv2 fakeroot ffmpegthumbnailer file findutils flex gawk gcc gettext gimp git google-cloud-sdk grep groff grub gtk-engine-murrine gzip hsetroot htop-vim-git imagemagick kvantum-qt5 libreoffice-fresh libtool linux linux-firmware linux-headers linux-zen-custom linux-zen-custom-headers lsof lynx m4 make man-db megasync-nopdfium mlocate mpv mutt-wizard-git neovim nerd-fonts-fira-code nerd-fonts-jetbrains-mono networkmanager newsboat noto-fonts npm ntfs-3g nudoku-git numlockx openresolv pacman pacman-contrib papirus-icon-theme patch pfetch-git picom-git pkgconf polybar pulseaudio pulseaudio-alsa python-pip python-pipenv python-pynvim qt5ct ranger redshift-minimal rmtrash scrot sed simple-mtpfs sncli-git subliminal-git sudo sxhkd sxiv syncthing texinfo thunar timeshift trash-cli ttf-material-design-icons-git ttf-ms-fonts ttf-roboto ttf-symbola ttf-vista-fonts ueberzug unclutter unrar virtualbox virtualbox-ext-oracle virtualbox-guest-iso weechat wget which wireguard-tools xclip xdg-user-dirs xdman xorg-server xorg-xdpyinfo xorg-xev xorg-xinit xorg-xrandr xorg-xsetroot yay-bin youtube-dl zathura zathura-pdf-poppler zsh
+yay -S --needed abook adapta-gtk-theme alacritty alsa-firmware alsa-utils aspell aspell-en autoconf automake base bc binutils bison brave-bin broadcom-wl-dkms bspwm cronie dosfstools dunst efibootmgr exa exiv2 fakeroot ffmpegthumbnailer file findutils flex gawk gcc gettext gimp git gnome-calculator grep groff grub gtk-engine-murrine gzip hsetroot htop-vim-git imagemagick jdk-openjdk kvantum-qt5 libreoffice-fresh libtool linux linux-firmware linux-headers linux-zen-custom linux-zen-custom-headers lynx m4 make man-db megasync-nopdfium mpv mutt-wizard-git neovim nerd-fonts-fira-code nerd-fonts-source-code-pro networkmanager newsboat noto-fonts npm ntfs-3g nudoku-git numlockx openresolv pacman pacman-contrib papirus-icon-theme patch pfetch-git picom-git pkgconf polybar postgresql pulseaudio pulseaudio-alsa python-pipenv python-pynvim python38 qt5ct ranger redshift-minimal rmtrash scrot sed simple-mtpfs sncli-git subliminal sudo sxhkd sxiv syncthing telegram-desktop texinfo thunar timeshift transmission-cli trash-cli ttf-material-design-icons-git ttf-ms-fonts ttf-roboto ttf-symbola ttf-vista-fonts ueberzug unclutter unrar virtualbox virtualbox-ext-oracle virtualbox-guest-iso weechat wget which wireguard-tools xclip xdg-user-dirs xorg-server xorg-xdpyinfo xorg-xev xorg-xinit xorg-xrandr xorg-xsetroot yay-bin youtube-dl zathura zathura-pdf-poppler zip zsh
 ```
+
+## Screenshots
+<img src="Screenshots/result_new6.png" width=1000px>

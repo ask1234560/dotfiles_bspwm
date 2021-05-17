@@ -4,8 +4,12 @@ config:
   dotpath: dotfiles
   instignore:
   - '*/README.md'
+  - '*/node_modules'
+  - '*/.git'
   upignore:
   - '*/README.md'
+  - '*/node_modules'
+  - '*/.git'
 dotfiles:
   f_zshrc:
     src: zshrc
@@ -104,6 +108,9 @@ dotfiles:
   d_git:
     src: config/git
     dst: ~/.config/git
+  d_yay:
+    src: config/yay
+    dst: ~/.config/yay
 profiles:
   arch:
     dotfiles:
@@ -134,3 +141,4 @@ profiles:
     - d_x11
     - f_muttrc
     - d_git
+    - d_yay

@@ -10,7 +10,7 @@ touch "$cache"
 # cleaning
 while read cmd
 do
-    command -v ${cmd%% *} &>/dev/null || sed -i "/$cmd/d" $cache
+    command -v ${cmd%;} &>/dev/null || sed -i "/$cmd/d" $cache
 done < <(sort -u $cache)
 
 most_used=$(sort "$cache" | uniq -c | sort -rh | sed 's/\s*//' | cut -d' ' -f2-)

@@ -17,6 +17,7 @@ alias \
     nb='newsboat ' \
     nv='nvim ' \
     nvs='sudo -E nvim ' \
+    pastebin="curl -F 'f:1=<-' ix.io " \
     pc='pacman ' \
     pfetch="bspc rule -a Alacritty state=floating --one-shot && alacritty --hold --option window.dimensions.columns=42 window.dimensions.lines=10 -e pfetch &; disown " \
     rg='ranger' \
