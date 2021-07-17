@@ -115,7 +115,7 @@ XF86AudioMute
     volume-notify mute
 # screen lock/suspend
 super + alt + {n,z}
-    {slock,systemctl suspend}
+    {slock-wrapper,systemctl suspend}
 # commands: background change/brave/mount/umount using dmenu
 super + alt + {c,f,m,u,y}
     {bg-changer,brave,dmount,dumount,drecord}

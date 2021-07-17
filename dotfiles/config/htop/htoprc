@@ -1,7 +1,7 @@
 # Beware! This file is rewritten by htop when settings are changed in the interface.
 # The parser is also very primitive, and not human-friendly.
 fields=0 48 17 18 2 50 46 47 39 49 1
-sort_key=46
+sort_key=47
 sort_direction=-1
 tree_sort_key=0
 tree_sort_direction=1
@@ -9,8 +9,9 @@ hide_kernel_threads=1
 hide_userland_threads=1
 shadow_other_users=0
 show_thread_names=0
-show_program_path=1
+show_program_path=0
 highlight_base_name=1
+highlight_deleted_exe=1
 highlight_megabytes=0
 highlight_threads=1
 highlight_changes=0
@@ -18,7 +19,7 @@ highlight_changes_delay_secs=5
 find_comm_in_cmdline=1
 strip_exe_from_cmdline=1
 show_merged_command=0
-tree_view=0
+tree_view=1
 tree_view_always_by_pid=0
 all_branches_collapsed=0
 header_margin=1

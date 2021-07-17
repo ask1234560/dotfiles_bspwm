@@ -111,6 +111,12 @@ dotfiles:
   d_yay:
     src: config/yay
     dst: ~/.config/yay
+  d_kvantum:
+    src: config/Kvantum
+    dst: ~/.config/Kvantum
+  d_qt5ct:
+    src: config/qt5ct
+    dst: ~/.config/qt5ct
 profiles:
   arch:
     dotfiles:
@@ -142,3 +148,5 @@ profiles:
     - f_muttrc
     - d_git
     - d_yay
+    - d_kvantum
+    - d_qt5ct
