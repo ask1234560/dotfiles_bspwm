@@ -1,23 +1,30 @@
 #!/bin/bash
 
 name="$1"
+filename=/tmp/"$1"
 
-bspc_return_nodeid() {
-    # $1 - query item, $2 - location; All windows should be floating
-    for i in $(bspc query -N -n .floating)
+bspc_write_nodeid() {
+    for id in $(bspc query -d focused -N -n .floating.sticky)
     do
-        bspc query  --node $i -T | grep -q $1 && echo $i > $2 && break
+        bspc query --node $id -T | grep -q $name && echo $id > $filename && break
+    done
+}
+
+hide_all_except_current(){
+    for id in $(bspc query -d focused -N -n .floating.sticky)
+    do
+        bspc query --node $id -T | grep -qv $name && bspc node $id --flag hidden=on
     done
 }
 
 toggle_hidden() {
-    [ -e "/tmp/$name" ] || exit 1
-    id=$(cat /tmp/"$name")
-    bspc node $id --flag hidden
-    bspc node -f $id
+    [ -e "$filename" ] || exit 1
+    hide_all_except_current
+    id=$(<$filename)
+    bspc node $id --flag hidden -f
 }
 
-if ! ps -x | grep -q "[c]lass=$name"
+if ! ps -ef | grep -q "[c]lass=$name"
 then
     bspc rule -a "$name" --one-shot state=floating sticky=on hidden=on center=on
     case "$name" in
@@ -44,7 +51,7 @@ then
     esac
     notify-send "Scratch: starting $name"
     sleep 3
-    bspc_return_nodeid "$name" /tmp/"$name"
+    bspc_write_nodeid
     toggle_hidden
 else
     toggle_hidden

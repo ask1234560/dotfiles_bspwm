@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Usage:
 # `$0`: Ask for recording type via dmenu
@@ -15,7 +15,7 @@
 #     }
 
 killrecording() {
-	recpid="$(cat /tmp/recordingpid)"
+	recpid="$(</tmp/recordingpid)"
 	# kill with SIGTERM, allowing finishing touches.
 	kill -15 "$recpid"
 	rm -f /tmp/recordingpid

@@ -31,7 +31,7 @@ do
                 notify-send "Sxiv: exact wall"
                 ;;
         "y")
-                echo -n "$file" | xclip -selection clipboard
+                xclip -selection clipboard -t image/png "$file"
                 notify-send "Sxiv: copied to clipboard"
                 ;;
         esac

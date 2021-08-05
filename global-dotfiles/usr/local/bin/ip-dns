@@ -14,4 +14,4 @@ echo -e "${BLUE}dns ${RED}==>"
 echo -e "${GREEN}$(curl -sL https://edns.ip-api.com/json)\n"
 
 echo -e "${BLUE}resolv.conf ${RED}==>"
-echo -e "${GREEN}$(cat /etc/resolv.conf)\n"
+echo -e "${GREEN}$(</etc/resolv.conf)\n"

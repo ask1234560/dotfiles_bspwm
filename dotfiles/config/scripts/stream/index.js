@@ -16,7 +16,7 @@ const fs = require("fs");
 // });
 app.get("/", function (req, res) {
     const path =
-        "../Desktop/MG_THE_PRIEST_2021_Malayalam_HDRip_720p_x264_DD+5_1_192Kbps_&_AAC.mkv";
+        "/home/ananthu/Public/159/Voyagers.2021.720p.BluRay.x264.800MB-Pahe.in.mkv";
     const stat = fs.statSync(path);
     const fileSize = stat.size;
     const range = req.headers.range;
