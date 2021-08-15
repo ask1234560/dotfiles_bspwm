@@ -18,5 +18,3 @@ then
 else
     echo "%{F$fg}󰇮%{F-} $unread"
 fi
-
-sleep 3m

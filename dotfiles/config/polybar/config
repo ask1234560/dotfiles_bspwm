@@ -74,7 +74,7 @@ label-empty-padding = 1
 ;====Right modules=========================================
 [module/mail]
 type = custom/script
-; interval = 120
+interval = 180
 tail = true
 exec = bash $HOME/.config/polybar/mailbox.sh
 ;format-underline = ${colors.underline}
@@ -84,7 +84,7 @@ click-left = scratch neomutt &
 
 [module/pkg]
 type = custom/script
-; interval = 3600
+interval = 3600
 tail = true
 exec = bash $HOME/.config/polybar/checkupdates.sh
 ;format-underline = ${colors.underline}
@@ -256,7 +256,7 @@ animation-charging-framerate = 750
 
 [module/date]
 type = internal/date
-interval = 10
+interval = 1
 date = "󰃰 %a %d"
 time = "%H:%M"
 format = <label>

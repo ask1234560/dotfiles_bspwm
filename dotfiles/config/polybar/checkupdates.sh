@@ -21,5 +21,3 @@ then
 else
     echo "%{F$fg}󰊠%{F-} $updates"
 fi
-
-sleep 1h
