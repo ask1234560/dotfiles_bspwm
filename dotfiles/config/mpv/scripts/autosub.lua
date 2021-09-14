@@ -60,5 +60,4 @@ end
 
 -- For enabling auto download sub on startup uncomment below line
 -- mp.register_event('file-loaded', control_download)
-
 mp.add_key_binding(nil, 'download_subs', download_subs)

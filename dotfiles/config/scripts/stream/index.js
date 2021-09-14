@@ -5,8 +5,11 @@ const fs = require("fs");
 const { spawn, spawnSync } = require("child_process");
 
 const movie_path =
-    "/home/ananthu/Public/159/[MM] November Story S01E01 Tamil 1080p HEVC.mkv";
+    "/home/ananthu/Downloads/mega/m1/Dont.Breathe.2.2021.720p.WEB-HD.x264.700MB-Pahe.in.mkv";
 const xxx_path = "/home/ananthu/.local/share/x.mp4";
+const series_path =
+    "/home/ananthu/Downloads/mega/m1/american.horror.story.s01.720p.bluray.x264-pahe.in/american.horror.story.s01eXX.720p.bluray.x264-pahe.in.mkv";
+let current_ep = 1;
 let job_completed = true;
 
 app.use(express.json());
@@ -54,6 +57,16 @@ app.get("/m", function (req, res) {
 
 app.get("/x", function (req, res) {
     playVideos(req, res, xxx_path);
+});
+
+app.get("/s", function (req, res) {
+    var current_ep_path;
+    if (String(current_ep).length === 2) {
+        current_ep_path = series_path.replace("XX", current_ep);
+    } else {
+        current_ep_path = series_path.replace("XX", "0" + current_ep);
+    }
+    playVideos(req, res, current_ep_path);
 });
 
 app.post("/job/start", function (req, res) {
@@ -109,6 +122,46 @@ app.get("/job/status", function (req, res) {
             status: "job in progress",
         });
     }
+});
+
+app.post("/series/ep/increment", function (req, res) {
+    current_ep += 1;
+    res.json({
+        status: "series episode incremented",
+    });
+});
+
+app.post("/series/ep/decrement", function (req, res) {
+    if (current_ep > 1) {
+        current_ep -= 1;
+        res.json({
+            status: "series episode decremented",
+        });
+    } else {
+        res.json({
+            status: "invalid request",
+        });
+    }
+});
+
+app.post("/series/ep/set", function (req, res) {
+    var ep = req.body["s-ep"];
+    if (ep) {
+        current_ep = Number(ep);
+        res.json({
+            status: "current series episode updated",
+        });
+    } else {
+        res.json({
+            status: "invalid request",
+        });
+    }
+});
+
+app.get("/series/ep/status", function (req, res) {
+    res.json({
+        status: `current series episode ${current_ep}`,
+    });
 });
 
 app.get("*", function (req, res) {

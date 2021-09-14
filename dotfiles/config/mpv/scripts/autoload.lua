@@ -193,4 +193,4 @@ function find_and_add_entries()
 end
 
 -- mp.register_event("start-file", find_and_add_entries)
-mp.add_key_binding(nil, 'update-playlist', function() log('Playlist updating...'); sleep(5); find_and_add_entries() end)
+mp.add_key_binding(nil, 'update-playlist', function() log('Playlist updating...'); sleep(3); find_and_add_entries() end)
