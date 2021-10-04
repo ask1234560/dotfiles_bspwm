@@ -1,7 +1,5 @@
 -- Requires Subliminal version 1.0 or newer
--- Make sure to specify your system's Subliminal location below:
-subliminal = '/usr/bin/subliminal'
-language = 'en'
+downloadsubs_exe = '/usr/local/bin/downloadsubs'
 local utils = require 'mp.utils'
 
 -- Log function: log to both terminal and mpv OSD (On-Screen Display)
@@ -22,9 +20,9 @@ function download_subs()
     conn_result = utils.subprocess(conn_table)
 
     if string.find(conn_result.stdout, 'packets transmitted') then
-        table = { args = {subliminal, 'download', '-s', '-l', language, '-d', save_dir, filename} }
+        table = { args = { downloadsubs_exe, filename } }
         result = utils.subprocess(table)
-        if string.find(result.stdout, 'Downloaded 1 subtitle') then
+        if string.find(result.stdout, 'Downloaded') then
             -- Subtitles are downloaded successfully, so rescan to activate them:
             mp.commandv('rescan_external_files')
             log('Subtitles ready!')

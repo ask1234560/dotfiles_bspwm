@@ -98,6 +98,8 @@ end
 local autoloaded = nil
 
 function find_and_add_entries()
+    -- clear the playlist
+    mp.commandv("playlist-clear")
     local path = mp.get_property("path", "")
     local dir, filename = utils.split_path(path)
     msg.trace(("dir: %s, filename: %s"):format(dir, filename))

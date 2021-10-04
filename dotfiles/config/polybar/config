@@ -76,7 +76,7 @@ label-empty-padding = 1
 type = custom/script
 interval = 180
 tail = true
-exec = bash $HOME/.config/polybar/mailbox.sh
+exec = bash $XDG_CONFIG_HOME/polybar/mailbox.sh
 ;format-underline = ${colors.underline}
 ;format-padding = 1
 click-left = scratch neomutt &
@@ -86,11 +86,11 @@ click-left = scratch neomutt &
 type = custom/script
 interval = 3600
 tail = true
-exec = bash $HOME/.config/polybar/checkupdates.sh
+exec = bash $XDG_CONFIG_HOME/polybar/checkupdates.sh
 ;format-underline = ${colors.underline}
 ;format-padding = 1
 ;format-margin = ${margin.for-modules}
-click-left = $TERMINAL -e bash $HOME/.config/polybar/updates.sh &
+click-left = $TERMINAL -e bash $XDG_CONFIG_HOME/polybar/updates.sh &
 
 
 [module/volume]

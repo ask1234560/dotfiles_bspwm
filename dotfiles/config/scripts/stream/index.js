@@ -5,10 +5,10 @@ const fs = require("fs");
 const { spawn, spawnSync } = require("child_process");
 
 const movie_path =
-    "/home/ananthu/Downloads/mega/m1/Dont.Breathe.2.2021.720p.WEB-HD.x264.700MB-Pahe.in.mkv";
+    "/home/ananthu/Public/159/Andhaghaaram.2020.720p.NF.WEB-DL.x264-Pahe.in.mkv";
 const xxx_path = "/home/ananthu/.local/share/x.mp4";
 const series_path =
-    "/home/ananthu/Downloads/mega/m1/american.horror.story.s01.720p.bluray.x264-pahe.in/american.horror.story.s01eXX.720p.bluray.x264-pahe.in.mkv";
+    "/home/ananthu/Downloads/mega/m1/American Horror Story S03 720p BrRip x264-Pahe.in/American Horror Story S03 720p BrRip x264-Pahe.in/american.horror.story.03eXX.720p.brrip.x264-pahe.in.mkv";
 let current_ep = 1;
 let job_completed = true;
 
