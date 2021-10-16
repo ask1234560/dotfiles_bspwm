@@ -4,14 +4,14 @@ from os import getenv
 import re
 
 
-class z(Command):
-    """:z
+class x(Command):
+    """:x
     Uses .z file to set the current directory.
     """
     def execute(self):
 
         # location of .z file
-        z_loc = getenv("_Z_DATA") or getenv("HOME")+"/.z"
+        z_loc = getenv("_Z_DATA") or getenv("ZSHZ_DATA") or getenv("HOME")+"/.z"
         with open(z_loc,"r") as fobj:
             flists = fobj.readlines()
 

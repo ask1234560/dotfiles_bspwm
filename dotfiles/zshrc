@@ -3,12 +3,9 @@ HISTSIZE=10000
 SAVEHIST=$HISTSIZE
 HISTFILE=~/.cache/zsh/history
 
-setopt histexpiredupsfirst          # Expire duplicate entries first when trimming history.
-setopt histignorespace              # ignore line with leading space
-setopt incappendhistory             # append history at same time, not at shell exits
-setopt nobanghist                   # don't expand !
-setopt nobeep                       # nobeep in tty
-setopt sharehistory                 # share history between sessions
+setopt histexpiredupsfirst histignorespace nobanghist nobeep
+# setopt sharehistory                 # share history between sessions
+# setopt incappendhistory             # append history at same time, not at shell exits
 
 # startx
 if [ "$(tty)" = "/dev/tty1" ]
@@ -24,11 +21,11 @@ source ~/.config/.zplug/init.zsh
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
-zplug "rupa/z"
+zplug "agkozak/zsh-z"
 
 # z
-export _Z_DATA="$HOME/.config/.z"
-source ~/.config/.zplug/repos/rupa/z/z.sh
+export ZSHZ_DATA="$HOME/.config/.z"
+export ZSHZ_SRC="$HOME/.config/.zplug/repos/agkozak/zsh-z/zsh-z.plugin.zsh"
 
 # autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5e6d6e"
