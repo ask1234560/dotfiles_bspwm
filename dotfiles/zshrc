@@ -21,11 +21,11 @@ source ~/.config/.zplug/init.zsh
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
-zplug "agkozak/zsh-z"
+zplug "rupa/z"
 
 # z
-export ZSHZ_DATA="$HOME/.config/.z"
-export ZSHZ_SRC="$HOME/.config/.zplug/repos/agkozak/zsh-z/zsh-z.plugin.zsh"
+export _Z_DATA="$HOME/.config/.z"
+export _Z_SRC="$HOME/.config/.zplug/repos/rupa/z/z.sh"
 
 # autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5e6d6e"
@@ -104,6 +104,8 @@ source ~/.config/.aliasrc
 source ~/.config/.zplug/repos/custom/git-aliases.zsh
 # load keybinds
 source ~/.config/.zplug/repos/custom/key-bindings.zsh
+# z
+source $_Z_SRC
 
 # vi mode
 # spaceship_vi_mode_enable

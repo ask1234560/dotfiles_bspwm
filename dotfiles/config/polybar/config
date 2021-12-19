@@ -74,7 +74,7 @@ label-empty-padding = 1
 ;====Right modules=========================================
 [module/mail]
 type = custom/script
-interval = 180
+interval = 10
 tail = true
 exec = bash $XDG_CONFIG_HOME/polybar/mailbox.sh
 ;format-underline = ${colors.underline}

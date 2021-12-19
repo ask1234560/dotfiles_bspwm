@@ -92,7 +92,7 @@ super + ctrl + {_,shift} + space
 # screenshot win/full/region screen
 super + alt + {s,w,a}
     xdotool mousemove_relative 1 0; \
-    scrot -{_,u,fs}z --line style=solid,width=2,color='#859900' 'Screenshot_from_%F_%X.png' -e 'mv $f ~/Pictures/Screenshots/ && sxiv ~/Pictures/Screenshots/$f'
+    scrot -z{_,u,fs} --line style=solid,width=2,color='#859900' 'Screenshot_from_%F_%X.png' -e 'mv $f ~/Pictures/Screenshots/ && sxiv ~/Pictures/Screenshots/$f'
 # brightness dec/inc
 super + {F2,F3}
     brightness-notify {down,up}
@@ -117,3 +117,8 @@ super + alt + {c,f,m,u,y}
 # scratchpads
 super + alt + {b,d,g,i,space,t}
     scratch {newsboat,dictionary,neomutt,ranger,terminal,htop}
+# dunst
+ctrl + {_, shift} + space
+    dunstctl {close,close-all}
+ctrl + grave
+    dunstctl history-pop
