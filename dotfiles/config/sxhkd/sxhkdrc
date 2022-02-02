@@ -17,7 +17,7 @@ super + Escape
 #
 # focus the last node/desktop
 super + grave
-    bspc desktop -f last.occupied
+    bspc desktop -f last
 super + Tab
     bspc node -f last.local
 # focus the next/previous node in the current desktop

@@ -3,7 +3,7 @@
 
 username=$OPENSUBTITLES_username
 password=$OPENSUBTITLES_password
-filename=$1
+filename="$1"
 lan='en'
 
-subliminal --opensubtitles $username $password download -l $lan $filename
+subliminal --opensubtitles $username $password download -l $lan "$filename"
