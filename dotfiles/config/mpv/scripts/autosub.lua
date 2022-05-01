@@ -3,14 +3,14 @@ downloadsubs_exe = '/usr/local/bin/downloadsubs'
 local utils = require 'mp.utils'
 
 -- Log function: log to both terminal and mpv OSD (On-Screen Display)
-function log(string, secs)
-    secs = secs or 2     -- secs defaults to 2 when the secs parameter is absent
+function log(string)
+    secs = 3     -- secs defaults to 2 when the secs parameter is absent
     mp.msg.warn(string)          -- This logs to the terminal
     mp.osd_message(string, secs) -- This logs to mpv screen
 end
 
 function download_subs()
-    log('Searching subtitles...', 10)
+    log('Searching subtitles...')
 
     path = mp.get_property('path')
     filename = mp.get_property('filename')
@@ -22,15 +22,15 @@ function download_subs()
     if string.find(conn_result.stdout, 'packets transmitted') then
         table = { args = { downloadsubs_exe, filename } }
         result = utils.subprocess(table)
-        if string.find(result.stdout, 'Downloaded') then
+        if string.find(result.stdout, 'Downloaded 1 subtitle') then
             -- Subtitles are downloaded successfully, so rescan to activate them:
             mp.commandv('rescan_external_files')
             log('Subtitles ready!')
         else
-            log('No subtitles found', 3)
+            log('No subtitles found')
         end
     else
-        log('Connection not available', 3)
+        log('Connection not available')
     end
 
 end

@@ -5,15 +5,12 @@ config:
   instignore:
   - '*/sudoers'
   - '*/profile'
-  - '*/mirrorlist'
   upignore:
   - '*/sudoers'
   - '*/profile'
-  - '*/mirrorlist'
   cmpignore:
   - '*/sudoers'
   - '*/profile'
-  - '*/mirrorlist'
 dotfiles:
   f_pacman.conf:
     src: etc/pacman.conf
@@ -51,9 +48,6 @@ dotfiles:
   f_slock@.service:
     src: etc/systemd/system/slock@.service
     dst: /etc/systemd/system/slock@.service
-  f_mirrorlist:
-    src: etc/pacman.d/mirrorlist
-    dst: /etc/pacman.d/mirrorlist
   f_83-gamingkeyboard.rules:
     src: etc/udev/rules.d/83-gamingkeyboard.rules
     dst: /etc/udev/rules.d/83-gamingkeyboard.rules
@@ -73,6 +67,5 @@ profiles:
     - f__dotdrop.sh-completion.zsh
     - f_issue
     - f_slock@.service
-    - f_mirrorlist
     - f_83-gamingkeyboard.rules
     - f_mutt-wizard.muttrc

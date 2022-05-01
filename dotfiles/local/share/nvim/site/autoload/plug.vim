@@ -242,6 +242,8 @@ function! plug#begin(...)
     let home = s:path(s:plug_fnamemodify(s:plug_expand(a:1), ':p'))
   elseif exists('g:plug_home')
     let home = s:path(g:plug_home)
+  elseif has('nvim')
+    let home = stdpath('data') . '/plugged'
   elseif !empty(&rtp)
     let home = s:path(split(&rtp, ',')[0]) . '/plugged'
   else
@@ -350,7 +352,7 @@ function! plug#end()
   endif
   let lod = { 'ft': {}, 'map': {}, 'cmd': {} }
 
-  if exists('g:did_load_filetypes')
+  if get(g:, 'did_load_filetypes', 0)
     filetype off
   endif
   for name in g:plugs_order
@@ -2764,9 +2766,9 @@ function! s:snapshot(force, ...) abort
   1
   let anchor = line('$') - 3
   let names = sort(keys(filter(copy(g:plugs),
-        \'has_key(v:val, "uri") && !has_key(v:val, "commit") && isdirectory(v:val.dir)')))
+        \'has_key(v:val, "uri") && isdirectory(v:val.dir)')))
   for name in reverse(names)
-    let sha = s:git_revision(g:plugs[name].dir)
+    let sha = has_key(g:plugs[name], 'commit') ? g:plugs[name].commit : s:git_revision(g:plugs[name].dir)
     if !empty(sha)
       call append(anchor, printf("silent! let g:plugs['%s'].commit = '%s'", name, sha))
       redraw
