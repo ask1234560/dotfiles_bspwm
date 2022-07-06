@@ -117,6 +117,9 @@ dotfiles:
   d_qt5ct:
     src: config/qt5ct
     dst: ~/.config/qt5ct
+  f_mailcap:
+    src: config/mutt/mailcap
+    dst: ~/.config/mutt/mailcap
 profiles:
   arch:
     dotfiles:
@@ -150,3 +153,4 @@ profiles:
     - d_yay
     - d_kvantum
     - d_qt5ct
+    - f_mailcap

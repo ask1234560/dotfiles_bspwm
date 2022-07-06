@@ -1,0 +1,2 @@
+application/octet-stream; /usr/lib/mutt-wizard/openfile %s ;
+application/*; /usr/lib/mutt-wizard/openfile %s ;
