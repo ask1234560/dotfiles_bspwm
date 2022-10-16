@@ -1,36 +1,38 @@
 # dotfiles_bspwm
 ```
-dotfiles/
+dotfiles
 ├── bashrc
 ├── config
-│   ├── alacritty
-│   ├── bspwm
-│   ├── dmenu
-│   ├── dunst
-│   ├── git
-│   ├── gtk-3.0
-│   ├── htop
-│   ├── Kvantum
-│   ├── mpv
-│   ├── mutt
-│   ├── newsboat
-│   ├── nvim
-│   ├── picom
-│   ├── polybar
-│   ├── qt5ct
-│   ├── ranger
-│   ├── scripts
-│   ├── slock
-│   ├── sxhkd
-│   ├── sxiv
-│   ├── X11
-│   ├── yay
-│   └── zathura
+│  ├── .aliasrc
+│  ├── .zplug
+│  ├── alacritty
+│  ├── bspwm
+│  ├── dmenu
+│  ├── dunst
+│  ├── git
+│  ├── gtk-3.0
+│  ├── htop
+│  ├── Kvantum
+│  ├── mpv
+│  ├── mutt
+│  ├── newsboat
+│  ├── nvim
+│  ├── picom
+│  ├── polybar
+│  ├── qt5ct
+│  ├── ranger
+│  ├── scripts
+│  ├── slock
+│  ├── sxhkd
+│  ├── sxiv
+│  ├── X11
+│  ├── yay
+│  └── zathura
 ├── gtkrc-2.0
 ├── icons
-│   └── Breeze-Blue
+│  └── Breeze-Blue
 ├── local
-│   └── share
+│  └── share
 ├── xinitrc
 └── zshrc
 ```
