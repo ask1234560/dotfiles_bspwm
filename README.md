@@ -4,7 +4,6 @@ dotfiles/
 ├── bashrc
 ├── config
 │   ├── alacritty
-│   ├── .aliasrc
 │   ├── bspwm
 │   ├── dmenu
 │   ├── dunst
@@ -21,14 +20,12 @@ dotfiles/
 │   ├── qt5ct
 │   ├── ranger
 │   ├── scripts
-│   ├── simplenote
 │   ├── slock
 │   ├── sxhkd
 │   ├── sxiv
 │   ├── X11
 │   ├── yay
-│   ├── zathura
-│   └── .zplug
+│   └── zathura
 ├── gtkrc-2.0
 ├── icons
 │   └── Breeze-Blue
@@ -76,7 +73,7 @@ dotfiles/
 
 ## (Optional) Explicitly installed packages
 ```
-abook adapta-gtk-theme alacritty alsa-firmware alsa-utils aspell aspell-en autoconf automake autopep8 base binutils bison brave-bin broadcom-wl-dkms bspwm cpupower-gui cronie dosfstools dunst efibootmgr exa exiv2 fakeroot ffmpegthumbnailer file findutils flex gawk gcc gettext gimp git gnome-calculator-gtk3 grep groff grub gtk-engine-murrine gzip hsetroot htop-vim-git imagemagick inetutils kvantum libreoffice-fresh libtool linux-firmware linux-zen linux-zen-headers lsof lynx m4 make man-db megasync-bin mpv mutt-wizard-git neovim nerd-fonts-fira-code nerd-fonts-source-code-pro networkmanager newsboat noto-fonts npm ntfs-3g numlockx openresolv p7zip pacman pacman-contrib papirus-icon-theme patch pfetch-git picom-git pkgconf polybar pulseaudio pulseaudio-alsa python-pip python-pynvim python38 qt5ct ranger redshift-minimal rmtrash scrot sed simple-mtpfs subliminal-git sudo sxhkd sxiv syncthing telegram-desktop texinfo thunar timeshift tor-browser transmission-cli trash-cli ttf-material-design-icons-git ttf-ms-fonts ttf-roboto ttf-symbola ttf-vista-fonts ueberzug unclutter unrar unzip virtualbox virtualbox-ext-oracle virtualbox-guest-iso weechat wget which xclip xdg-user-dirs xdotool xf86-video-intel xorg-server xorg-xdpyinfo xorg-xev xorg-xinit xorg-xrandr xorg-xsetroot yay-bin youtube-dl zathura zathura-pdf-poppler zip zsh
+abook adapta-gtk-theme alacritty alsa-firmware alsa-utils aspell aspell-en autoconf automake autopep8 base binutils bison brave-bin broadcom-wl-dkms bspwm cpupower-gui cronie dosfstools dunst efibootmgr exa exiv2 fakeroot ffmpegthumbnailer file findutils flex gawk gcc gettext gimp git gnome-calculator-gtk3 grep groff grub gtk-engine-murrine gzip hsetroot htop-vim-git imagemagick inetutils kvantum libreoffice-fresh libtool linux-firmware linux-zen linux-zen-headers lsof lynx m4 make man-db megasync-bin mpv mutt-wizard-git neovim nerd-fonts-fira-code networkmanager newsboat noto-fonts npm ntfs-3g numlockx openresolv p7zip pacman pacman-contrib papirus-icon-theme patch pfetch-git picom-git pkgconf polybar pulseaudio pulseaudio-alsa python-pip python-pynvim python38 qt5ct ranger redshift-minimal rmtrash scrot sed simple-mtpfs subliminal-git sudo sxhkd sxiv syncthing telegram-desktop texinfo thunar timeshift tor-browser transmission-cli trash-cli ttf-material-design-icons-git ttf-ms-fonts ttf-roboto ttf-sourcecodepro-nerd ttf-symbola ttf-vista-fonts ueberzug unclutter unrar unzip virtualbox virtualbox-ext-oracle virtualbox-guest-iso weechat wget which xclip xdg-user-dirs xdotool xf86-video-intel xorg-server xorg-xdpyinfo xorg-xev xorg-xinit xorg-xrandr xorg-xsetroot yay-bin youtube-dl zathura zathura-pdf-poppler zip zsh
 ```
 
 ## Screenshots

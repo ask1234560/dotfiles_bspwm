@@ -2,7 +2,7 @@
 
 # Autostart
 pgrep -x dunst > /dev/null     || dunst &
-pgrep -x picom > /dev/null     || picom --experimental-backends --no-fading-openclose &
+pgrep -x picom > /dev/null     || picom --no-fading-openclose &
 pgrep -x sxhkd > /dev/null     || sxhkd &
 pgrep -x unclutter > /dev/null || unclutter &
 $HOME/.config/polybar/launch.sh &

@@ -15,9 +15,6 @@ dotfiles:
   f_pacman.conf:
     src: etc/pacman.conf
     dst: /etc/pacman.conf
-  f_update-resolv-conf:
-    src: etc/openvpn/update-resolv-conf
-    dst: /etc/openvpn/update-resolv-conf
   d_bin:
     src: usr/local/bin
     dst: /usr/local/bin
@@ -58,7 +55,6 @@ profiles:
   arch:
     dotfiles:
     - f_pacman.conf
-    - f_update-resolv-conf
     - d_bin
     - d_cron
     - f_sudoers
