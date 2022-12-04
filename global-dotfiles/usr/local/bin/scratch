@@ -26,7 +26,7 @@ toggle_hidden() {
 
 if ! ps -ef | grep -q "[c]lass=$name"
 then
-    bspc rule -a "$name" --one-shot state=floating sticky=on hidden=on center=on
+    bspc rule -a "$name" --one-shot state=floating sticky=on hidden=on
     case "$name" in
         "dictionary")
             $TERMINAL --class="$name","$name" -e dict-search &

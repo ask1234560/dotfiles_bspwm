@@ -118,7 +118,5 @@ super + alt + {c,f,m,u,y}
 super + alt + {b,d,g,i,space,t}
     scratch {newsboat,dictionary,neomutt,ranger,terminal,htop}
 # dunst
-ctrl + {_, shift} + space
-    dunstctl {close,close-all}
-ctrl + grave
-    dunstctl history-pop
+super + {_, shift} + d
+    dunstctl {history-pop, close-all}

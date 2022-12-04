@@ -60,8 +60,11 @@ export PF_INFO="ascii os wm pkgs memory uptime palette"
 
 # zsh
 # z
-export _Z_DATA="$HOME/.config/.z"
-export _Z_SRC="$HOME/.config/.zplug/repos/rupa/z/z.sh"
+export _Z_DATA="$XDG_CONFIG_HOME/.z"
+export _Z_SRC="$XDG_CONFIG_HOME/.zplug/repos/rupa/z/z.sh"
 
 # aspell
 export ASPELL_CONF="per-conf $XDG_CONFIG_HOME/aspell/aspell.conf; personal $XDG_CONFIG_HOME/aspell/en.pws; repl $XDG_CONFIG_HOME/aspell/en.prepl"
+
+# gdb
+export GDBHISTFILE="$XDG_DATA_HOME/gdb/.gdb_history"
