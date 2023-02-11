@@ -12,7 +12,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.12",
+    "nodemon": "^2.0.20",
     "prettier": "^2.2.1"
   }
 }
