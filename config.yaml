@@ -123,6 +123,9 @@ dotfiles:
   d_gdb:
     src: config/gdb
     dst: ~/.config/gdb
+  d_paru:
+    src: config/paru
+    dst: ~/.config/paru
 profiles:
   arch:
     dotfiles:
@@ -156,3 +159,4 @@ profiles:
     - d_qt5ct
     - d_mutt
     - d_gdb
+    - d_paru

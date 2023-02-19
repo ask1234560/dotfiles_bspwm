@@ -92,7 +92,7 @@ super + ctrl + {_,shift} + space
 # screenshot win/full/region screen
 super + alt + {s,w,a}
     xdotool mousemove_relative 1 0; \
-    scrot -z{_,u,fs} --line style=solid,width=2,color='#859900' 'Screenshot_from_%F_%X.png' -e 'mv $f ~/Pictures/Screenshots/ && sxiv ~/Pictures/Screenshots/$f'
+    scrot -z{_,u,fs} --line style=solid,width=1,color='#839496' 'Screenshot_from_%F_%X.png' -e 'mv $f ~/Pictures/Screenshots/ && sxiv ~/Pictures/Screenshots/$f'
 # brightness dec/inc
 super + {F2,F3}
     brightness-notify {down,up}

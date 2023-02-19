@@ -18,9 +18,10 @@ export ZPLUG_HOME="$HOME/.config/.zplug"
 source ~/.config/.zplug/init.zsh
 
 # Plugins
+zplug "zplug/zplug", hook-build:'zplug --self-manage'
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
-zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "rupa/z"
 
 # z

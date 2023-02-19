@@ -1,7 +1,23 @@
-#!/bin/sh
+#!/bin/bash
 
 xrdb -merge "$HOME/.config/X11/xresources"
 xmodmap "$HOME/.config/X11/xmodmap"
 . "$HOME/.config/X11/xprofile"
+
+
+# Autostart
+pgrep -x dunst > /dev/null     || dunst &
+# pgrep -x picom > /dev/null     || picom --no-fading-openclose &
+pgrep -x unclutter > /dev/null || unclutter &
+bg-changer random &
+numlockx &
+xset r rate 300 50 -b -dpms &
+xsetroot -cursor_name left_ptr &
+# disable inbuilt keyboard
+# id=$(xinput list | grep AT | awk '{print $7}'); xinput float ${id#*=}
+# browser fullscreen script
+# pgrep -f browser_fullscreen > /dev/null || browser_fullscreen &
+transmission-wrap &
+
 
 exec bspwm

@@ -1,0 +1,23 @@
+#
+# $PARU_CONF
+# /etc/paru.conf
+# ~/.config/paru/paru.conf
+#
+# See the paru.conf(5) manpage for options
+
+#
+# GENERAL OPTIONS
+#
+[options]
+PgpFetch
+Devel
+Provides
+DevelSuffixes = -git -cvs -svn -bzr -darcs -always
+BatchInstall
+
+#
+# Binary OPTIONS
+#
+[bin]
+FileManager = ranger
+#MFlags = --skippgpcheck

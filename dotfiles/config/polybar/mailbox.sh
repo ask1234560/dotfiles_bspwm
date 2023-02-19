@@ -18,7 +18,7 @@ is_key_cached(){
 
 if is_key_cached; then
     date -Iseconds >/tmp/mutt.log
-    mw -Y >/dev/null 2>>/tmp/mutt.log
+    mailsync >/dev/null 2>>/tmp/mutt.log
 
     unread="$(find "${XDG_DATA_HOME:-$HOME/.local/share}"/mail/*/[Ii][Nn][Bb][Oo][Xx]/new -type f | wc -l 2>/dev/null)"
 
