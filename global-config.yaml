@@ -51,6 +51,12 @@ dotfiles:
   f_mutt-wizard.muttrc:
     src: usr/share/mutt-wizard/mutt-wizard.muttrc
     dst: /usr/share/mutt-wizard/mutt-wizard.muttrc
+  f_mkinitcpio.conf:
+    src: etc/mkinitcpio.conf
+    dst: /etc/mkinitcpio.conf
+  f_grub:
+    src: etc/default/grub
+    dst: /etc/default/grub
 profiles:
   arch:
     dotfiles:
@@ -65,3 +71,5 @@ profiles:
     - f_slock@.service
     - f_83-gamingkeyboard.rules
     - f_mutt-wizard.muttrc
+    - f_mkinitcpio.conf
+    - f_grub

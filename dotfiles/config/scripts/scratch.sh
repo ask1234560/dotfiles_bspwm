@@ -50,7 +50,7 @@ then
             exit 1
     esac
     notify-send "Scratch: starting $name"
-    sleep 3
+    sleep 3s
     bspc_write_nodeid
     toggle_hidden
 else
