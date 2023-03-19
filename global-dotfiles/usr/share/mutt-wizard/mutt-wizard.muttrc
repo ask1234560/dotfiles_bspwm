@@ -43,7 +43,6 @@ bind attach <return> view-mailcap
 bind attach l view-mailcap
 bind editor <space> noop
 bind index G last-entry
-bind index gg first-entry
 bind pager,attach h exit
 bind pager j next-line
 bind pager k previous-line
@@ -145,7 +144,6 @@ color sidebar_highlight red default
 color sidebar_divider brightblack black
 color sidebar_flagged red black
 color sidebar_new green black
-color normal brightyellow default
 color error red default
 color tilde black default
 color message cyan default
@@ -163,7 +161,6 @@ color quoted5 brightred default
 color signature brightgreen default
 color bold black default
 color underline black default
-color normal default default
 
 # Regex highlighting:
 color header brightmagenta default "^From"

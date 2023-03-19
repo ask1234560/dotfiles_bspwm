@@ -2,7 +2,6 @@
 
 # custom aliases
 alias \
-    cp='cpg -g ' \
     dotdrop="$DOTREPO/dotdrop.sh" \
     dotgit="git -C $DOTREPO" \
     dotglob='sudo ./dotdrop.sh --cfg=global-config.yaml ' \
@@ -13,7 +12,6 @@ alias \
     ll='exa -alb --group-directories-first' \
     ls='exa --group-directories-first' \
     lynx='lynx -accept_all_cookies ' \
-    mv='mvg -g ' \
     nb='newsboat ' \
     nv='nvim ' \
     nvs='sudo -E nvim ' \
@@ -22,7 +20,6 @@ alias \
     pfetch="bspc rule -a Alacritty state=floating --one-shot && alacritty --hold --option window.dimensions.columns=42 window.dimensions.lines=10 -e pfetch &; disown " \
     rg='ranger' \
     sclip='xclip -selection c' \
-    speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python - ' \
     sudo='sudo ' \
     tds='transmission-wrap ' \
     tra='transmission-remote -a ' \

@@ -12,4 +12,3 @@ transmission-daemon --foreground --log-info 2>&1 | while read line; do
 			echo $line | systemd-cat --identifier="TransWrap" --priority=5
 		done 2>&1 > /dev/null
 	done&disown
-
