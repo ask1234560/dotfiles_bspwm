@@ -1,0 +1,66 @@
+{
+  "settingsVersion": "1.67.4",
+  "exclusionRules": [
+    {
+      "pattern": "https?://www.youtube.com/*",
+      "passKeys": "NP"
+    },
+    {
+      "pattern": "https?://en.key-test.ru/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.google.com/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://play.decentraland.org/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://play.decentraland.org/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://43.204.220.8:9091/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://43.204.220.8:9091/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://zeus:9091/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://zeus:9091/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://localhost:9091/*",
+      "passKeys": "*"
+    },
+    {
+      "pattern": "https?://localhost:9091/*",
+      "passKeys": ""
+    }
+  ],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": false,
+  "keyMappings": "# Insert your preferred key mappings here.",
+  "linkHintCharacters": "sadfjklewcmpgh",
+  "linkHintNumbers": "0123456789",
+  "newTabUrl": "about:newtab",
+  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
+  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
+  "regexFindMode": true,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 60,
+  "smoothScroll": true,
+  "grabBackFocus": false,
+  "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\ng: https://www.google.com/search?q=%s Google\ny: https://www.youtube.com/results?search_query=%s Youtube\nm: https://www.google.com/maps?q=%s Google maps\nd: https://duckduckgo.com/?q=%s DuckDuckGo\ni: https://github.com/search?q=%s Github",
+  "searchUrl": "https://www.google.com/search?q=",
+  "userDefinedLinkHintCss": "/***\n*\n*  Solarized Dark theme for Vimium\n*  © Dawid Ferenczy 2018\n*\n*  A color theme for famous Chrome extension Vimium by Phil Crosby based on also famous\n*  Ethan Schoonover's Solarized Dark color palette.\n*  https://github.com/philc/vimium\n*  https://ethanschoonover.com/solarized/#the-values\n*\n*\n*  Installation:\n*\n*      1. Open Vimium's settings\n*      2. Click \"Show Advanced Options\"\n*      3. Paste the whole content of this file into the text box \"CSS for Vimium UI\"\n*      4. Save it\n*      5. Reload existing or open a new tab to test it\n*\n*\n*  Color palette:\n*      base03:  #002B36\n*      base02:  #073642\n*      base01:  #586E75\n*      base00:  #657B83\n*      base0:   #839496\n*      base1:   #93A1A1\n*      base2:   #EEE8D5\n*      base3:   #FDF6E3\n*      yellow:  #B58900\n*      orange:  #CB4B16\n*      red:     #DC322F\n*      magenta: #D33682\n*      violet:  #6C71C4\n*      blue:    #268BD2\n*      cyan:    #2AA198\n*      green:   #859900\n*\n***/\n\n\n/*\n    HUD\n    ---\n*/\n\ndiv > .vimiumHUD {\n    height: auto;\n    max-width: 600px;\n    min-width: 200px;\n    padding: 0.5em 1em;\n    color: #EEE8D5;\n    background-color: #073642;\n    border: 1px solid #B58900;\n    font-size: 12px;\n    font-family: \"Source Code Pro\", Consolas, Courier;\n    text-shadow: none;\n}\n\n\n/*\n    Link Hints\n    ----------\n*/\n\n/* link hint box */\ndiv > .vimiumHintMarker {\n    background: -webkit-gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0%, #002B36),\n        color-stop(100%, #586E75)\n    );\n    border: 1px solid #B58900;\n    padding: 2px 4px;\n}\n\n/* link hint text */\ndiv > .vimiumHintMarker span {\n    color: #EEE8D5;\n    font-size: 14px;\n    font-weight: normal;\n    font-family: \"Source Code Pro\", Consolas, Courier;\n    text-shadow: none;\n}\n\n/* active link hint box */\ndiv > .vimiumActiveHintMarker {\n    background: -webkit-gradient(\n        linear,\n        left top,\n        left bottom,\n        color-stop(0%, #B58900),\n        color-stop(100%, #FDF6E3)\n    );\n    background-color: #B58900;\n}\n\n/* active link hint text */\ndiv > .vimiumActiveHintMarker span {\n    color: black !important;\n    font-weight: bold;\n}\n\n\n/*\n    Vomnibar\n    --------\n*/\n\n/* Vomnibar box */\n#vomnibar {\n    border-color: #93A1A1;\n}\n\n/* box with search input */\n#vomnibar .vomnibarSearchArea {\n    background-color: #073642;\n    border-bottom: 1px solid #002B36;\n}\n\n/* search input */\n#vomnibar input {\n    border-color: #586E75;\n}\ninput#vomnibarInput.vimiumReset {\n    color: #FDF6E3 !important;\n    background-color: black !important;\n}\n\n/* result box */\n#vomnibar ul {\n    background-color: #073642;\n}\n\n/* result item box */\n#vomnibar li {\n    border: 1px solid #073642;\n}\n\n/* result item first and second line */\n#vomnibar li .vomnibarTopHalf, #vomnibar li .vomnibarBottomHalf {\n    overflow: display;\n}\n\n/* result title */\n#vomnibar li em, #vomnibar li .vomnibarTitle {\n    color: #859900;\n    font-family: \"Segoe UI\", \"Helvetica Neue\", \"Helvetica\", \"Arial\", sans-serif;\n}\n\n/* result source - tab, history, bookmark, etc. */\n#vomnibar li .vomnibarSource {\n    color: #657B83;\n    font-family: \"Segoe UI\", \"Helvetica Neue\", \"Helvetica\", \"Arial\", sans-serif;\n}\n\n/* result URL */\n#vomnibar li .vomnibarUrl {\n    color: #268BD2;\n    font-family: \"Source Code Pro\", Consolas, Courier;\n    font-size: 12px;\n}\n\n/* selected result box */\n#vomnibar li.vomnibarSelected {\n    background-color: #002B36;\n    border: 1px solid #B58900;\n}\n\n/* selected result title */\n#vomnibar li.vomnibarSelected .vomnibarTitle {\n}\n\n/* selected result source */\n#vomnibar li.vomnibarSelected .vomnibarSource {\n    color: #B58900;\n}\n\n/* highlighted search term */\n/* ...in result title */\n#vomnibar li em .vomnibarMatch, #vomnibar li .vomnibarTitle .vomnibarMatch {\n    color: #D33682;\n}\n/* ...in result URL */\n#vomnibar li .vomnibarMatch {\n    color: #D33682;\n}\n\n#vomnibar {\n    background-color: #002b36 !important;\n    border-color: #002b36 !important;\n    box-shadow: none !important;\n}\n\n#vomnibar #vomnibarInput {\n    background-color: #002b36 !important;\n    color: #839496 !important;\n}"
+}

@@ -20,11 +20,11 @@ function get_icon {
 
 case $1 in
     up)
-        cbacklight --inc 5
+        cbacklight --inc 3
 	    get_icon
 	;;
     down)
-        cbacklight --dec 5
+        cbacklight --dec 3
 	    get_icon
 	;;
 esac

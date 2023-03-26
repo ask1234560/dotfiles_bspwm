@@ -24,13 +24,13 @@ if is_key_cached; then
 
     if [ $unread -gt 20 ]
     then
-        echo "%{F$adapta_red}󰇮%{F-} $unread"
+        echo "%{F$adapta_red}%{F-} $unread"
     elif [ $unread -gt 5 ]
     then
-        echo "%{F$adapta_yellow}󰇮%{F-} $unread"
+        echo "%{F$adapta_yellow}%{F-} $unread"
     else
-        echo "%{F$fg}󰇮%{F-} $unread"
+        echo "%{F$fg}%{F-} $unread"
     fi
 else
-    echo "%{F$adapta_red}󰇮%{F-} -1"
+    echo "%{F$adapta_red}%{F-} -1"
 fi

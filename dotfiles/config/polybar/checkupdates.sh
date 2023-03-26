@@ -15,10 +15,10 @@ updates=$(("$updates_arch" + "$updates_aur"))
 
 if [ $updates -gt 50 ]
 then
-    echo "%{F$adapta_red}󰊠%{F-} $updates"
+    echo "%{F$adapta_red}%{F-} $updates"
 elif [ $updates -gt 15 ]
 then
-    echo "%{F$adapta_yellow}󰊠%{F-} $updates"
+    echo "%{F$adapta_yellow}%{F-} $updates"
 else
-    echo "%{F$fg}󰊠%{F-} $updates"
+    echo "%{F$fg}%{F-} $updates"
 fi

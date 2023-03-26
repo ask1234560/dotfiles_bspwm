@@ -7,6 +7,7 @@ dotfiles/
 │   ├── bspwm
 │   ├── dmenu
 │   ├── dunst
+│   ├── extensions
 │   ├── gdb
 │   ├── git
 │   ├── gtk-3.0
@@ -66,14 +67,17 @@ dotfiles/
 * build dmenu
    * cd ~/.config/dmenu
    * sudo make install
+* build slock
+   * cd ~/.config/slock
+   * sudo make install
 * set qt theme to Adapta Nokto(kvantum, qt5ct).
 * (optional) to remove backup files
    * find ~ -regextype grep -regex '.*/*dotdropbak' -exec rm {} \;
 * for changing theme, change in alacritty, nvim, nvim quick scope pluggin(init.vim), ~/.Xresources, dmenu, dunst, polybar(reads Xresources), cursor, mpv. Scrot custom region screenclip and bspwm focused window border have same width and color.
-* Terminal font nerd-fonts-source-code-pro, nerd-fonts-fira-code for remaining apps.
+* Terminal font nerd-fonts-source-code-pro, ttf-fira-code for remaining apps and otf-font-awesome for polybar glyphs. 
 ```
 
 ## (Optional) Explicitly installed packages
 ```
-abook adapta-gtk-theme alacritty alsa-firmware alsa-utils aspell aspell-en autoconf automake base binutils bison brave-bin broadcom-wl-dkms bspwm cpupower-gui cronie dosfstools dunst efibootmgr exa exiv2 fakeroot ffmpegthumbnailer file findutils flex gawk gcc gdb gef-git gettext gimp git gnome-calculator-gtk3 grep groff grub gtk-engine-murrine gzip hsetroot htop-vim-git imagemagick inetutils kvantum libreoffice-fresh libtool linux-firmware linux-zen linux-zen-headers lsof ltrace lynx m4 make man-db megasync-bin mpv mutt-wizard-git neovim networkmanager newsboat noto-fonts npm ntfs-3g numlockx openresolv p7zip pacman pacman-contrib papirus-icon-theme paru-bin patch perl-image-exiftool pfetch-git picom-git pkgconf polybar pulseaudio pulseaudio-alsa python-pip python-pynvim python38 qt5ct ranger redshift-minimal rmtrash scrot sed simple-mtpfs strace subliminal-git sudo sxhkd sxiv syncthing telegram-desktop texinfo thunar timeshift tor-browser transmission-cli trash-cli ttf-firacode-nerd ttf-material-design-icons-git ttf-ms-fonts ttf-roboto ttf-sourcecodepro-nerd ttf-symbola ttf-vista-fonts ueberzug unclutter unrar unzip virtualbox virtualbox-ext-oracle virtualbox-guest-iso visual-studio-code-bin weechat wget which wireguard-tools xclip xdg-user-dirs xdotool xf86-video-intel xorg-server xorg-xdpyinfo xorg-xev xorg-xinit xorg-xrandr xorg-xsetroot yt-dlp zathura zathura-pdf-poppler zip zsh
+abook adapta-gtk-theme alacritty alsa-firmware alsa-utils aspell aspell-en autoconf automake base binutils bison brave-bin broadcom-wl-dkms bspwm cpupower-gui cronie dosfstools dunst efibootmgr exa exiv2 fakeroot ffmpegthumbnailer file findutils flex gawk gcc gdb gef-git gettext gimp git gnome-calculator-gtk3 grep groff grub gtk-engine-murrine gzip hsetroot htop-vim-git imagemagick inetutils kvantum libreoffice-fresh libtool linux-firmware linux-zen linux-zen-headers lsof ltrace lynx m4 make man-db megasync-bin mpv mutt-wizard-git neovim networkmanager newsboat noto-fonts npm ntfs-3g numlockx openresolv otf-font-awesome p7zip pacman pacman-contrib papirus-icon-theme paru-bin patch perl-image-exiftool pfetch-git picom-git pkgconf polybar pulseaudio pulseaudio-alsa python-pip python-pynvim python38 qt5ct ranger redshift-minimal rmtrash scrot sed simple-mtpfs strace subliminal-git sudo sxhkd sxiv syncthing telegram-desktop texinfo thunar timeshift tor-browser transmission-cli trash-cli ttf-fira-code ttf-ms-fonts ttf-roboto ttf-sourcecodepro-nerd ttf-symbola ttf-vista-fonts ueberzug unclutter unrar unzip virtualbox virtualbox-ext-oracle virtualbox-guest-iso visual-studio-code-bin weechat wget which wireguard-tools xclip xdg-user-dirs xdotool xf86-video-intel xorg-server xorg-xdpyinfo xorg-xev xorg-xinit xorg-xrandr xorg-xsetroot yt-dlp zathura zathura-pdf-poppler zip zsh
 ```

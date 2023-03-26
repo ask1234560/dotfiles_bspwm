@@ -126,6 +126,9 @@ dotfiles:
   d_paru:
     src: config/paru
     dst: ~/.config/paru
+  d_extensions:
+    src: config/extensions
+    dst: ~/.config/extensions
 profiles:
   arch:
     dotfiles:
@@ -160,3 +163,4 @@ profiles:
     - d_mutt
     - d_gdb
     - d_paru
+    - d_extensions
