@@ -129,6 +129,12 @@ dotfiles:
   d_extensions:
     src: config/extensions
     dst: ~/.config/extensions
+  f_calvinn.ttf:
+    src: local/share/fonts/CALVINN.TTF
+    dst: ~/.local/share/fonts/CALVINN.TTF
+  f_calvino.ttf:
+    src: local/share/fonts/CALVINO.TTF
+    dst: ~/.local/share/fonts/CALVINO.TTF
 profiles:
   arch:
     dotfiles:
@@ -164,3 +170,5 @@ profiles:
     - d_gdb
     - d_paru
     - d_extensions
+    - f_calvinn.ttf
+    - f_calvino.ttf
