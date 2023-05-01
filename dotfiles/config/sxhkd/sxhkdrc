@@ -9,7 +9,7 @@ super + {_,shift} + space
     {drecent -p "Run:",$BROWSER keep.google.com}
 # make sxhkd reload its configuration files:
 super + Escape
-    pkill -USR1 -x sxhkd; notify-send "Sxhkd: reloaded"
+    pkill -USR1 -x sxhkd; dunstify "Sxhkd: reloaded"
 
 
 #
@@ -27,7 +27,7 @@ super + brace{left,right}
     bspc node -f {next,prev}.local.!hidden.window
 # quit/restart bspwm
 super + alt + {q,r}
-    bspc {quit,wm -r; notify-send "Bspwm: reloaded"}
+    bspc {quit,wm -r; dunstify "Bspwm: reloaded"}
 # close and kill
 super + {_,shift} + c
     bspc node -{c,k}

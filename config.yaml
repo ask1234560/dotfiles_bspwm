@@ -3,11 +3,9 @@ config:
   create: true
   dotpath: dotfiles
   instignore:
-  - '*/README.md'
   - '*/node_modules'
   - '*/.git'
   upignore:
-  - '*/README.md'
   - '*/node_modules'
   - '*/.git'
 dotfiles:

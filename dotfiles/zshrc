@@ -101,6 +101,7 @@ setopt auto_cd
 _comp_options+=(globdots)
 
 # aliases
+alias -g -- --help="--help | less -FXi ; true "
 source ~/.config/.aliasrc
 source ~/.config/.zplug/repos/custom/git-aliases.zsh
 # load keybinds

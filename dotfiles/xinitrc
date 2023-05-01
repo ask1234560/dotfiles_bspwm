@@ -17,7 +17,6 @@ xsetroot -cursor_name left_ptr &
 # id=$(xinput list | grep AT | awk '{print $7}'); xinput float ${id#*=}
 # browser fullscreen script
 # pgrep -f browser_fullscreen > /dev/null || browser_fullscreen &
-transmission-wrap &
-
+pgrep -f transmission-daemon > /dev/null || transmission-daemon &
 
 exec bspwm

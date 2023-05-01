@@ -24,32 +24,36 @@ toggle_hidden() {
     bspc node $id --flag hidden -f
 }
 
+create_terminal(){
+    $TERMINAL --class="$name","$name" -e $1 &
+}
+
 if ! ps -ef | grep -q "[c]lass=$name"
 then
     bspc rule -a "$name" --one-shot state=floating sticky=on hidden=on
     case "$name" in
         "dictionary")
-            $TERMINAL --class="$name","$name" -e dict-search &
+            create_terminal dict-search
             ;;
         "htop")
-            $TERMINAL --class="$name","$name" -e htop &
+            create_terminal htop
             ;;
         "neomutt")
-            $TERMINAL --class="$name","$name" -e neomutt &
+            create_terminal neomutt
             ;;
         "newsboat")
-            $TERMINAL --class="$name","$name" -e newsboat &
+            create_terminal newsboat
             ;;
         "ranger")
-            $TERMINAL --class="$name","$name" -e ranger &
+            create_terminal ranger
             ;;
         "terminal")
-            $TERMINAL --class="$name","$name" -e $SHELL &
+            create_terminal $SHELL
             ;;
         *)
             exit 1
     esac
-    notify-send "Scratch: starting $name"
+    dunstify "Scratch: starting $name"
     sleep 3s
     bspc_write_nodeid
     toggle_hidden

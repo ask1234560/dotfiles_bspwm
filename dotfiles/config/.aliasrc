@@ -28,8 +28,6 @@ alias \
     vpnc='sudo openvpn --config /home/ananthu/.config/vpnclients/arch.ovpn '  \
     watch='watch ' \
     wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts" "
-# global
-alias -g -- --help="--help | less -FXi ; true "
 
 # Custom functions
 # ext - archive extractor
