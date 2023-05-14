@@ -32,6 +32,7 @@ export _Z_SRC="$HOME/.config/.zplug/repos/rupa/z/z.sh"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5e6d6e"
 
 # spaceship
+SPACESHIP_PROMPT_ASYNC=false
 SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   dir           # Current directory section
@@ -81,14 +82,16 @@ fi
 # SPACESHIP_VI_MODE_COLOR=#586e75
 # SPACESHIP_VI_MODE_INSERT=[i]
 # SPACESHIP_VI_MODE_NORMAL=[n]
+# vi mode
+# spaceship_vi_mode_enable
 
 # Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
+# if ! zplug check --verbose; then
+#     printf "Install? [y/N]: "
+#     if read -q; then
+#         echo; zplug install
+#     fi
+# fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
@@ -108,6 +111,3 @@ source ~/.config/.zplug/repos/custom/git-aliases.zsh
 source ~/.config/.zplug/repos/custom/key-bindings.zsh
 # z
 source $_Z_SRC
-
-# vi mode
-# spaceship_vi_mode_enable
