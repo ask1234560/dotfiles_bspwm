@@ -97,9 +97,6 @@ dotfiles:
   d_x11:
     src: config/X11
     dst: ~/.config/X11
-  d_git:
-    src: config/git
-    dst: ~/.config/git
   d_yay:
     src: config/yay
     dst: ~/.config/yay
@@ -160,7 +157,6 @@ profiles:
     - d_custom
     - d_slock
     - d_x11
-    - d_git
     - d_yay
     - d_kvantum
     - d_qt5ct
