@@ -152,3 +152,16 @@ weather() {
 
 
 source ~/.config/.aliasrc
+
+# aliases
+alias ga='git add'
+alias gaa='git add --all'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gcmsg='git commit -S -m'
+alias gco='git checkout'
+alias gl='git pull'
+alias glg='git log --stat'
+alias glgg='git log --graph'
+alias glgp='git log --stat -p'
+alias gst='git status'

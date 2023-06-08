@@ -31,7 +31,7 @@ window:
   # least `2`, while using a value of `0` for columns and lines will fall back
   # to the window manager's recommended size
   dimensions:
-    columns: 132
+    columns: 134
     lines: 32
 
   # Window position (changes require restart)
@@ -39,8 +39,8 @@ window:
   # Specified in number of pixels.
   # If the position is not set, the window manager will handle the placement.
   position:
-    x: 19
-    y: 72
+    x: 13
+    y: 52
 
   # Window padding (changes require restart)
   #
@@ -139,16 +139,16 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: SauceCodePro Nerd Font Mono
+    family: JetBrainsMono Nerd Font
     style: Bold
   bold:
-    family: SauceCodePro Nerd Font Mono
+    family: JetBrainsMono Nerd Font
     style: Bold
   italic:
-    family: SauceCodePro Nerd Font Mono
+    family: JetBrainsMono Nerd Font
     style: Medium 
   bold_italic:
-    family: SauceCodePro Nerd Font Mono
+    family: JetBrainsMono Nerd Font
     style: Medium
 
   # Point size
