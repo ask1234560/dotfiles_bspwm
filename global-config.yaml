@@ -1,16 +1,12 @@
 config:
   backup: true
+  banner: true
   create: true
   dotpath: global-dotfiles
-  instignore:
-  - '*/sudoers'
-  - '*/profile'
-  upignore:
-  - '*/sudoers'
-  - '*/profile'
-  cmpignore:
-  - '*/sudoers'
-  - '*/profile'
+  keepdot: false
+  link_dotfile_default: nolink
+  link_on_import: nolink
+  longkey: false
 dotfiles:
   f_pacman.conf:
     src: etc/pacman.conf
@@ -18,58 +14,67 @@ dotfiles:
   d_bin:
     src: usr/local/bin
     dst: /usr/local/bin
+    cmpignore:
+    - 'dmenu*'
+    - 'stest'
     upignore:
-    - dmenu*
-    - stest
-    instignore:
-    - dmenu*
-    - stest
+    - 'dmenu*'
+    - 'stest'
   d_cron:
     src: var/spool/cron
     dst: /var/spool/cron
-  f_sudoers:
-    src: etc/sudoers
-    dst: /etc/sudoers
-  f_script.service:
-    src: etc/systemd/system/script.service
-    dst: /etc/systemd/system/script.service
-  f_profile:
-    src: etc/profile
-    dst: /etc/profile
-  f__dotdrop.sh-completion.zsh:
-    src: usr/share/zsh/site-functions/_dotdrop.sh-completion.zsh
-    dst: /usr/share/zsh/site-functions/_dotdrop.sh-completion.zsh
-  f_issue:
-    src: etc/issue
-    dst: /etc/issue
   f_slock@.service:
     src: etc/systemd/system/slock@.service
     dst: /etc/systemd/system/slock@.service
   f_83-gamingkeyboard.rules:
     src: etc/udev/rules.d/83-gamingkeyboard.rules
     dst: /etc/udev/rules.d/83-gamingkeyboard.rules
-  f_mutt-wizard.muttrc:
-    src: usr/share/mutt-wizard/mutt-wizard.muttrc
-    dst: /usr/share/mutt-wizard/mutt-wizard.muttrc
   f_mkinitcpio.conf:
     src: etc/mkinitcpio.conf
     dst: /etc/mkinitcpio.conf
   f_grub:
     src: etc/default/grub
     dst: /etc/default/grub
+  f_background.png:
+    src: usr/share/images/grub/background.png
+    dst: /usr/share/images/grub/background.png
+  f_issue:
+    src: etc/issue
+    dst: /etc/issue
+  f_script.service:
+    src: etc/systemd/system/script.service
+    dst: /etc/systemd/system/script.service
+  f_sudoers:
+    src: etc/sudoers
+    dst: /etc/sudoers
+    chmod: '440'
+    cmpignore:
+    - '*'
+    upignore:
+    - '*'
+    instignore:
+    - '*'
+  f_profile:
+    src: etc/profile
+    dst: /etc/profile
+    cmpignore:
+    - '*'
+    upignore:
+    - '*'
+    instignore:
+    - '*'
 profiles:
   arch:
     dotfiles:
     - f_pacman.conf
     - d_bin
     - d_cron
-    - f_sudoers
-    - f_script.service
-    - f_profile
-    - f__dotdrop.sh-completion.zsh
-    - f_issue
     - f_slock@.service
     - f_83-gamingkeyboard.rules
-    - f_mutt-wizard.muttrc
     - f_mkinitcpio.conf
     - f_grub
+    - f_background.png
+    - f_issue
+    - f_script.service
+    - f_sudoers
+    - f_profile

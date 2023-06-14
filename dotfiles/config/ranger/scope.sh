@@ -172,6 +172,8 @@ handle_image() {
 
         ## Video
         video/*)
+            # check if file is incomplete torrent video file
+            [ "$FILE_EXTENSION_LOWER" = "part" ] && exit 1
         #     # Get embedded thumbnail
         #     ffmpeg -i "${FILE_PATH}" -map 0:v -map -0:V -c copy "${IMAGE_CACHE_PATH}" && exit 6
             # Get frame 10% into video

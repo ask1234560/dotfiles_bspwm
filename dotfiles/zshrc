@@ -1,7 +1,10 @@
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
-HISTFILE=~/.cache/zsh/history
+HISTFILE="$HOME/.cache/zsh/history"
+
+autoload -Uz compinit
+compinit -d "$HOME/.cache/zsh/zcompdump-$ZSH_VERSION"
 
 setopt histexpiredupsfirst histignorespace nobanghist nobeep
 # setopt sharehistory                 # share history between sessions
@@ -13,88 +16,12 @@ then
     pgrep bspwm || startx
 fi
 
-# zplug
-export ZPLUG_HOME="$HOME/.config/.zplug"
-source ~/.config/.zplug/init.zsh
-
-# Plugins
-zplug "zplug/zplug", hook-build:'zplug --self-manage'
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
-zplug "rupa/z"
-
 # z
-export _Z_DATA="$HOME/.config/.z"
-export _Z_SRC="$HOME/.config/.zplug/repos/rupa/z/z.sh"
+export _Z_DATA="$HOME/.local/share/z"
+export _Z_SRC="/usr/share/z/z.sh"
 
 # autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5e6d6e"
-
-# spaceship
-SPACESHIP_PROMPT_ASYNC=false
-SPACESHIP_PROMPT_ORDER=(
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  # hg            # Mercurial section (hg_branch  + hg_status)
-  # package       # Package version
-  # node          # Node.js section
-  # ruby          # Ruby section
-  # elixir        # Elixir section
-  # xcode         # Xcode section
-  # swift         # Swift section
-  # golang        # Go section
-  # php           # PHP section
-  # rust          # Rust section
-  # haskell       # Haskell Stack section
-  # julia         # Julia section
-  # docker        # Docker section
-  # aws           # Amazon Web Services section
-  # gcloud        # Google Cloud Platform section
-  venv          # virtualenv section
-  # conda         # conda virtualenv section
-  # pyenv         # Pyenv section
-  # dotnet        # .NET section
-  # ember         # Ember.js section
-  # kubectl       # Kubectl context section
-  # terraform     # Terraform workspace section
-  line_sep      # Line break
-  # battery       # Battery level and status
-  # vi_mode       # Vi-mode indicator
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
-SPACESHIP_RPROMPT_ORDER=(
-  # time          # Time stamps section
-  exec_time     # Execution time
-)
-SPACESHIP_CHAR_SYMBOL=" 󰁔 "
-SPACESHIP_GIT_STATUS_BEHIND="󰁅"
-SPACESHIP_GIT_STATUS_AHEAD="󰁝"
-if [ "$(hostname)" != "arch" ]
-then
-    SPACESHIP_USER_SHOW=always
-    SPACESHIP_HOST_SHOW=always
-fi
-# SPACESHIP_VI_MODE_COLOR=#586e75
-# SPACESHIP_VI_MODE_INSERT=[i]
-# SPACESHIP_VI_MODE_NORMAL=[n]
-# vi mode
-# spaceship_vi_mode_enable
-
-# Install plugins if there are plugins that have not been installed
-# if ! zplug check --verbose; then
-#     printf "Install? [y/N]: "
-#     if read -q; then
-#         echo; zplug install
-#     fi
-# fi
-
-# Then, source plugins and add commands to $PATH
-zplug load
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -105,9 +32,13 @@ _comp_options+=(globdots)
 
 # aliases
 alias -g -- --help="--help | less -FXi ; true "
-source ~/.config/.aliasrc
-source ~/.config/.zplug/repos/custom/git-aliases.zsh
+source $HOME/.config/alias_and_keybinds/aliasrc
 # load keybinds
-source ~/.config/.zplug/repos/custom/key-bindings.zsh
-# z
+source $HOME/.config/alias_and_keybinds/key-bindings.zsh
+
+# plugins
+eval "$(starship init zsh)"
 source $_Z_SRC
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+

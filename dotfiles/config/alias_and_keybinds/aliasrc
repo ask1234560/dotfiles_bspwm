@@ -1,0 +1,81 @@
+#!/bin/bash
+
+# custom aliases
+alias \
+    dotglob='sudo dotdrop --cfg=global-config.yaml ' \
+    gclip='xclip -selection c -o' \
+    grep='grep --colour=auto' \
+    la='exa -a --group-directories-first' \
+    ll='exa -alb --group-directories-first' \
+    ls='exa --group-directories-first' \
+    lynx='lynx -accept_all_cookies ' \
+    nb='newsboat ' \
+    nv='nvim ' \
+    nvs='sudo -E nvim ' \
+    pastebin="curl -F 'f:1=<-' ix.io " \
+    pc='pacman ' \
+    pfetch="bspc rule -a Alacritty state=floating --one-shot && alacritty --hold --option window.dimensions.columns=42 window.dimensions.lines=10 -e pfetch &; disown " \
+    rg='ranger' \
+    sclip='xclip -selection c' \
+    sudo='sudo ' \
+    tds='transmission-daemon ' \
+    tra='transmission-remote -a ' \
+    trl='watch -n1 transmission-remote -l ' \
+    tree='exa -T' \
+    watch='watch ' \
+    wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts" " \
+    ga='git add' \
+    gaa='git add --all' \
+    gb='git branch' \
+    gba='git branch -a' \
+    gcmsg='git commit -S -m' \
+    gco='git checkout' \
+    gd='git diff' \
+    gds='git diff --staged' \
+    gf='git fetch' \
+    gl='git pull' \
+    glg='git log --stat' \
+    glgg='git log --graph' \
+    glgp='git log --stat -p' \
+    gp='git push' \
+    gsh='git show' \
+    gst='git status' \
+    gsta='git stash push' \
+    gstl='git stash list' \
+    gstp='git stash pop' \
+    gsts='git stash show --text'
+
+# Custom functions
+# ext - archive extractor
+# usage: ext <file>
+ext() {
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.tar.xz)    tar xJf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.iso)       if [ $# -ne 2 ]
+                   then
+                        echo "specify the destination directory"
+                   else
+                        7z x -o$2 $1
+                   fi
+                   ;;
+      *)           echo "'$1' cannot be extracted via ext()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+weather() {
+    curl "wttr.in/${1:-paravur,kollam}?2mM"
+}

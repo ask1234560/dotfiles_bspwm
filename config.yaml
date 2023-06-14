@@ -1,168 +1,161 @@
 config:
   backup: true
+  banner: true
   create: true
   dotpath: dotfiles
-  instignore:
-  - '*/node_modules'
-  - '*/.git'
-  upignore:
-  - '*/node_modules'
-  - '*/.git'
+  keepdot: false
+  link_dotfile_default: nolink
+  link_on_import: nolink
+  longkey: false
 dotfiles:
   f_zshrc:
     src: zshrc
     dst: ~/.zshrc
+    chmod: '755'
   f_bashrc:
     src: bashrc
     dst: ~/.bashrc
+    chmod: '777'
   f_xinitrc:
     src: xinitrc
     dst: ~/.xinitrc
-  d_mpv:
-    src: config/mpv
-    dst: ~/.config/mpv
-    upignore:
-    - watch_later
-    instignore:
-    - watch_later
-  d_htop:
-    src: config/htop
-    dst: ~/.config/htop
-  d_newsboat:
-    src: config/newsboat
-    dst: ~/.config/newsboat
-    upignore:
-    - cache.db
-    instignore:
-    - cache.db
-  d_nvim:
-    src: config/nvim
-    dst: ~/.config/nvim
-  f_plug.vim:
-    src: local/share/nvim/site/autoload/plug.vim
-    dst: ~/.local/share/nvim/site/autoload/plug.vim
-  d_sxiv:
-    src: config/sxiv
-    dst: ~/.config/sxiv
-  f_aliasrc:
-    src: config/.aliasrc
-    dst: ~/.config/.aliasrc
-  d_scripts:
-    src: config/scripts
-    dst: ~/.config/scripts
-  d_bspwm:
-    src: config/bspwm
-    dst: ~/.config/bspwm
+  d_alias_and_keybinds:
+    src: config/alias_and_keybinds
+    dst: ~/.config/alias_and_keybinds
   d_sxhkd:
     src: config/sxhkd
     dst: ~/.config/sxhkd
+  d_bspwm:
+    src: config/bspwm
+    dst: ~/.config/bspwm
+  d_alacritty:
+    src: config/alacritty
+    dst: ~/.config/alacritty
+  d_x11:
+    src: config/X11
+    dst: ~/.config/X11
+  d_paru:
+    src: config/paru
+    dst: ~/.config/paru
+  d_yay:
+    src: config/yay
+    dst: ~/.config/yay
+  d_picom:
+    src: config/picom
+    dst: ~/.config/picom
+  d_zathura:
+    src: config/zathura
+    dst: ~/.config/zathura
+    chmod: '700'
+  f_gtkrc-2.0:
+    src: gtkrc-2.0
+    dst: ~/.gtkrc-2.0
+  d_gdb:
+    src: config/gdb
+    dst: ~/.config/gdb
+  d_sxiv:
+    src: config/sxiv
+    dst: ~/.config/sxiv
+  d_gtk-3.0:
+    src: config/gtk-3.0
+    dst: ~/.config/gtk-3.0
+    chmod: '700'
+  d_htop:
+    src: config/htop
+    dst: ~/.config/htop
+    chmod: '700'
+  d_browser_extensions_backup:
+    src: config/browser_extensions_backup
+    dst: ~/.config/browser_extensions_backup
+  d_mpv:
+    src: config/mpv
+    dst: ~/.config/mpv
+    chmod: '700'
+    cmpignore:
+    - 'watch_later'
+    upignore:
+    - 'watch_later'
+  d_newsboat:
+    src: config/newsboat
+    dst: ~/.config/newsboat
+    cmpignore:
+    - 'cache.db'
+    upignore:
+    - 'cache.db'
+  f_starship.toml:
+    src: config/starship.toml
+    dst: ~/.config/starship.toml
+  d_scripts:
+    src: config/scripts
+    dst: ~/.config/scripts
   d_polybar:
     src: config/polybar
     dst: ~/.config/polybar
   d_dunst:
     src: config/dunst
     dst: ~/.config/dunst
-  d_alacritty:
-    src: config/alacritty
-    dst: ~/.config/alacritty
-  f_gtkrc-2.0:
-    src: gtkrc-2.0
-    dst: ~/.gtkrc-2.0
-  d_gtk-3.0:
-    src: config/gtk-3.0
-    dst: ~/.config/gtk-3.0
-    chmod: '700'
-  d_zathura:
-    src: config/zathura
-    dst: ~/.config/zathura
-    chmod: '700'
-  d_breeze-blue:
-    src: icons/Breeze-Blue
-    dst: ~/.icons/Breeze-Blue
-  d_ranger:
-    src: config/ranger
-    dst: ~/.config/ranger
-  d_picom:
-    src: config/picom
-    dst: ~/.config/picom
-  d_dmenu:
-    src: config/dmenu
-    dst: ~/.config/dmenu
-  d_custom:
-    src: config/.zplug/repos/custom
-    dst: ~/.config/.zplug/repos/custom
-  d_slock:
-    src: config/slock
-    dst: ~/.config/slock
-  d_x11:
-    src: config/X11
-    dst: ~/.config/X11
-  d_yay:
-    src: config/yay
-    dst: ~/.config/yay
+  d_fonts:
+    src: local/share/fonts
+    dst: ~/.local/share/fonts
+    cmpignore:
+    - '.uuid'
+    upignore:
+    - '.uuid'
   d_kvantum:
     src: config/Kvantum
     dst: ~/.config/Kvantum
-  d_qt5ct:
-    src: config/qt5ct
-    dst: ~/.config/qt5ct
   d_mutt:
     src: config/mutt
     dst: ~/.config/mutt
-    instignore:
-    - accounts
-    - .mailsynclastrun
+    cmpignore:
+    - 'accounts'
+    - '.mailsynclastrun'
     upignore:
-    - accounts
-    - .mailsynclastrun
-  d_gdb:
-    src: config/gdb
-    dst: ~/.config/gdb
-  d_paru:
-    src: config/paru
-    dst: ~/.config/paru
-  d_extensions:
-    src: config/extensions
-    dst: ~/.config/extensions
-  f_calvinn.ttf:
-    src: local/share/fonts/CALVINN.TTF
-    dst: ~/.local/share/fonts/CALVINN.TTF
-  f_calvino.ttf:
-    src: local/share/fonts/CALVINO.TTF
-    dst: ~/.local/share/fonts/CALVINO.TTF
+    - 'accounts'
+    - '.mailsynclastrun'
+  d_qt5ct:
+    src: config/qt5ct
+    dst: ~/.config/qt5ct
+  d_ranger:
+    src: config/ranger
+    dst: ~/.config/ranger
+    cmpignore:
+    - '*/__pycache__'
+    upignore:
+    - '*/__pycache__'
+  d_slock:
+    src: config/slock
+    dst: ~/.config/slock
 profiles:
   arch:
     dotfiles:
     - f_zshrc
     - f_bashrc
     - f_xinitrc
-    - d_mpv
-    - d_htop
-    - d_newsboat
-    - d_sxiv
-    - f_aliasrc
-    - d_scripts
-    - d_bspwm
+    - d_alias_and_keybinds
     - d_sxhkd
+    - d_bspwm
+    - d_alacritty
+    - d_x11
+    - d_paru
+    - d_yay
+    - d_picom
+    - d_zathura
+    - f_gtkrc-2.0
+    - d_gdb
+    - d_sxiv
+    - d_gtk-3.0
+    - d_htop
+    - d_browser_extensions_backup
+    - d_mpv
+    - d_newsboat
+    - f_starship.toml
+    - d_scripts
     - d_polybar
     - d_dunst
-    - d_alacritty
-    - f_gtkrc-2.0
-    - d_gtk-3.0
-    - d_zathura
-    - d_breeze-blue
-    - d_ranger
-    - d_picom
-    - f_plug.vim
-    - d_custom
-    - d_slock
-    - d_x11
-    - d_yay
+    - d_fonts
     - d_kvantum
-    - d_qt5ct
     - d_mutt
-    - d_gdb
-    - d_paru
-    - d_extensions
-    - f_calvinn.ttf
-    - f_calvino.ttf
+    - d_qt5ct
+    - d_ranger
+    - d_slock
