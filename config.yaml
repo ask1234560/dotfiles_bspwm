@@ -16,9 +16,6 @@ dotfiles:
     src: bashrc
     dst: ~/.bashrc
     chmod: '777'
-  f_xinitrc:
-    src: xinitrc
-    dst: ~/.xinitrc
   d_alias_and_keybinds:
     src: config/alias_and_keybinds
     dst: ~/.config/alias_and_keybinds
@@ -47,9 +44,6 @@ dotfiles:
     src: config/zathura
     dst: ~/.config/zathura
     chmod: '700'
-  f_gtkrc-2.0:
-    src: gtkrc-2.0
-    dst: ~/.gtkrc-2.0
   d_gdb:
     src: config/gdb
     dst: ~/.config/gdb
@@ -126,12 +120,18 @@ dotfiles:
   d_slock:
     src: config/slock
     dst: ~/.config/slock
+  d_gtk-2.0:
+    src: config/gtk-2.0
+    dst: ~/.config/gtk-2.0
+    chmod: '700'
+  d_gtk-4.0:
+    src: config/gtk-4.0
+    dst: ~/.config/gtk-4.0
 profiles:
   arch:
     dotfiles:
     - f_zshrc
     - f_bashrc
-    - f_xinitrc
     - d_alias_and_keybinds
     - d_sxhkd
     - d_bspwm
@@ -141,7 +141,6 @@ profiles:
     - d_yay
     - d_picom
     - d_zathura
-    - f_gtkrc-2.0
     - d_gdb
     - d_sxiv
     - d_gtk-3.0
@@ -159,3 +158,5 @@ profiles:
     - d_qt5ct
     - d_ranger
     - d_slock
+    - d_gtk-2.0
+    - d_gtk-4.0

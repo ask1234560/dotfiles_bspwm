@@ -28,6 +28,7 @@ alias \
     gaa='git add --all' \
     gb='git branch' \
     gba='git branch -a' \
+    gcl='git clone --recurse-submodules' \
     gcmsg='git commit -S -m' \
     gco='git checkout' \
     gd='git diff' \

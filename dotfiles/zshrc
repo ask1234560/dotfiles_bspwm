@@ -1,10 +1,27 @@
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+
+export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
+# z
+export _Z_DATA="$XDG_DATA_HOME/z"
+export _Z_SRC="/usr/share/z/z.sh"
+# autosuggestions
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5e6d6e"
+
+
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
-HISTFILE="$HOME/.cache/zsh/history"
+HISTFILE="$XDG_CACHE_HOME/zsh/history"
 
 autoload -Uz compinit
-compinit -d "$HOME/.cache/zsh/zcompdump-$ZSH_VERSION"
+if [[ -n  $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION(#qN.mh+24) ]]
+then
+    compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
+else
+    compinit -C
+fi
 
 setopt histexpiredupsfirst histignorespace nobanghist nobeep
 # setopt sharehistory                 # share history between sessions
@@ -16,13 +33,6 @@ then
     pgrep bspwm || startx
 fi
 
-# z
-export _Z_DATA="$HOME/.local/share/z"
-export _Z_SRC="/usr/share/z/z.sh"
-
-# autosuggestions
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5e6d6e"
-
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 setopt auto_cd
@@ -32,13 +42,12 @@ _comp_options+=(globdots)
 
 # aliases
 alias -g -- --help="--help | less -FXi ; true "
-source $HOME/.config/alias_and_keybinds/aliasrc
+source $XDG_CONFIG_HOME/alias_and_keybinds/aliasrc
 # load keybinds
-source $HOME/.config/alias_and_keybinds/key-bindings.zsh
+source $XDG_CONFIG_HOME/alias_and_keybinds/key-bindings.zsh
 
 # plugins
 eval "$(starship init zsh)"
 source $_Z_SRC
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-

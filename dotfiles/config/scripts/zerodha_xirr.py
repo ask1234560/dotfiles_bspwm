@@ -22,11 +22,12 @@ if __name__ == "__main__":
             temp.append(row)
 
     for row in temp[2:-1]:
-        flag = False
+        flag = True
         for pattern in exclude_patterns:
             if pattern in row[0]:
-                flag = True
-        if not flag:
+                flag = False
+                break
+        if flag:
             rows.append(row)
 
     for row in rows:
@@ -41,4 +42,4 @@ if __name__ == "__main__":
 
     per = xirr.math.listsXirr(xirr_dict["date"], xirr_dict["val"])
 
-    print("xirr returns is {}%".format(round(per*100, 2)))
+    print(f"xirr returns is {round(per*100, 2)}%")
