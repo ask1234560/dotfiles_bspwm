@@ -6,12 +6,21 @@ set date_format="%b %d %I:%M%p"
 set query_command = "abook --datafile "$XDG_DATA_HOME"/abook/addressbook --mutt-query '%s'"
 macro index,pager a "<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return><pipe-message>abook --datafile "$XDG_DATA_HOME"/abook/addressbook --add-email<return><enter-command>set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<return>" "add the sender address to abook"
 macro index,pager,attach <Esc>a  "<pipe-message>sed -e /^From/d -e s/To:/From:/ | abook --datafile "$XDG_DATA_HOME"/abook/addressbook --add-email<return>" "add the to: address to abook?"
-macro index,pager gs "<change-folder>=Sent Mail<enter>" "go to sent"
-macro index,pager Ms ";<save-message>=Sent Mail<enter>" "move mail to sent"
-macro index,pager Cs ";<copy-message>=Sent Mail<enter>" "copy mail to sent"
-macro index,pager gS "<change-folder>=Spam<enter>" "go to spam"
-macro index,pager MS ";<save-message>=Spam<enter>" "move mail to spam"
-macro index,pager CS ";<copy-message>=Spam<enter>" "copy mail to spam"
+
+
+macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>" "go to drafts"
+macro index,pager Md ";<save-message>=[Gmail]/Drafts<enter>" "move mail to drafts"
+macro index,pager Cd ";<copy-message>=[Gmail]/Drafts<enter>" "copy mail to drafts"
+macro index,pager gt "<change-folder>=[Gmail]/Trash<enter>" "go to trash"
+macro index,pager Mt ";<save-message>=[Gmail]/Trash<enter>" "move mail to trash"
+macro index,pager Ct ";<copy-message>=[Gmail]/Trash<enter>" "copy mail to trash"
+macro index,pager gs "<change-folder>=[Gmail]/Sent Mail<enter>" "go to sent"
+macro index,pager Ms ";<save-message>=[Gmail]/Sent Mail<enter>" "move mail to sent"
+macro index,pager Cs ";<copy-message>=[Gmail]/Sent Mail<enter>" "copy mail to sent"
+macro index,pager gS "<change-folder>=[Gmail]/Spam<enter>" "go to spam"
+macro index,pager MS ";<save-message>=[Gmail]/Spam<enter>" "move mail to spam"
+macro index,pager CS ";<copy-message>=[Gmail]/Spam<enter>" "copy mail to spam"
+
 
 source /home/ananthu/.config/mutt/accounts/ask1234560@gmail.com.muttrc
 macro index,pager i1 '<sync-mailbox><enter-command>source /home/ananthu/.config/mutt/accounts/ask1234560@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to ask1234560@gmail.com"

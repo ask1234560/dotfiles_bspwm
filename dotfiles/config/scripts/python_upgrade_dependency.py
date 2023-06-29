@@ -2,7 +2,7 @@ import os
 import shlex
 import subprocess
 
-PATH = '/usr/lib/python3.10/site-packages'
+PATH = '/usr/lib/python3.11/site-packages'
 
 
 def main():
