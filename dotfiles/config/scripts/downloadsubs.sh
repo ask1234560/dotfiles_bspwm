@@ -1,17 +1,17 @@
 #!/bin/bash
 # This files uses subliminal for subtitles download
 
-filename="$1"
 lan='en'
-server="$2"
+provider="$1"
+shift
 
-case $server in 
-    1)
+case $provider in 
+    opensubtitles)
         name="OPENSUBTITLES"
         username=$name\_username
         password=$name\_password
         ;;
-    2)
+    addic7ed)
         name="ADDIC7ED"
         username=$name\_username
         password=$name\_password
@@ -23,4 +23,4 @@ case $server in
         ;;
 esac
 
-subliminal --${name,,} $(eval "echo \${$username}") $(eval "echo \${$password}") download -l $lan "$filename"
+subliminal --${name,,} $(eval "echo \${$username}") $(eval "echo \${$password}") download -l $lan "$@"

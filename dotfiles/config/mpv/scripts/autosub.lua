@@ -20,7 +20,7 @@ function download_subs()
     conn_result = utils.subprocess(conn_table)
 
     if string.find(conn_result.stdout, 'packets transmitted') then
-        table = { args = { downloadsubs_exe, filename } }
+        table = { args = { downloadsubs_exe, 'opensubtitles', filename } }
         result = utils.subprocess(table)
         if string.find(result.stdout, 'Downloaded 1 subtitle') then
             -- Subtitles are downloaded successfully, so rescan to activate them:

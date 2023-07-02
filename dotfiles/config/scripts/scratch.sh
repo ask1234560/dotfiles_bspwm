@@ -4,14 +4,20 @@ name="$1"
 filename=/tmp/"$1"
 
 bspc_write_nodeid() {
-    for id in $(bspc query -d focused -N -n .floating.sticky)
+    while true
     do
-        bspc query --node $id -T | grep -q $name && echo $id > $filename && break
+        flag=false
+        for id in $(bspc query -d focused -N -n .floating.sticky.hidden)
+        do
+            bspc query --node $id -T | grep -q $name && { echo $id > $filename; flag=true; break; }
+        done
+        [[ "$flag" == "true" ]] && break
+        sleep 0.1s
     done
 }
 
 hide_all_except_current(){
-    for id in $(bspc query -d focused -N -n .floating.sticky)
+    for id in $(bspc query -d focused -N -n .floating.sticky.!hidden)
     do
         bspc query --node $id -T | grep -qv $name && bspc node $id --flag hidden=on
     done
@@ -54,7 +60,6 @@ then
             exit 1
     esac
     dunstify "Scratch: starting $name"
-    sleep 3s
     bspc_write_nodeid
     toggle_hidden
 else
