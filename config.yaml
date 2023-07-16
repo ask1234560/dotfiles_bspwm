@@ -66,16 +66,16 @@ dotfiles:
     dst: ~/.config/mpv
     chmod: '700'
     cmpignore:
-    - 'watch_later'
+    - watch_later
     upignore:
-    - 'watch_later'
+    - watch_later
   d_newsboat:
     src: config/newsboat
     dst: ~/.config/newsboat
     cmpignore:
-    - 'cache.db'
+    - cache.db
     upignore:
-    - 'cache.db'
+    - cache.db
   f_starship.toml:
     src: config/starship.toml
     dst: ~/.config/starship.toml
@@ -92,9 +92,9 @@ dotfiles:
     src: local/share/fonts
     dst: ~/.local/share/fonts
     cmpignore:
-    - '.uuid'
+    - .uuid
     upignore:
-    - '.uuid'
+    - .uuid
   d_kvantum:
     src: config/Kvantum
     dst: ~/.config/Kvantum
@@ -102,11 +102,11 @@ dotfiles:
     src: config/mutt
     dst: ~/.config/mutt
     cmpignore:
-    - 'accounts'
-    - '.mailsynclastrun'
+    - accounts
+    - .mailsynclastrun
     upignore:
-    - 'accounts'
-    - '.mailsynclastrun'
+    - accounts
+    - .mailsynclastrun
   d_qt5ct:
     src: config/qt5ct
     dst: ~/.config/qt5ct
@@ -127,6 +127,10 @@ dotfiles:
   d_gtk-4.0:
     src: config/gtk-4.0
     dst: ~/.config/gtk-4.0
+  d_cpupower_gui:
+    src: config/cpupower_gui
+    dst: ~/.config/cpupower_gui
+    chmod: '700'
 profiles:
   arch:
     dotfiles:
@@ -160,3 +164,4 @@ profiles:
     - d_slock
     - d_gtk-2.0
     - d_gtk-4.0
+    - d_cpupower_gui

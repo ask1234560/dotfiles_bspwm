@@ -6,12 +6,11 @@ $git_branch\
 $git_commit\
 $git_status\
 $python\
+$fill\
+$cmd_duration\
 $line_break\
 $jobs\
 $character"""
-
-right_format = """
-$cmd_duration"""
 
 
 
@@ -178,4 +177,7 @@ show_milliseconds = true
 
 [sudo]
 disabled = false
+
+[fill]
+symbol = ' '
 
