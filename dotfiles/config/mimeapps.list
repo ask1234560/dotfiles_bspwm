@@ -1,0 +1,19 @@
+[Added Associations]
+image/jpeg=sxiv.desktop;userapp-"sxiv"-B3FSK0.desktop;
+x-scheme-handler/http=exo-web-browser.desktop;
+x-scheme-handler/https=exo-web-browser.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-97NP30.desktop;org.telegram.desktop.desktop;
+application/octet-stream=Alacritty.desktop;
+video/mp4=mpv.desktop;
+application/x-shellscript=leafpad.desktop;
+
+[Default Applications]
+image/jpeg=sxiv.desktop
+image/jpg=sxiv.desktop
+image/png=sxiv.desktop
+x-scheme-handler/tg=org.telegram.desktop.desktop
+application/pdf=org.pwmt.zathura-pdf-poppler.desktop;
+application/octet-stream=org.pwmt.zathura-pdf-poppler.desktop;
+x-scheme-handler/magnet=brave-browser.desktop
+x-scheme-handler/etcher=balena-etcher.desktop
+inode/directory=thunar.desktop

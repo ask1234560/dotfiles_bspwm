@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # end a command with ; to run in a terminal
 
 term="$TERMINAL -e"

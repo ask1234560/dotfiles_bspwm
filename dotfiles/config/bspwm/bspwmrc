@@ -1,8 +1,19 @@
 #!/bin/bash
 
 # Autostart
-pgrep -x sxhkd > /dev/null     || sxhkd &
 $HOME/.config/polybar/launch.sh &
+pgrep -x sxhkd > /dev/null                  || sxhkd &
+pgrep -x dunst > /dev/null                  || dunst &
+# pgrep -x picom > /dev/null                || picom --no-fading-openclose &
+pgrep -x unclutter > /dev/null              || unclutter &
+bg-changer random &
+numlockx &
+xset r rate 300 50 -b -dpms &
+xsetroot -cursor_name left_ptr &
+# disable inbuilt keyboard
+# id=$(xinput list | grep AT | awk '{print $7}'); xinput float ${id#*=}
+# pgrep -f browser_fullscreen > /dev/null   || browser_fullscreen &
+pgrep -f transmission-daemon > /dev/null    || transmission-daemon &
 
 # monitors
 bspc monitor -d I II III IV V VI
@@ -30,13 +41,11 @@ bspc config normal_border_color         "#002b36"
 bspc config presel_feedback_color       "#839496"
 
 # rules
-bspc rule -a Brave-browser              desktop='^3' state=tiled
-bspc rule -a Gimp                       desktop='^5' state=floating
+bspc rule -a Brave-browser                desktop='^3' state=tiled
+bspc rule -a Gimp                         desktop='^5' state=floating
 # bspc rule -a libreoffice-startcenter    desktop='^5' state=tiled
-bspc rule -a MEGAsync                                state=floating
-bspc rule -a mpv                        desktop='^5' state=tiled
+bspc rule -a MEGAsync                                  state=floating
+bspc rule -a mpv                          desktop='^5' state=tiled
 # bspc rule -a Soffice                    desktop='^5' state=tiled
-bspc rule -a VirtualBox\ Manager        desktop='^5' state=tiled
-bspc rule -a VirtualBoxVM               desktop='^6' state=fullscreen
-bspc rule -a xdman-Main                 desktop='^3' state=floating
-bspc rule -a Zathura                                 state=tiled
+bspc rule -a Virt-manager                 desktop='^6' state=tiled
+bspc rule -a Zathura                                   state=tiled

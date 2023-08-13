@@ -131,6 +131,9 @@ dotfiles:
     src: config/cpupower_gui
     dst: ~/.config/cpupower_gui
     chmod: '700'
+  f_mimeapps.list:
+    src: config/mimeapps.list
+    dst: ~/.config/mimeapps.list
 profiles:
   arch:
     dotfiles:
@@ -165,3 +168,4 @@ profiles:
     - d_gtk-2.0
     - d_gtk-4.0
     - d_cpupower_gui
+    - f_mimeapps.list

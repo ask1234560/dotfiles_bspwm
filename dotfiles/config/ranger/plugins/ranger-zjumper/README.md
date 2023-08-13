@@ -1,6 +1,8 @@
 # Ranger & z
 This plugin integrates [z](https://github.com/rupa/z) with [ranger](https://github.com/ranger/ranger).The plugin uses `.z` file to jump around, watch [screencast](https://youtu.be/ciHHbFtz4N8).
 
+This branch currently only supports [z](https://github.com/rupa/z), if you wanted to use [zsh-z](https://github.com/agkozak/zsh-z) please see the [master](https://github.com/ask1234560/ranger-zjumper/tree/master) branch.
+
 ## Requirement
 * set `_Z_SRC` to path to z.sh
 
