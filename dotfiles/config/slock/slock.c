@@ -316,7 +316,7 @@ main(int argc, char **argv) {
 
 	ARGBEGIN {
 	case 'v':
-		fprintf(stderr, "slock-"VERSION"\n");
+		puts("slock-"VERSION);
 		return 0;
 	default:
 		usage();

@@ -15,11 +15,11 @@ dotfiles:
     src: usr/local/bin
     dst: /usr/local/bin
     cmpignore:
-    - 'dmenu*'
-    - 'stest'
+    - dmenu*
+    - stest
     upignore:
-    - 'dmenu*'
-    - 'stest'
+    - dmenu*
+    - stest
   d_cron:
     src: var/spool/cron
     dst: /var/spool/cron
