@@ -6,7 +6,7 @@ set date_format="%b %d %I:%M%p"
 set query_command = "abook --datafile "$XDG_DATA_HOME"/abook/addressbook --mutt-query '%s'"
 macro index,pager a "<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return><pipe-message>abook --datafile "$XDG_DATA_HOME"/abook/addressbook --add-email<return><enter-command>set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<return>" "add the sender address to abook"
 macro index,pager,attach <Esc>a  "<pipe-message>sed -e /^From/d -e s/To:/From:/ | abook --datafile "$XDG_DATA_HOME"/abook/addressbook --add-email<return>" "add the to: address to abook?"
-
+set display_filter="exec sed -r \"s/^Date:\\s*(([F-Wa-u]{3},\\s*)?[[:digit:]]{1,2}\\s+[A-Sa-y]{3}\\s+[[:digit:]]{4}\\s+[[:digit:]]{1,2}:[[:digit:]]{1,2}(:[[:digit:]]{1,2})?\\s+[+-][[:digit:]]{4})/date +'Date: %a, %d %b %Y %H:%M:%S %z' -d '\\1'/e\""
 
 macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>" "go to drafts"
 macro index,pager Md ";<save-message>=[Gmail]/Drafts<enter>" "move mail to drafts"

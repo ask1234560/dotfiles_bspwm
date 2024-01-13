@@ -134,6 +134,9 @@ dotfiles:
   f_mimeapps.list:
     src: config/mimeapps.list
     dst: ~/.config/mimeapps.list
+  d_git:
+    src: config/git
+    dst: ~/.config/git
 profiles:
   arch:
     dotfiles:
@@ -169,3 +172,4 @@ profiles:
     - d_gtk-4.0
     - d_cpupower_gui
     - f_mimeapps.list
+    - d_git

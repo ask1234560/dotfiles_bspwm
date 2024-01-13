@@ -1,0 +1,11 @@
+[user]
+	email = ask1234560@gmail.com
+	name = ananthu
+	signingkey = 5A2FBE239078A7CD
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[log]
+	date = local

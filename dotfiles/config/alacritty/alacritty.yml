@@ -139,16 +139,16 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: JetBrainsMono Nerd Font
+    family: JetBrainsMono NFM
     style: Bold
   bold:
-    family: JetBrainsMono Nerd Font
+    family: JetBrainsMono NFM
     style: Bold
   italic:
-    family: JetBrainsMono Nerd Font
+    family: JetBrainsMono NFM
     style: Medium 
   bold_italic:
-    family: JetBrainsMono Nerd Font
+    family: JetBrainsMono NFM
     style: Medium
 
   # Point size

@@ -1,0 +1,119 @@
+[colors.bright]
+black = "#002b36"
+blue = "#839496"
+cyan = "#93a1a1"
+green = "#586e75"
+magenta = "#6c71c4"
+red = "#cb4b16"
+white = "#fdf6e3"
+yellow = "#657b83"
+
+[colors.cursor]
+cursor = "#839496"
+text = "#002b36"
+
+[colors.normal]
+black = "#073642"
+blue = "#268bd2"
+cyan = "#2aa198"
+green = "#859900"
+magenta = "#d33682"
+red = "#dc322f"
+white = "#eee8d5"
+yellow = "#b58900"
+
+[colors.primary]
+background = "#002b36"
+foreground = "#839496"
+
+[colors.vi_mode_cursor]
+cursor = "0x268bd2"
+text = "CellBackground"
+
+[cursor]
+vi_mode_style = "Block"
+
+[cursor.style]
+shape = "Block"
+
+[font]
+size = 11
+
+[font.bold]
+family = "JetBrainsMono NFM"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono NFM"
+style = "Medium"
+
+[font.italic]
+family = "JetBrainsMono NFM"
+style = "Medium"
+
+[font.normal]
+family = "JetBrainsMono NFM"
+style = "Bold"
+
+[[keyboard.bindings]]
+action = "ScrollHalfPageUp"
+key = "K"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ScrollHalfPageDown"
+key = "J"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "Escape"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "A"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "Last"
+key = 5
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = 13
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Control|Shift"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+
+[window]
+opacity = 0.8
+
+[window.dimensions]
+columns = 134
+lines = 32
+
+[window.padding]
+x = 0
+y = 0
+
+[window.position]
+x = 13
+y = 52
