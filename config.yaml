@@ -137,6 +137,15 @@ dotfiles:
   d_git:
     src: config/git
     dst: ~/.config/git
+  d_simple-file-server:
+    src: Desktop/xtra/projects/simple-file-server
+    dst: ~/Desktop/xtra/projects/simple-file-server
+    cmpignore:
+    - uploads
+    - node_modules
+    upignore:
+    - uploads
+    - node_modules
 profiles:
   arch:
     dotfiles:
@@ -173,3 +182,4 @@ profiles:
     - d_cpupower_gui
     - f_mimeapps.list
     - d_git
+    - d_simple-file-server
