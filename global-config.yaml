@@ -48,12 +48,6 @@ dotfiles:
     src: etc/sudoers
     dst: /etc/sudoers
     chmod: '440'
-    cmpignore:
-    - '*'
-    upignore:
-    - '*'
-    instignore:
-    - '*'
   f_profile:
     src: etc/profile
     dst: /etc/profile

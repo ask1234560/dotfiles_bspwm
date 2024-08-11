@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
 // Create the multer instance
 const upload = multer({ storage: storage });
 
-app.post('/up', upload.single('file'), (req, res) => {
+app.post('/up', upload.array('file'), (req, res) => {
   // Handle the uploaded file
   res.json({ message: 'File uploaded successfully!' });
 });
