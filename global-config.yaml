@@ -57,6 +57,9 @@ dotfiles:
     - '*'
     instignore:
     - '*'
+  d_breeze_blue:
+    src: usr/share/icons/Breeze_Blue
+    dst: /usr/share/icons/Breeze_Blue
 profiles:
   arch:
     dotfiles:
@@ -72,3 +75,4 @@ profiles:
     - f_script.service
     - f_sudoers
     - f_profile
+    - d_breeze_blue
