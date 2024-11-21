@@ -7,8 +7,8 @@ do
 done
 export DISPLAY=:0
 
-stat=$(</sys/class/power_supply/BAT1/status)
-cap=$(</sys/class/power_supply/BAT1/capacity)
+stat=$(</sys/class/power_supply/BAT0/status)
+cap=$(</sys/class/power_supply/BAT0/capacity)
 
 if [ "$stat" == "Discharging" ]
 then

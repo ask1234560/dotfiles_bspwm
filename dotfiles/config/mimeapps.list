@@ -17,3 +17,4 @@ application/octet-stream=org.pwmt.zathura-pdf-poppler.desktop;
 x-scheme-handler/magnet=brave-browser.desktop
 x-scheme-handler/etcher=balena-etcher.desktop
 inode/directory=thunar.desktop
+x-scheme-handler/webcal=brave-browser.desktop

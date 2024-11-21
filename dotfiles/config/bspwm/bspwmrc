@@ -13,7 +13,7 @@ xsetroot -cursor_name left_ptr &
 # disable inbuilt keyboard
 # id=$(xinput list | grep AT | awk '{print $7}'); xinput float ${id#*=}
 # pgrep -f browser_fullscreen > /dev/null   || browser_fullscreen &
-pgrep -f transmission-daemon > /dev/null    || transmission-daemon &
+# pgrep -f transmission-daemon > /dev/null    || transmission-daemon &
 
 # monitors
 bspc monitor -d I II III IV V VI
@@ -33,7 +33,7 @@ bspc config pointer_modifier            mod4
 bspc config right_padding               0
 bspc config single_monocle              true
 bspc config split_ratio                 0.70
-bspc config top_padding                 29
+bspc config top_padding                 31
 bspc config window_gap                  2
 # colors
 bspc config focused_border_color        "#839496"

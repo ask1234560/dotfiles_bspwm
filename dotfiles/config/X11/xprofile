@@ -77,7 +77,7 @@ export CARGO_BUILD_JOBS=1
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # make
-export MAKEFLAGS="-j1"
+export MAKEFLAGS="-j$(echo $(nproc) - 2 | bc)"
 
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"

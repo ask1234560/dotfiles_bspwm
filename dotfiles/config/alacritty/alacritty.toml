@@ -114,6 +114,6 @@ lines = 32
 x = 0
 y = 0
 
-[window.position]
-x = 13
-y = 52
+# [window.position]
+# x = 13
+# y = 52

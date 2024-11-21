@@ -60,6 +60,15 @@ dotfiles:
   d_breeze_blue:
     src: usr/share/icons/Breeze_Blue
     dst: /usr/share/icons/Breeze_Blue
+  f_backlight.rules:
+    src: etc/udev/rules.d/backlight.rules
+    dst: /etc/udev/rules.d/backlight.rules
+  f_99-swappiness.conf:
+    src: etc/sysctl.d/99-swappiness.conf
+    dst: /etc/sysctl.d/99-swappiness.conf
+  f_40-libinput.conf:
+    src: etc/X11/xorg.conf.d/40-libinput.conf
+    dst: /etc/X11/xorg.conf.d/40-libinput.conf
 profiles:
   arch:
     dotfiles:
@@ -76,3 +85,6 @@ profiles:
     - f_sudoers
     - f_profile
     - d_breeze_blue
+    - f_backlight.rules
+    - f_99-swappiness.conf
+    - f_40-libinput.conf

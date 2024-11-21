@@ -1,4 +1,5 @@
 #!/bin/bash
 
-# disable mouse from waking up lap during suspend
-echo EHC2 > /proc/acpi/wakeup
+# disable mouse and keyboard from waking up lap during suspend
+echo XHC0 > /proc/acpi/wakeup
+echo XHC1 > /proc/acpi/wakeup

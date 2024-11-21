@@ -3,5 +3,6 @@
 xrdb -merge "$HOME/.config/X11/xresources"
 xmodmap "$HOME/.config/X11/xmodmap"
 . "$HOME/.config/X11/xprofile"
+. "$HOME/.config/scripts/hdmi-monitor.sh"
 
 exec bspwm
