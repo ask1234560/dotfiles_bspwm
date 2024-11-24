@@ -18,8 +18,8 @@ super + Escape
 # focus the last node/desktop
 super + grave
     bspc desktop -f last.occupied
-super + Tab
-    bspc node -f last.local
+super + {_,shift} + Tab
+    {bspc node -f last.local,keyboard-layout-changer}
 # focus the next/previous node in the current desktop
 super + bracket{left,right}
     bspc node -f {next,prev}.local.!hidden.window.floating

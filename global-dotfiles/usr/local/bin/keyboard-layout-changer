@@ -1,0 +1,23 @@
+#!/bin/bash
+
+layouts=("us" "de")
+
+filename="/tmp/keyboardlayout"
+
+if [[ ! -e $filename ]]
+then
+    echo ${layouts[0]} > $filename
+fi
+
+currentlayout=$(<$filename)
+
+
+for i in "${!layouts[@]}"
+do 
+    if [[ "${layouts[$i]}" == "${currentlayout}" ]]
+    then
+        nextindex="$(echo "($i+1) % ${#layouts[@]}" | bc)"
+        nextlayout="${layouts[$nextindex]}"
+        setxkbmap "$nextlayout" && cosmicbyte_keyboard_script nodelay && echo "$nextlayout" > $filename
+    fi
+done

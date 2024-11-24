@@ -14,12 +14,6 @@ dotfiles:
   d_bin:
     src: usr/local/bin
     dst: /usr/local/bin
-    cmpignore:
-    - dmenu*
-    - stest
-    upignore:
-    - dmenu*
-    - stest
   d_cron:
     src: var/spool/cron
     dst: /var/spool/cron
