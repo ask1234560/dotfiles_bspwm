@@ -1,31 +1,45 @@
 #!/bin/bash
 
-# You can call this script like this:
-# $./brightness.sh up
-# $./brightness.sh down
-# $./brightness.sh mute
+brightness_file="/sys/class/backlight/amdgpu_bl2/brightness"
+brightness="$(<$brightness_file)"
 
-function get_icon {
-    brightness=$(cbacklight --get)
+calculate_brightness() {
+    # Input arguments: current brightness and percentage increase
+    local current_brightness=$1
+    local percentage_change=$2
+
+    # Calculate the final brightness using awk
+    local brightness_change=$(awk -v brightness="$current_brightness" -v percent="$percentage_change" \
+        'BEGIN{ printf "%.f", ((brightness * percent) / 100) }')
+
+    # Return the final brightness value
+    echo "$brightness_change"
+}
+
+function write_brightness {
+    local brightness=$1
+    echo $brightness | tee $brightness_file
+
+    local icon=display-brightness-low-symbolic
     if [ $brightness -gt 64 ]
     then
-        icon=display-brightness-symbolic.symbolic
+        icon=display-brightness-high-symbolic
     elif [ $brightness -gt 31 ]
     then
-        icon=display-brightness-symbolic.symbolic
-    else
-        icon=display-brightness-symbolic.symbolic
+        icon=display-brightness-medium-symbolic
     fi
+    dunstify -i $icon -t 2000 -r 2594 "Brightness: $brightness%"
 }
 
 case $1 in
     up)
-        cbacklight --inc 3
-	    get_icon
+        brightness_change=$(calculate_brightness $brightness 5)
+        final_brightness=$(echo $brightness + $brightness_change | bc)
+        write_brightness $final_brightness
 	;;
     down)
-        cbacklight --dec 3
-	    get_icon
+        brightness_change=$(calculate_brightness $brightness 5)
+        final_brightness=$(echo $brightness - $brightness_change | bc)
+        write_brightness $final_brightness
 	;;
 esac
-dunstify -i $icon -t 2000 -r 2594 "Brightness: $brightness%"

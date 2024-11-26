@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# You can call this script like this:
-# $./volume.sh up
-# $./volume.sh down
-# $./volume.sh mute
-
 function get_volume {
     pactl get-sink-volume @DEFAULT_SINK@ | grep -oP '[0-9]+%' | head -n1 | cut -d'%' -f1
 }
@@ -17,12 +12,12 @@ function get_icon {
     volume=`get_volume`
     if [ $volume -gt 64 ]
     then
-        icon=audio-volume-high-symbolic.symbolic
+        icon=audio-volume-high-symbolic
     elif [ $volume -gt 31 ]
     then
-        icon=audio-volume-medium-symbolic.symbolic
+        icon=audio-volume-medium-symbolic
     else
-        icon=audio-volume-low-symbolic.symbolic
+        icon=audio-volume-low-symbolic
     fi
 }
 
@@ -41,7 +36,7 @@ case $1 in
         pactl set-sink-mute @DEFAULT_SINK@ toggle
         if is_mute
         then
-            icon=audio-volume-muted-symbolic.symbolic
+            icon=audio-volume-muted-symbolic
             volume=0
         else
             get_icon

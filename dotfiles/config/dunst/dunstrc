@@ -166,7 +166,10 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/Adwaita/32x32/status/:/usr/share/icons/Adwaita/32x32/devices/:/usr/share/icons/Adwaita/32x32/actions/
+    # icon_path = /usr/share/icons/Adwaita/32x32/status/:/usr/share/icons/Adwaita/32x32/devices/:/usr/share/icons/Adwaita/32x32/actions/
+    #
+    icon_theme = Papirus-Dark
+    enable_recursive_icon_lookup = true
 
     ### History ###
 

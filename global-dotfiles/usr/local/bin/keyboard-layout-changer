@@ -4,12 +4,12 @@ layouts=("us" "de")
 
 filename="/tmp/keyboardlayout"
 
-if [[ ! -e $filename ]]
+if [[ -e "$filename" ]]
 then
-    echo ${layouts[0]} > $filename
+    currentlayout="$(<$filename)"
+else
+    currentlayout="${layouts[0]}" 
 fi
-
-currentlayout=$(<$filename)
 
 
 for i in "${!layouts[@]}"
@@ -18,6 +18,6 @@ do
     then
         nextindex="$(echo "($i+1) % ${#layouts[@]}" | bc)"
         nextlayout="${layouts[$nextindex]}"
-        setxkbmap "$nextlayout" && cosmicbyte_keyboard_script nodelay && echo "$nextlayout" > $filename
+        setxkbmap "$nextlayout" && cosmicbyte_keyboard_script nodelay && echo "$nextlayout" > $filename && dunstify -t 10000 "Keyboard layout changed to $nextlayout" --icon="input-keyboard-symbolic"
     fi
 done

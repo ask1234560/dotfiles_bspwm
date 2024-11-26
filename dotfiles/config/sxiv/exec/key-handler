@@ -4,35 +4,35 @@ do
         case "$1" in
         "c")
                 cp "$file" ~/.cache/default_wall
-                notify-send "Sxiv: set as default wall"
+                dunstify "Sxiv: set as default wall"
                 ;;
         "d")
                 trash "$file"
-                notify-send "Sxiv: trashed"
+                dunstify "Sxiv: trashed"
                 ;;
         "g")
                 gimp "$file" &
-                notify-send "Sxiv: opening in gimp"
+                dunstify "Sxiv: opening in gimp"
                 ;;
         "r")
                 convert -rotate 90 "$file" "$file"
-                notify-send "Sxiv: rotated 90 clockwise"
+                dunstify "Sxiv: rotated 90 clockwise"
                 ;;
         "R")
                 convert -rotate -90 "$file" "$file"
-                notify-send "Sxiv: rotated 90 anti-clockwise"
+                dunstify "Sxiv: rotated 90 anti-clockwise"
                 ;;
         "w")
                 hsetroot -fill "$file"  -tint '#9ccfe6'
-                notify-send "Sxiv: wall with tint"
+                dunstify "Sxiv: wall with tint"
                 ;;
         "x")
                 hsetroot -fill "$file"
-                notify-send "Sxiv: exact wall"
+                dunstify "Sxiv: exact wall"
                 ;;
         "y")
                 xclip -selection clipboard -t image/png "$file"
-                notify-send "Sxiv: copied to clipboard"
+                dunstify "Sxiv: copied to clipboard"
                 ;;
         esac
 done

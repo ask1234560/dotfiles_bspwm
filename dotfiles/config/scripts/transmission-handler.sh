@@ -4,7 +4,7 @@ percentage=$(transmission-remote -t $TR_TORRENT_ID -l | awk -v ID="$TR_TORRENT_I
 
 if [ $percentage != "100%" ]
 then
-     notify-send --app-name="Transmission Started" "Transmission: started $TR_TORRENT_NAME"
+     dunstify --icon="transmission-symbolic" "Transmission: started $TR_TORRENT_NAME"
 else
-     notify-send --app-name="Transmission Complete" "Transmission: downloaded $TR_TORRENT_NAME"
+     dunstify --icon="transmission-symbolic" "Transmission: downloaded $TR_TORRENT_NAME"
 fi

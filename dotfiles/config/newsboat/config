@@ -14,7 +14,7 @@ articlelist-title-format ""
 
 # notifications
 notify-format "Newsboat: %d new"
-notify-program "/usr/bin/notify-send" 
+notify-program "/usr/bin/dunstify" 
 
 #keybinds
 bind-key j down
