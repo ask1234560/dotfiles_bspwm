@@ -3,19 +3,6 @@
 brightness_file="/sys/class/backlight/amdgpu_bl2/brightness"
 brightness="$(<$brightness_file)"
 
-calculate_brightness() {
-    # Input arguments: current brightness and percentage increase
-    local current_brightness=$1
-    local percentage_change=$2
-
-    # Calculate the final brightness using awk
-    local brightness_change=$(awk -v brightness="$current_brightness" -v percent="$percentage_change" \
-        'BEGIN{ printf "%.f", ((brightness * percent) / 100) }')
-
-    # Return the final brightness value
-    echo "$brightness_change"
-}
-
 function write_brightness {
     local brightness=$1
     echo $brightness | tee $brightness_file
@@ -33,13 +20,11 @@ function write_brightness {
 
 case $1 in
     up)
-        brightness_change=$(calculate_brightness $brightness 5)
-        final_brightness=$(echo $brightness + $brightness_change | bc)
+        final_brightness=$(( $brightness + 5 ))
         write_brightness $final_brightness
 	;;
     down)
-        brightness_change=$(calculate_brightness $brightness 5)
-        final_brightness=$(echo $brightness - $brightness_change | bc)
+        final_brightness=$(( $brightness - 5 ))
         write_brightness $final_brightness
 	;;
 esac

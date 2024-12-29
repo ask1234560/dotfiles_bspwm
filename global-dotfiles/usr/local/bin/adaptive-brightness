@@ -1,6 +1,6 @@
 #!/bin/sh
 
-MIN=50
+MIN=10
 MAX=$(< /sys/class/backlight/amdgpu_bl2/max_brightness)
 OUT=/sys/class/backlight/amdgpu_bl2/brightness
 
