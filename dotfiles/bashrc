@@ -106,3 +106,5 @@ shopt -s histappend
 
 source ~/.config/alias_and_keybinds/aliasrc
 
+# Created by `pipx` on 2025-01-01 19:56:14
+export PATH="$PATH:$HOME/.local/bin"

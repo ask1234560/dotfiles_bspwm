@@ -51,3 +51,6 @@ eval "$(starship init zsh)"
 source $_Z_SRC
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Created by `pipx` on 2025-01-01 19:56:14
+export PATH="$PATH:$HOME/.local/bin"
