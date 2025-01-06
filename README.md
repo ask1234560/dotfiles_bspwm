@@ -74,7 +74,7 @@ dotfiles/
        * cd ~/.config/slock
        * sudo make install
 * set qt theme to Adapta Nokto(kvantum, qt5ct).
-* for changing theme, change in alacritty, nvim, ~/.Xresources, dmenu, dunst, polybar(reads Xresources), cursor, mpv. Scrot custom region screenclip and bspwm focused window border have same width and color.
+* for changing theme, change in alacritty, nvim, ~/.config/X11/xresources, dmenu, dunst, polybar(reads Xresources), cursor, mpv. Scrot custom region screenclip and bspwm focused window border have same width and color.
 * Terminal font nerd-fonts-jetbrains-mono, ttf-fira-code for remaining apps and otf-font-awesome for polybar glyphs.
 ```
 
