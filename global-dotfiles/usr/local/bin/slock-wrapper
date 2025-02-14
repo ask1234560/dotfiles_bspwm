@@ -6,7 +6,7 @@
 #     date +%a > "/home/ananthu/.cache"/lockscreen_update
 # fi
 
-[ -e "/home/ananthu/.cache"/lockscreen ] || convert /home/ananthu/.cache/default_wall -gravity center /home/ananthu/Pictures/wallpapers/personal/lock-xxl.png -composite "/home/ananthu/.cache"/lockscreen
+[ "/home/ananthu/.cache"/default_wall -nt "/home/ananthu/.cache"/lockscreen ] && convert /home/ananthu/.cache/default_wall -gravity center /home/ananthu/Pictures/wallpapers/personal/lock-xxl.png -composite "/home/ananthu/.cache"/lockscreen
 
 current_desktop=$(bspc query -D -d focused --names)
 bspc rule -a Sxiv --one-shot desktop='^6' follow=on

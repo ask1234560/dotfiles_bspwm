@@ -14,6 +14,10 @@ do
                 gimp "$file" &
                 dunstify "Sxiv: opening in gimp"
                 ;;
+        "p")
+                echo -n "$file" | xclip -selection clipboard
+                dunstify "Sxiv: copied path to clipboard"
+                ;;
         "r")
                 convert -rotate 90 "$file" "$file"
                 dunstify "Sxiv: rotated 90 clockwise"
@@ -32,7 +36,7 @@ do
                 ;;
         "y")
                 xclip -selection clipboard -t image/png "$file"
-                dunstify "Sxiv: copied to clipboard"
+                dunstify "Sxiv: copied image to clipboard"
                 ;;
         esac
 done

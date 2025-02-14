@@ -18,6 +18,7 @@ do
     then
         nextindex="$(echo "($i+1) % ${#layouts[@]}" | bc)"
         nextlayout="${layouts[$nextindex]}"
-        setxkbmap "$nextlayout" && cosmicbyte_keyboard_script nodelay && echo "$nextlayout" > $filename && dunstify -t 10000 "Keyboard layout changed to $nextlayout" --icon="input-keyboard-symbolic"
+        setxkbmap "$nextlayout" && { cosmicbyte_keyboard_script nodelay; echo "$nextlayout" > $filename; dunstify -t 10000 "Keyboard layout changed to $nextlayout" --icon="input-keyboard-symbolic"; }
+        break
     fi
 done
