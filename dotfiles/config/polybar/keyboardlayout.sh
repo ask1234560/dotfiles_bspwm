@@ -7,5 +7,6 @@ then
     currentlayout=$(<$filename)
     echo "[$currentlayout]" 
 else
-    echo ""
+    # default layout
+    echo "[us]"
 fi

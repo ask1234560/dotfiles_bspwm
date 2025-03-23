@@ -47,6 +47,14 @@
     {
       "passKeys": "",
       "pattern": "https?://localhost:9091/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://localhost:8888/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://myappexp.tcsapps.com/*"
     }
   ]
 }
