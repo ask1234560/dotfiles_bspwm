@@ -20,11 +20,11 @@ function write_brightness {
 
 case $1 in
     up)
-        final_brightness=$(( $brightness + 5 ))
+        final_brightness=$(( $brightness + 2 ))
         write_brightness $final_brightness
 	;;
     down)
-        final_brightness=$(( $brightness - 5 ))
+        final_brightness=$(( $brightness - 2 ))
         write_brightness $final_brightness
 	;;
 esac
