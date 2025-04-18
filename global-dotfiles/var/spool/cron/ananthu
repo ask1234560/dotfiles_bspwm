@@ -1,4 +1,5 @@
 */3  *   *   *   *     /home/ananthu/.config/scripts/lowpower_hibernate_arch.sh
-# 0    */5 *   *   * 	   echo " " > /home/ananthu/Desktop/xtra/sslkeys/sslkey.log 
-0    21  *   *   *     rsync -a --delete /home/ananthu /home/489 --log-file /tmp/rsync_backup_home.log
+
+# backup linux home
+0    21  *   *   *     rsync -a --delete --exclude '*/VMs/' /home/ananthu /home/489 --log-file /tmp/rsync_backup_home.log
 

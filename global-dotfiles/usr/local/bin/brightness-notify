@@ -1,11 +1,12 @@
 #!/bin/bash
 
 brightness_file="/sys/class/backlight/amdgpu_bl2/brightness"
+# brightness_file="/sys/class/backlight/amdgpu_bl1/brightness"
 brightness="$(<$brightness_file)"
 
 function write_brightness {
     local brightness=$1
-    echo $brightness | tee $brightness_file
+    echo $brightness > $brightness_file
 
     local icon=display-brightness-low-symbolic
     if [ $brightness -gt 64 ]
