@@ -65,6 +65,9 @@ dotfiles/
 * Other installation
     * nvim
         * git clone --single-branch --branch performance https://github.com/ask1234560/neovim-config.git ~/.config/nvim
+        * sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+        * open nvim, :PlugInstall for installing plugins.
     * dmenu
         * git clone https://github.com/ask1234560/dmenu.git ~/.config/dmenu
         * build dmenu
