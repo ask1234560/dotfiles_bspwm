@@ -146,6 +146,9 @@ dotfiles:
     upignore:
     - uploads
     - node_modules
+  d_eza:
+    src: config/eza
+    dst: ~/.config/eza
 profiles:
   arch:
     dotfiles:
@@ -183,3 +186,4 @@ profiles:
     - f_mimeapps.list
     - d_git
     - d_simple-file-server
+    - d_eza
