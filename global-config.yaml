@@ -63,6 +63,9 @@ dotfiles:
   f_40-libinput.conf:
     src: etc/X11/xorg.conf.d/40-libinput.conf
     dst: /etc/X11/xorg.conf.d/40-libinput.conf
+  d_modprobe.d:
+    src: etc/modprobe.d
+    dst: /etc/modprobe.d
 profiles:
   arch:
     dotfiles:
@@ -82,3 +85,4 @@ profiles:
     - f_backlight.rules
     - f_99-swappiness.conf
     - f_40-libinput.conf
+    - d_modprobe.d
