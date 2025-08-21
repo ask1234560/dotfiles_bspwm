@@ -3,7 +3,7 @@
 GRUB_DEFAULT=saved
 GRUB_TIMEOUT=5
 GRUB_DISTRIBUTOR="Arch"
-GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet splash resume=UUID=5021ead2-1099-4959-a78a-fbf7379d346a"
+GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=5021ead2-1099-4959-a78a-fbf7379d346a sysrq_always_enabled=1 loglevel=3 quiet splash"
 # GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=5021ead2-1099-4959-a78a-fbf7379d346a amd_iommu=on iommu=pt vfio-pci.ids=10de:1f99,10de:10fa"
 GRUB_CMDLINE_LINUX=""
 

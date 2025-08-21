@@ -66,6 +66,14 @@ dotfiles:
   d_modprobe.d:
     src: etc/modprobe.d
     dst: /etc/modprobe.d
+    cmpignore:
+    - '*'
+    - '!vfio.conf'
+    - '!nobeep.conf'
+    upignore:
+    - '*'
+    - '!vfio.conf'
+    - '!nobeep.conf'
 profiles:
   arch:
     dotfiles:

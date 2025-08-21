@@ -3,7 +3,7 @@
 # for multiple instances of bspwm
 for id in $(pgrep -u $LOGNAME -x bspwm)
 do
-    eval "export $(egrep -z DBUS_SESSION_BUS_ADDRESS /proc/$id/environ)"
+    eval "export $(grep -Ez DBUS_SESSION_BUS_ADDRESS /proc/$id/environ | tr '\0' '\n')"
 done
 export DISPLAY=:0
 
