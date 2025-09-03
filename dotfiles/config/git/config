@@ -9,3 +9,5 @@
 	required = true
 [log]
 	date = local
+[core]
+	quotepath = false
