@@ -64,7 +64,7 @@ handle_extension() {
             exit 1;;
         7z)
             ## Avoid password prompt by providing empty password
-            7z l -p -- "${FILE_PATH}" && exit 5
+            7zz l -p -- "${FILE_PATH}" && exit 5
             exit 1;;
 
         ## PDF
@@ -150,10 +150,10 @@ handle_image() {
             exit 1;;
 
         ## DjVu
-        # image/vnd.djvu)
-        #     ddjvu -format=tiff -quality=90 -page=1 -size="${DEFAULT_SIZE}" \
-        #           - "${IMAGE_CACHE_PATH}" < "${FILE_PATH}" \
-        #           && exit 6 || exit 1;;
+        image/vnd.djvu)
+            ddjvu -format=tiff -quality=90 -page=1 -size="${DEFAULT_SIZE}" \
+                  - "${IMAGE_CACHE_PATH}" < "${FILE_PATH}" \
+                  && exit 6 || exit 1;;
 
         ## Image
         image/*)
@@ -172,8 +172,8 @@ handle_image() {
 
         ## Video
         video/*)
-            # don't generate thumbnail for incomplete torrent video file
-            [[ "$FILE_EXTENSION_LOWER" == "part" ]] && return
+            # # don't generate thumbnail for incomplete torrent video file
+            # [[ "$FILE_EXTENSION_LOWER" == "part" ]] && exit 2
         #     # Get embedded thumbnail
         #     ffmpeg -i "${FILE_PATH}" -map 0:v -map -0:V -c copy "${IMAGE_CACHE_PATH}" && exit 6
             # Get frame 10% into video
@@ -181,20 +181,20 @@ handle_image() {
             exit 1;;
 
         ## Audio
-        # audio/*)
-        #     # Get embedded thumbnail
-        #     ffmpeg -i "${FILE_PATH}" -map 0:v -map -0:V -c copy \
-        #       "${IMAGE_CACHE_PATH}" && exit 6;;
+        audio/*)
+            # Get embedded thumbnail
+            ffmpeg -i "${FILE_PATH}" -map 0:v -map -0:V -c copy \
+              "${IMAGE_CACHE_PATH}" && exit 6;;
 
         ## PDF
-        # application/pdf)
-        #     pdftoppm -f 1 -l 1 \
-        #              -scale-to-x "${DEFAULT_SIZE%x*}" \
-        #              -scale-to-y -1 \
-        #              -singlefile \
-        #              -jpeg -tiffcompression jpeg \
-        #              -- "${FILE_PATH}" "${IMAGE_CACHE_PATH%.*}" \
-        #         && exit 6 || exit 1;;
+        application/pdf)
+            pdftoppm -f 1 -l 1 \
+                     -scale-to-x "${DEFAULT_SIZE%x*}" \
+                     -scale-to-y -1 \
+                     -singlefile \
+                     -jpeg -tiffcompression jpeg \
+                     -- "${FILE_PATH}" "${IMAGE_CACHE_PATH%.*}" \
+                && exit 6 || exit 1;;
 
 
         ## ePub, MOBI, FB2 (using Calibre)
