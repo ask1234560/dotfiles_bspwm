@@ -36,7 +36,7 @@ export GROFF_NO_SGR=1
 export SUDO_ASKPASS="/usr/local/bin/dpass"
 
 # ranger use only user rc.conf
-export RANGER_LOAD_DEFAULT_RC="FALSE"
+export RANGER_LOAD_DEFAULT_RC="false"
 
 # weechat irc
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"

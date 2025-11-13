@@ -38,7 +38,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 setopt auto_cd
 
 # Include hidden files.
-_comp_options+=(globdots)
+setopt globdots
 
 # aliases
 alias -g -- --help="--help | less -FXi ; true "

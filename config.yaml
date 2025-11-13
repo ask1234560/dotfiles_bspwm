@@ -149,6 +149,9 @@ dotfiles:
   d_eza:
     src: config/eza
     dst: ~/.config/eza
+  d_tmux:
+    src: config/tmux
+    dst: ~/.config/tmux
 profiles:
   arch:
     dotfiles:
@@ -187,3 +190,4 @@ profiles:
     - d_git
     - d_simple-file-server
     - d_eza
+    - d_tmux
