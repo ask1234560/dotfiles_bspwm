@@ -114,12 +114,16 @@ dotfiles:
     src: config/ranger
     dst: ~/.config/ranger
     cmpignore:
-    - '*/__pycache__'
+    - '*/plugins'
     upignore:
-    - '*/__pycache__'
+    - '*/plugins'
   d_slock:
     src: config/slock
     dst: ~/.config/slock
+    cmpignore:
+    - '*'
+    upignore:
+    - '*'
   d_gtk-2.0:
     src: config/gtk-2.0
     dst: ~/.config/gtk-2.0
@@ -152,6 +156,23 @@ dotfiles:
   d_tmux:
     src: config/tmux
     dst: ~/.config/tmux
+  d_dmenu:
+    src: config/dmenu
+    dst: ~/.config/dmenu
+    cmpignore:
+    - '*'
+    upignore:
+    - '*'
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
+    cmpignore:
+    - '*'
+    upignore:
+    - '*'
+  f_plug.vim:
+    src: local/share/nvim/site/autoload/plug.vim
+    dst: ~/.local/share/nvim/site/autoload/plug.vim
 profiles:
   arch:
     dotfiles:
@@ -191,3 +212,6 @@ profiles:
     - d_simple-file-server
     - d_eza
     - d_tmux
+    - d_dmenu
+    - d_nvim
+    - f_plug.vim

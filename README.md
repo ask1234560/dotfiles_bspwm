@@ -20,6 +20,7 @@ dotfiles/
 │   ├── browser_extensions_backup
 │   ├── bspwm
 │   ├── cpupower_gui
+│   ├── dmenu
 │   ├── dunst
 │   ├── eza
 │   ├── gdb
@@ -33,6 +34,7 @@ dotfiles/
 │   ├── mpv
 │   ├── mutt
 │   ├── newsboat
+│   ├── nvim
 │   ├── paru
 │   ├── picom
 │   ├── polybar
@@ -43,6 +45,7 @@ dotfiles/
 │   ├── starship.toml
 │   ├── sxhkd
 │   ├── sxiv
+│   ├── tmux
 │   ├── X11
 │   ├── yay
 │   └── zathura
@@ -59,24 +62,21 @@ dotfiles/
 
 ## Installation
 ```
-* git clone --single-branch --branch performance https://github.com/ask1234560/dotfiles_bspwm ~/.config/dotfiles_bspwm
+* git clone --recurse-submodules --single-branch --branch performance https://github.com/ask1234560/dotfiles_bspwm ~/.config/dotfiles_bspwm
 * cd ~/.config/dotfiles_bspwm
 * config.yaml is for user specific configs and global-config.yaml for system wide configs. Edit the yaml files with the hostname and the required configs
 * dotdrop install
 * Other installation
     * nvim
-        * git clone --single-branch --branch performance https://github.com/ask1234560/neovim-config.git ~/.config/nvim
-        * sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
         * open nvim, :PlugInstall for installing plugins.
     * dmenu
-        * git clone https://github.com/ask1234560/dmenu.git ~/.config/dmenu
         * build dmenu
            * cd ~/.config/dmenu
            * sudo make install
     * slock
-       * cd ~/.config/slock
-       * sudo make install
+       * build slock
+           * cd ~/.config/slock
+           * sudo make install
 * set qt theme to Adapta Nokto(kvantum, qt5ct).
 * for changing theme, change in alacritty, nvim, ~/.config/X11/xresources, dmenu, dunst, polybar(reads Xresources), cursor, mpv. Scrot custom region screenclip and bspwm focused window border have same width and color.
 * Terminal font nerd-fonts-jetbrains-mono, ttf-fira-code for remaining apps and otf-font-awesome for polybar glyphs.
@@ -84,5 +84,5 @@ dotfiles/
 
 ## Explicitly installed packages
 ```
-7zip abook adapta-gtk-theme alacritty alsa-firmware alsa-utils amd-ucode arandr arch-wiki-docs aspell aspell-en autopep8 base base-devel bc brave-bin bspwm-git cpupower-gui-git cronie dmidecode dnsmasq docker dosfstools dotdrop-git dunst efibootmgr entr exiv2 eza ffmpegthumbnailer gimp git git-lfs gnome-calculator-gtk3 gnome-keyring gnu-free-fonts grub gtk-engine-murrine hsetroot htop-git htop-git-debug imagemagick inetutils iptables-nft jdk21-openjdk kvantum kvantum-qt5 less libomxil-bellagio libreoffice-fresh libxft libxinerama linux-firmware linux-lts linux-lts-headers linux-zen linux-zen-headers lsof ltrace lua53 lynx man-db mpv mutt-wizard-git neovim networkmanager newsboat noto-fonts npm ntfs-3g numlockx nvidia-open-dkms nvidia-utils openbsd-netcat openresolv os-prober otf-font-awesome pacman-contrib pandoc-bin pandoc-bin-debug papirus-icon-theme paru-bin paru-bin-debug perl-image-exiftool pfetch-git polybar-git polybar-git-debug pulseaudio pulseaudio-alsa python-click-option-group python-docopt python-gdal python-lxml python-numpy python-owslib python-pip python-pipx python-psycopg2 python-pynvim python-yaml qemu-desktop qpdf qt5ct ranger-git redshift-minimal rmtrash rustup scrot simple-mtpfs sshpass starship strace subliminal-git sudo swtpm sxhkd-git sxhkd-git-debug sxiv telegram-desktop texlive-fontsrecommended texlive-latex texlive-latexextra texlive-latexrecommended thunar timeshift tk transmission-cli trash-cli ttf-dejavu ttf-fira-code ttf-jetbrains-mono-nerd ttf-roboto typst ueberzugpp unclutter unrar unzip virt-manager visual-studio-code-bin weechat wget xclip xdg-user-dirs xdotool xorg-server xorg-xdpyinfo xorg-xev xorg-xinit xorg-xrandr xorg-xsetroot yt-dlp-git z-git zathura zathura-pdf-poppler zip zsh zsh-autosuggestions-git zsh-syntax-highlighting-git
+7zip abook adapta-gtk-theme alacritty alsa-firmware alsa-utils amd-ucode arandr arch-wiki-docs aspell aspell-en autopep8 base base-devel bc brave-bin bspwm-git cpupower-gui-git cronie dmidecode dnsmasq docker docker-compose dosfstools dotdrop-git dunst efibootmgr entr exiv2 eza ffmpegthumbnailer gimp git git-lfs gnome-calculator-gtk3 gnome-keyring gnu-free-fonts grub gtk-engine-murrine hsetroot htop-git htop-git-debug imagemagick inetutils iptables-nft kvantum kvantum-qt5 less libomxil-bellagio libreoffice-fresh libxft libxinerama linux-firmware linux-lts linux-lts-headers lsof ltrace lua53 lynx man-db mpv mutt-wizard-git neovim networkmanager newsboat noto-fonts npm ntfs-3g numlockx nvidia-open-dkms nvidia-utils openbsd-netcat openresolv os-prober otf-font-awesome pacman-contrib pandoc-bin pandoc-bin-debug papirus-icon-theme paru-bin paru-bin-debug perl-image-exiftool pfetch-git polybar-git polybar-git-debug pulseaudio pulseaudio-alsa python-click-option-group python-docopt python-gdal python-lxml python-numpy python-owslib python-pip python-pipx python-poetry python-psycopg2 python-pynvim python-yaml qemu-desktop qpdf qt5ct ranger-git redshift-minimal rmtrash rustup scrot simple-mtpfs sshpass starship strace subliminal-git sudo swtpm sxhkd-git sxhkd-git-debug sxiv telegram-desktop texlive-fontsrecommended texlive-latex texlive-latexextra texlive-latexrecommended thunar timeshift tk transmission-cli trash-cli ttf-dejavu ttf-fira-code ttf-jetbrains-mono-nerd ttf-roboto typst ueberzugpp unclutter unrar unzip virt-manager visual-studio-code-bin weechat wget xclip xdg-user-dirs xdotool xorg-server xorg-xdpyinfo xorg-xev xorg-xinit xorg-xrandr xorg-xsetroot yt-dlp-git z-git zathura zathura-pdf-poppler zip zsh zsh-autosuggestions-git zsh-syntax-highlighting-git
 ```

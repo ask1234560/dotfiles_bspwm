@@ -1,0 +1,18 @@
+[submodule "dotfiles/config/dmenu"]
+	path = dotfiles/config/dmenu
+	url = https://github.com/ananthu-sk/dmenu.git
+[submodule "dotfiles/config/slock"]
+	path = dotfiles/config/slock
+	url = https://github.com/ananthu-sk/slock.git
+[submodule "dotfiles/config/ranger/plugins/ranger-zjumper"]
+	path = dotfiles/config/ranger/plugins/ranger-zjumper
+	url = https://github.com/ananthu-sk/ranger-zjumper.git
+	branch = v2
+[submodule "dotfiles/config/nvim"]
+	path = dotfiles/config/nvim
+	url = https://github.com/ananthu-sk/neovim-config.git
+	branch = performance
+[submodule "dotfiles/config/ranger/plugins/ranger_devicons"]
+	path = dotfiles/config/ranger/plugins/ranger_devicons
+	url = https://github.com/alexanderjeurissen/ranger_devicons.git
+	branch = main
