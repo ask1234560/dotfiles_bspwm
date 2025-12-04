@@ -11,3 +11,5 @@
 	date = local
 [core]
 	quotepath = false
+[commit]
+	gpgsign = true
