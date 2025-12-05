@@ -1,9 +1,11 @@
 [submodule "dotfiles/config/dmenu"]
 	path = dotfiles/config/dmenu
 	url = https://github.com/ananthu-sk/dmenu.git
+	branch = master
 [submodule "dotfiles/config/slock"]
 	path = dotfiles/config/slock
 	url = https://github.com/ananthu-sk/slock.git
+	branch = master
 [submodule "dotfiles/config/ranger/plugins/ranger-zjumper"]
 	path = dotfiles/config/ranger/plugins/ranger-zjumper
 	url = https://github.com/ananthu-sk/ranger-zjumper.git
