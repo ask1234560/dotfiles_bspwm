@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# script to set tiled windows to fullscreen when in monocle layout
+
+while true
+do
+    sleep 0.1s
+    bspc query -T -d focused | grep -q '"userLayout":"monocle"' || continue
+    focused_node_id=$(bspc query -N -d focused -n .focused)
+    bspc query --node "$focused_node_id" -T | grep -qi '"state":"tiled"' && bspc node "$focused_node_id" --state fullscreen
+done

@@ -78,7 +78,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # make and cmake
 export MAKEFLAGS="-j$(echo $(nproc) - 2 | bc)"
-export CMAKE_BUILD_PARALLEL_LEVEL="-j$(echo $(nproc) - 2 | bc)"
+export CMAKE_BUILD_PARALLEL_LEVEL="$(echo $(nproc) - 2 | bc)"
 
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"

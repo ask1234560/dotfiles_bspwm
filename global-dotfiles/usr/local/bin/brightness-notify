@@ -1,7 +1,6 @@
 #!/bin/bash
 
-brightness_file="/sys/class/backlight/amdgpu_bl2/brightness"
-# brightness_file="/sys/class/backlight/amdgpu_bl1/brightness"
+brightness_file="/sys/class/backlight/amdgpu_bl1/brightness"
 brightness="$(<$brightness_file)"
 
 function write_brightness {
