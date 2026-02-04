@@ -26,13 +26,13 @@ do
                 convert -rotate -90 "$file" "$file"
                 dunstify "Sxiv: rotated 90 anti-clockwise"
                 ;;
-        "w")
+        "t")
                 hsetroot -fill "$file"  -tint '#9ccfe6'
-                dunstify "Sxiv: wall with tint"
+                dunstify "Sxiv: wallpaper is set with tint"
                 ;;
-        "x")
+        "w")
                 hsetroot -fill "$file"
-                dunstify "Sxiv: exact wall"
+                dunstify "Sxiv: wallpaper is set"
                 ;;
         "y")
                 xclip -selection clipboard -t image/png "$file"

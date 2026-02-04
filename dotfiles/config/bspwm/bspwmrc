@@ -12,11 +12,14 @@ numlockx &
 xsetroot -cursor_name left_ptr &
 # disable inbuilt keyboard
 # id=$(xinput list | grep AT | awk '{print $7}'); xinput float ${id#*=}
-# pgrep -f browser_fullscreen > /dev/null   || browser_fullscreen &
 # pgrep -f transmission-daemon > /dev/null    || transmission-daemon &
 
+
 # monitors
-bspc monitor -d I II III IV V VI
+bspc config remove_disabled_monitors true
+bspc config remove_unplugged_monitors true
+bspc monitor eDP-1 -d I II III IV V VI
+
 
 # general
 bspc config automatic_scheme            spiral
@@ -46,3 +49,4 @@ bspc rule -a Gimp                         desktop='^5'
 bspc rule -a MEGAsync                                  state=floating
 bspc rule -a mpv                          desktop='^5' 
 bspc rule -a Virt-manager                 desktop='^6' 
+

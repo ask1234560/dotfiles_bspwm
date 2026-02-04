@@ -92,7 +92,7 @@ super + ctrl + {_,shift} + space
 # screenshot win/full/region screen
 super + alt + {s,w,a}
     xdotool mousemove_relative 1 0; \
-    scrot -z{_,u,fs} --line style=solid,width=1,color='#839496' 'Screenshot_from_%F_%X.png' -e 'mv $f ~/Pictures/Screenshots/ && sxiv ~/Pictures/Screenshots/$f'
+    scrot -z{_,u,fs} --line style=solid,width=1,color='#839496' 'Screenshot_from_%Y_%m_%d_%X.png' -e 'mv $f ~/Pictures/Screenshots/ && sxiv ~/Pictures/Screenshots/$f'
 # brightness dec/inc
 super + {F2,F3}
     brightness-notify {down,up}
@@ -111,12 +111,12 @@ XF86AudioMute
 # screen lock/suspend
 super + alt + {n,z}
     {slock-wrapper,systemctl suspend}
-# commands: background change/browser/dmenu mount/dmenu umount
-super + alt + {c,f,m,u,y}
-    {bg-changer,$BROWSER,dmount,dumount,drecord}
+# commands
+super + alt + {c,d,f,m,u,y}
+    {bg-changer,monitor-mirror,$BROWSER,dmount,dumount,drecord}
 # scratchpads
-super + alt + {b,d,g,i,space,t}
-    scratch {newsboat,dictionary,neomutt,ranger,terminal,htop}
+super + alt + {b,g,i,space,t}
+    scratch {newsboat,neomutt,ranger,terminal,htop}
 # dunst
 super + {_, shift} + d
     dunstctl {history-pop, close-all}
