@@ -33,6 +33,7 @@ bspc config left_padding                0
 bspc config pointer_action1             move
 bspc config pointer_action3             resize_corner
 bspc config pointer_modifier            mod4
+bspc config removal_adjustment          true
 bspc config right_padding               0
 bspc config single_monocle              true
 bspc config split_ratio                 0.70

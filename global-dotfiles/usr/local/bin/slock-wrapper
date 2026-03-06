@@ -1,11 +1,23 @@
 #!/bin/bash
 
+# for multiple instances of bspwm
+for id in $(pgrep -u $LOGNAME -x bspwm)
+do
+    eval "export $(grep -Ez DBUS_SESSION_BUS_ADDRESS /proc/$id/environ | tr '\0' '\n')"
+done
+export DISPLAY=:0
+
+
 [ "/home/ananthu/.cache"/default_wall -nt "/home/ananthu/.cache"/lockscreen ] && convert /home/ananthu/.cache/default_wall -gravity center /home/ananthu/Pictures/wallpapers/personal/lock-xxl.png -composite "/home/ananthu/.cache"/lockscreen
 
 current_desktop=$(bspc query -D -d focused --names)
+dunstctl set-paused true
 bspc rule -a Sxiv --one-shot desktop='^6' follow=on
+
 sxiv -bf "/home/ananthu/.cache"/lockscreen &
 sxiv_pid=$!
 /usr/local/bin/slock "$@"
+
 kill $sxiv_pid
 bspc desktop -f $current_desktop
+dunstctl set-paused false
