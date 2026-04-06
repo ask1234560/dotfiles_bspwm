@@ -1,30 +1,38 @@
 #!/bin/bash
 
 brightness_file="/sys/class/backlight/amdgpu_bl1/brightness"
+max_brightness_file="/sys/class/backlight/amdgpu_bl1/max_brightness"
+
 brightness="$(<$brightness_file)"
+max_brightness="$(<$max_brightness_file)"
 
 function write_brightness {
-    local brightness=$1
-    echo $brightness > $brightness_file
+    local new_brightness=$1
+    echo "$new_brightness" > "$brightness_file"
+
+    local percent=$(( $new_brightness * 100 / $max_brightness ))
 
     local icon=display-brightness-low-symbolic
-    if [ $brightness -gt 64 ]
+    if [ $percent -gt 60 ]
     then
         icon=display-brightness-high-symbolic
-    elif [ $brightness -gt 31 ]
+    elif [ $percent -gt 30 ]
     then
         icon=display-brightness-medium-symbolic
     fi
-    dunstify -i $icon -t 2000 -r 2594 "Brightness: $brightness%"
+    dunstify -i "$icon" -t 2000 -r 2594 "Brightness: ${percent}%"
 }
 
+brightness_step=$(( $max_brightness * 2 / 100 ))
 case $1 in
     up)
-        final_brightness=$(( $brightness + 2 ))
+        final_brightness=$(( $brightness + $brightness_step ))
+        [ $final_brightness -gt $max_brightness ] && final_brightness=$max_brightness
         write_brightness $final_brightness
 	;;
     down)
-        final_brightness=$(( $brightness - 2 ))
+        final_brightness=$(( $brightness - $brightness_step ))
+        [ $final_brightness -lt 0 ] && final_brightness=0
         write_brightness $final_brightness
 	;;
 esac

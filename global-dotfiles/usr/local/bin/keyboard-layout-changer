@@ -2,15 +2,7 @@
 
 layouts=("us" "de")
 
-filename="/tmp/keyboardlayout"
-
-if [[ -e "$filename" ]]
-then
-    currentlayout="$(<$filename)"
-else
-    currentlayout="${layouts[0]}" 
-fi
-
+currentlayout="$(setxkbmap -query | grep layout | tr -s " " | cut -d " " -f2)"
 
 for i in "${!layouts[@]}"
 do 

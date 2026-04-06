@@ -1,12 +1,5 @@
 #!/bin/bash
 
-filename="/tmp/keyboardlayout"
+currentlayout="$(setxkbmap -query | grep layout | tr -s " " | cut -d " " -f2)"
 
-if [[ -e $filename ]] 
-then
-    currentlayout=$(<$filename)
-    echo "[$currentlayout]" 
-else
-    # default layout
-    echo "[us]"
-fi
+echo "[$currentlayout]" 
