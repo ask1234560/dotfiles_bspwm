@@ -11,6 +11,7 @@ do
         nextindex="$(echo "($i+1) % ${#layouts[@]}" | bc)"
         nextlayout="${layouts[$nextindex]}"
         setxkbmap -layout "$nextlayout" -option caps:swapescape && { echo "$nextlayout" > $filename; dunstify -t 10000 "Keyboard layout changed to $nextlayout" --icon="input-keyboard-symbolic"; }
+        pkill -x sxhkd && sxhkd &
         break
     fi
 done

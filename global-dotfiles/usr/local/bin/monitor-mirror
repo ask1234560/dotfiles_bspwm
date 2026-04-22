@@ -1,15 +1,22 @@
 #!/bin/bash
 
+
 # Internal display (laptop panel)
 INTERNAL=$(xrandr | awk '/ connected/ && /eDP/ {print $1}')
 
 # Find all external connected displays
 EXTERNALS=$(xrandr | awk '/ connected/ && !/eDP/ {print $1}')
 
-# If no internal display found, exit
+# If no external display found, exit
 [ -z "$EXTERNALS" ] && exit 0
 
-dunstify "Sxhkd: Running monitor mirror"
+# Get current resolution of internal display
+RESOLUTION=$(xrandr | awk -v mon="$INTERNAL" '
+    $0 ~ mon && $0 ~ " connected" {found=1}
+    found && /\*/ {print $1; exit}
+')
+
+dunstify "Sxhkd: Running monitor mirror (${RESOLUTION})"
 
 # Turn off all outputs first (except internal)
 for out in $EXTERNALS; do
@@ -18,6 +25,6 @@ done
 
 # Mirror each external display
 for out in $EXTERNALS; do
-    xrandr --output "$out" --same-as "$INTERNAL" --auto
+    xrandr --output "$out" --mode "$RESOLUTION" --same-as "$INTERNAL"
 done
 

@@ -36,7 +36,7 @@ screencast() { \
 	-f alsa -i default \
 	-r 30 \
  	-c:v h264 -crf 0 -preset ultrafast -c:a aac \
-	"$HOME/Videos/Screencast-$(date '+%F-%R:%S').mp4" &
+	"$HOME/Videos/Screencast_$(date '+%Y_%m_%d_%R:%S').mp4" &
 	echo $! > /tmp/recordingpid
 	# updateicon "⏺️🎙️"
        	}
@@ -46,7 +46,7 @@ video() { ffmpeg \
 	-s "$(xdpyinfo | grep dimensions | awk '{print $2;}')" \
 	-i "$DISPLAY" \
  	-c:v libx264 -qp 0 -r 30 \
-	"$HOME/Videos/video-$(date '+%F-%R:%S').mkv" &
+	"$HOME/Videos/video_$(date '+%Y_%m_%d_%R:%S').mkv" &
 	echo $! > /tmp/recordingpid
 	# updateicon "⏺️"
 	}
@@ -55,7 +55,7 @@ webcamhidef() { ffmpeg \
 	-f v4l2 \
 	-i /dev/video0 \
 	-video_size 1920x1080 \
-	"$HOME/Videos/webcam-$(date '+%F-%R:%S').mkv" &
+	"$HOME/Videos/webcam_$(date '+%Y_%m_%d_%R:%S').mkv" &
 	echo $! > /tmp/recordingpid
 	# updateicon "🎥"
 	}
@@ -64,7 +64,7 @@ webcam() { ffmpeg \
 	-f v4l2 \
 	-i /dev/video0 \
 	-video_size 640x480 \
-	"$HOME/Videos/webcam-$(date '+%F-%R:%S').mkv" &
+	"$HOME/Videos/webcam_$(date '+%Y_%m_%d_%R:%S').mkv" &
 	echo $! > /tmp/recordingpid
 	# updateicon "🎥"
 	}
@@ -74,7 +74,7 @@ audio() { \
 	ffmpeg \
 	-f alsa -i default \
 	-c:a flac \
-	"$HOME/Videos/audio-$(date '+%F-%R:%S').flac" &
+	"$HOME/Videos/audio_$(date '+%Y_%m_%d_%R:%S').flac" &
 	echo $! > /tmp/recordingpid
 	# updateicon "🎙️"
 	}
