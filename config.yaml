@@ -58,6 +58,10 @@ dotfiles:
     src: config/htop
     dst: ~/.config/htop
     chmod: '700'
+    cmpignore:
+    - htop_history
+    upignore:
+    - htop_history
   d_browser_extensions_backup:
     src: config/browser_extensions_backup
     dst: ~/.config/browser_extensions_backup

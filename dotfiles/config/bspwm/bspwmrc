@@ -10,8 +10,6 @@ pgrep -x unclutter > /dev/null              || unclutter &
 bg-changer random &
 numlockx &
 xsetroot -cursor_name left_ptr &
-# disable inbuilt keyboard
-# id=$(xinput list | grep AT | awk '{print $7}'); xinput float ${id#*=}
 # pgrep -f transmission-daemon > /dev/null    || transmission-daemon &
 
 

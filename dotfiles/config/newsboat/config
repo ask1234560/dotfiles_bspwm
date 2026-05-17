@@ -12,6 +12,8 @@ articlelist-format  "%4i %D %?T? %-10T   ?%t"
 feedlist-title-format ""
 articlelist-title-format ""
 
+datetime-format "%b %d %R"
+
 # notifications
 notify-format "Newsboat: %d new"
 notify-program "/usr/bin/dunstify" 

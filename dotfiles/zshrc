@@ -25,7 +25,7 @@ fi
 
 setopt histexpiredupsfirst histignorespace nobanghist nobeep
 # setopt sharehistory                 # share history between sessions
-# setopt incappendhistory             # append history at same time, not at shell exits
+setopt incappendhistory             # append history at same time, not at shell exits
 
 # startx
 if [ "$(tty)" = "/dev/tty1" ]

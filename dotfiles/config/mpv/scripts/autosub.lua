@@ -1,38 +1,75 @@
--- Requires Subliminal version 1.0 or newer
-downloadsubs_exe = '/usr/local/bin/downloadsubs'
+-- Requires Subliminal installed and available in PATH
+-- mpv subtitle downloader script
+
 local utils = require 'mp.utils'
 
--- Log function: log to both terminal and mpv OSD (On-Screen Display)
-function log(string)
-    secs = 3     -- secs defaults to 2 when the secs parameter is absent
-    mp.msg.warn(string)          -- This logs to the terminal
-    mp.osd_message(string, secs) -- This logs to mpv screen
+local lang = 'en'
+
+-- Change these if needed
+local opensubtitles_username = os.getenv("OPENSUBTITLES_username")
+local opensubtitles_password = os.getenv("OPENSUBTITLES_password")
+
+-- Log to terminal + OSD
+local function log(msg)
+    local secs = 3
+    mp.msg.warn(msg)
+    mp.osd_message(msg, secs)
 end
 
-function download_subs()
+local function has_connection()
+    local res = utils.subprocess({
+        args = { 'ping', '-c', '1', 'google.com' }
+    })
+
+    return res.status == 0
+end
+
+local function download_subs()
     log('Searching subtitles...')
 
-    path = mp.get_property('path')
-    filename = mp.get_property('filename')
-    save_dir = string.sub(path, 0, string.len(path) - string.len(filename))
+    local path = mp.get_property('path')
 
-    conn_table = { args = {'ping','-c','1','google.com'} }
-    conn_result = utils.subprocess(conn_table)
-
-    if string.find(conn_result.stdout, 'packets transmitted') then
-        table = { args = { downloadsubs_exe, 'opensubtitles', filename } }
-        result = utils.subprocess(table)
-        if string.find(result.stdout, 'Downloaded 1 subtitle') then
-            -- Subtitles are downloaded successfully, so rescan to activate them:
-            mp.commandv('rescan_external_files')
-            log('Subtitles ready!')
-        else
-            log('No subtitles found')
-        end
-    else
-        log('Connection not available')
+    if not path then
+        log('No file loaded')
+        return
     end
 
+    if not has_connection() then
+        log('Connection not available')
+        return
+    end
+
+    local args = {
+        'subliminal',
+
+        '--provider.opensubtitles.username',
+        opensubtitles_username or '',
+
+        '--provider.opensubtitles.password',
+        opensubtitles_password or '',
+
+        'download',
+        '-l',
+        lang,
+        path
+    }
+
+    local result = utils.subprocess({
+        args = args,
+        cancellable = false
+    })
+
+    mp.msg.info(result.stdout)
+    mp.msg.error(result.stderr)
+
+    if result.status == 0 and
+       string.find(result.stdout, 'Downloaded') then
+
+        mp.commandv('rescan_external_files')
+        log('Subtitles ready!')
+    else
+        log('No subtitles found')
+    end
 end
 
 -- Control function: only download if necessary

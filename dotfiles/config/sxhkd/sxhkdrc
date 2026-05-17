@@ -85,7 +85,6 @@ super + ctrl + {1-9}
 super + ctrl + {_,shift} + space
     {bspc node -p cancel,bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel}
 
-
 #
 # Personal
 #
@@ -101,7 +100,10 @@ super + F1
     adaptive-brightness
 # nightlight
 super + {alt,shift} + e
-    redshift -P -O {3000,6500}K
+    redshift {-P -O 3000K,-x}
+# greyscale
+super + ctrl + {_,shift} + e
+    vibrant-cli eDP-1 {0,1}
 # audio raise/lower volume
 XF86Audio{RaiseVolume,LowerVolume}
     volume-notify {up,down}
