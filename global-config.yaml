@@ -74,6 +74,12 @@ dotfiles:
     - '*'
     - '!vfio.conf'
     - '!nobeep.conf'
+  f_locale.conf:
+    src: etc/locale.conf
+    dst: /etc/locale.conf
+  f_locale.gen:
+    src: etc/locale.gen
+    dst: /etc/locale.gen
 profiles:
   arch:
     dotfiles:
@@ -94,3 +100,5 @@ profiles:
     - f_99-swappiness.conf
     - f_40-libinput.conf
     - d_modprobe.d
+    - f_locale.conf
+    - f_locale.gen

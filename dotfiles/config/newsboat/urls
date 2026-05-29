@@ -1,8 +1,9 @@
+https://www.uni-weimar.de/de/universitaet/aktuell/pinnwaende/rss/ "~BUW Pinward"
 https://zerodha.com/marketintel/bulletin/?format=xml "~Zerodha"
 https://based.cooking/rss.xml "~Recepies"
-https://www.archlinux.org/feeds/news/ "~Arch"
+https://www.archlinux.org/feeds/news/ "~Arch Linux"
 https://www.kali.org/rss.xml "~Kali Linux"
-https://notrelated.xyz/rss "~Luke Smith"
-https://goinglinux.com/mp3podcast.xml
-http://vault.lunduke.com/LundukeShowMP3.xml
-https://tuxdigital.com/feed/thisweekinlinux-mp3
+# https://notrelated.xyz/rss "~Luke Smith"
+# https://goinglinux.com/mp3podcast.xml
+# http://vault.lunduke.com/LundukeShowMP3.xml
+# https://tuxdigital.com/feed/thisweekinlinux-mp3
