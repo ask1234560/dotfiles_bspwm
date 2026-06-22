@@ -5,6 +5,7 @@ adapta_red=$(xrdb -query | grep color1: | awk '{print $2}')
 adapta_yellow=$(xrdb -query | grep color3: | awk '{print $2}')
 fg=$(xrdb -query | grep foreground: | awk '{print $2}')
 
+date -Iseconds >/tmp/newsboat.log
 newsboat -x reload >>/tmp/newsboat.log 2>&1
 
 if [ $? -eq 0 ]
