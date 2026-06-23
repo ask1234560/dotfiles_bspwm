@@ -1,11 +1,11 @@
 # dotfiles_bspwm
 
 ## Screenshots
-<img src="Screenshots/Screenshot_from_2025-01-05_17:50:39.png" width=1000px>
-<img src="Screenshots/Screenshot_from_2025-01-05_17:50:52.png" width=1000px>
-<img src="Screenshots/Screenshot_from_2025-01-05_17:54:20.png" width=1000px>
-<img src="Screenshots/Screenshot_from_2025-01-05_17:57:09.png" width=1000px>
-<img src="Screenshots/Screenshot_from_2025-01-05_18:38:32.png" width=1000px>
+<img src="Screenshots/Screenshot_from_2026_06_23_18:37:02.png" width=1000px>
+<img src="Screenshots/Screenshot_from_2026_06_23_18:37:10.png" width=1000px>
+<img src="Screenshots/Screenshot_from_2026_06_23_18:38:18.png" width=1000px>
+<img src="Screenshots/Screenshot_from_2026_06_23_18:39:06.png" width=1000px>
+<img src="Screenshots/Screenshot_from_2026_06_23_18:39:46.png" width=1000px>
 
 ## General
 This branch mainly focuses on performance. For transparency use [picom](https://github.com/ask1234560/dotfiles_bspwm/tree/master/dotfiles/config/picom) from master branch.
