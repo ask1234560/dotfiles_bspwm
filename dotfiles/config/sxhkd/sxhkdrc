@@ -104,12 +104,9 @@ super + {alt,shift} + e
 # greyscale
 super + ctrl + {_,shift} + e
     vibrant-cli eDP-1 {0,1}
-# audio raise/lower volume
-XF86Audio{RaiseVolume,LowerVolume}
-    volume-notify {up,down}
-# audio mute
-XF86AudioMute
-    volume-notify mute
+# audio raise/lower/mute volume
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+    volume-notify {up,down,mute}
 # screen lock/suspend
 super + alt + {n,z}
     {slock-wrapper,systemctl suspend}

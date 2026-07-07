@@ -1,23 +1,24 @@
 #!/bin/bash
 
+icon=audio-volume-low-symbolic
+volume=0
+
 function get_volume {
     pactl get-sink-volume @DEFAULT_SINK@ | grep -oP '[0-9]+%' | head -n1 | cut -d'%' -f1
 }
 
 function is_mute {
-    pactl get-sink-mute @DEFAULT_SINK@ | grep -q yes
+    pactl get-sink-mute @DEFAULT_SINK@ | grep -q 'yes\|ja'
 }
 
 function get_icon {
     volume=`get_volume`
-    if [ $volume -gt 64 ]
+    if [ $volume -gt 60 ]
     then
         icon=audio-volume-high-symbolic
-    elif [ $volume -gt 31 ]
+    elif [ $volume -gt 30 ]
     then
         icon=audio-volume-medium-symbolic
-    else
-        icon=audio-volume-low-symbolic
     fi
 }
 
@@ -37,7 +38,6 @@ case $1 in
         if is_mute
         then
             icon=audio-volume-muted-symbolic
-            volume=0
         else
             get_icon
         fi
