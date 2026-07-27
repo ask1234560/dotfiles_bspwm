@@ -17,6 +17,7 @@ dotfiles/
 ├── config
 │   ├── alacritty
 │   ├── alias_and_keybinds
+│   ├── brave-flags.conf
 │   ├── browser_extensions_backup
 │   ├── bspwm
 │   ├── cpupower_gui
@@ -34,6 +35,7 @@ dotfiles/
 │   ├── mpv
 │   ├── mutt
 │   ├── newsboat
+│   ├── nsxiv
 │   ├── nvim
 │   ├── paru
 │   ├── picom
@@ -44,7 +46,6 @@ dotfiles/
 │   ├── slock
 │   ├── starship.toml
 │   ├── sxhkd
-│   ├── sxiv
 │   ├── tmux
 │   ├── X11
 │   ├── yay
@@ -58,7 +59,7 @@ dotfiles/
 
 ## Requirements
 * [dotdrop](https://aur.archlinux.org/packages/dotdrop-git)
-* place [wallpapers](https://github.com/ask1234560/wallpapers) in ```~/Pictures``` for selecting wallpapers using sxiv and during startup
+* place [wallpapers](https://github.com/ask1234560/wallpapers) in ```~/Pictures``` for selecting wallpapers using nsxiv and during startup
 
 ## Installation
 ```
@@ -84,5 +85,5 @@ dotfiles/
 
 ## Explicitly installed packages
 ```
-7zip abook adapta-gtk-theme adobe-source-sans-fonts alacritty alsa-firmware alsa-utils amd-ucode arandr aspell aspell-en at ausweisapp base base-devel bc brave-bin bspwm-git cmake cpupower-gui-git cronie devtools dmidecode dnsmasq dosfstools dotdrop-git dunst efibootmgr entr exiv2 eza ffmpegthumbnailer firefox gimp git git-lfs gnome-calculator-gtk3 gnome-keyring gnu-free-fonts grub gtk-engine-murrine hsetroot htop-git imagemagick inetutils iptables kvantum kvantum-qt5 less libomxil-bellagio libreoffice-fresh libreoffice-fresh-de libxft libxinerama linux-firmware linux-lts linux-lts-headers linux-zen linux-zen-headers lsof ltrace lua53 lynx man-db mpv mutt-wizard-git neovim networkmanager newsboat noto-fonts noto-fonts-emoji npm ntfs-3g numlockx nvidia-open-dkms openbsd-netcat openresolv os-prober otf-font-awesome pacman-contrib pandoc-bin pandoc-crossref-bin papirus-icon-theme paru-git perl-image-exiftool pfetch-git polybar-git pulseaudio pulseaudio-alsa python-docopt python-pip python-pipx python-pynvim python-yaml qemu-desktop qpdf qt5ct ranger-git redshift-minimal rmtrash scrot simple-mtpfs sshpass starship strace subliminal-git sudo swtpm sxhkd-git sxiv telegram-desktop texlive-fontsrecommended texlive-latex texlive-latexextra texlive-latexrecommended thunar timeshift transmission-cli trash-cli ttf-dejavu ttf-fira-code ttf-jetbrains-mono-nerd ttf-roboto ttf-vista-fonts typst ueberzugpp unclutter unrar unzip vibrant-cli virt-manager visual-studio-code-bin wget xclip xdg-user-dirs xdotool xorg-server xorg-xdpyinfo xorg-xev xorg-xinit xorg-xrandr xorg-xset xorg-xsetroot yt-dlp-git z-git zathura zathura-pdf-poppler zip zsh zsh-autosuggestions-git zsh-syntax-highlighting-git
+7zip abook adapta-gtk-theme adobe-source-sans-fonts alacritty alsa-firmware alsa-utils amd-ucode arandr aspell aspell-en at ausweisapp base base-devel bc brave-bin bspwm-git cmake cpupower-gui-git cronie devtools dmidecode dnsmasq dosfstools dotdrop-git dunst efibootmgr entr exiv2 eza ffmpegthumbnailer gimp git git-lfs gnome-calculator-gtk3 gnome-keyring gnu-free-fonts grub gtk-engine-murrine hsetroot htop-git imagemagick inetutils iptables kvantum kvantum-qt5 less libomxil-bellagio libreoffice-fresh libreoffice-fresh-de libxft libxinerama linux-firmware linux-zen linux-zen-headers lsof ltrace lua53 lynx man-db mpv mutt-wizard-git neovim networkmanager newsboat noto-fonts noto-fonts-emoji npm nsxiv-git ntfs-3g numlockx nvidia-open-dkms ollama openbsd-netcat openresolv os-prober otf-font-awesome pacman-contrib pandoc-bin pandoc-crossref-bin papirus-icon-theme paru-git perl-image-exiftool pfetch-git polybar-git pulseaudio pulseaudio-alsa python-docopt python-pip python-pipx python-pynvim python-yaml qemu-desktop qpdf qt5ct ranger-git redshift-minimal rofimoji scrot simple-mtpfs sshpass starship strace subliminal-git sudo swtpm sxhkd-git telegram-desktop texlive-fontsrecommended texlive-latex texlive-latexextra texlive-latexrecommended thunar timeshift transmission-cli trash-cli ttf-dejavu ttf-fira-code ttf-jetbrains-mono-nerd ttf-roboto ttf-vista-fonts typst ueberzugpp unclutter unrar unzip vibrant-cli virt-manager visual-studio-code-bin wget xclip xdg-user-dirs xdotool xorg-server xorg-xdpyinfo xorg-xev xorg-xinit xorg-xrandr xorg-xset xorg-xsetroot yt-dlp-git z-git zathura zathura-pdf-poppler zip zsh zsh-autosuggestions-git zsh-syntax-highlighting-git
 ```

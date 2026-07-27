@@ -15,7 +15,7 @@ do
                 dunstify "Sxiv: opening in gimp"
                 ;;
         "p")
-                echo -n "$file" | xclip -selection clipboard
+                readlink -fn "$file" | xclip -selection clipboard
                 dunstify "Sxiv: copied path to clipboard"
                 ;;
         "r")

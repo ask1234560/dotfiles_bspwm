@@ -10,6 +10,6 @@ if [ "$#" -ne 0 ]; then
 else
 
     bspc rule -a Sxiv desktop=\^5 follow=on --one-shot
-    find "$HOME"/Pictures/wallpapers -path "*.git*" -prune -o \( -type f \) | shuf | sxiv - -ftbo 2> /dev/null | shuf -n 1 | xargs -ri sh -c "echo '{}' | grep -qE jpg\|jpeg\|png && hsetroot -fill '{}'"
+    find "$HOME"/Pictures/wallpapers -path "*.git*" -prune -o \( -type f \) | shuf | nsxiv - -ftbo 2> /dev/null | shuf -n 1 | xargs -ri sh -c "echo '{}' | grep -qE jpg\|jpeg\|png && hsetroot -fill '{}'"
     bspc desktop -f last
 fi

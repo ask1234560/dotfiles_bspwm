@@ -47,9 +47,6 @@ dotfiles:
   d_gdb:
     src: config/gdb
     dst: ~/.config/gdb
-  d_sxiv:
-    src: config/sxiv
-    dst: ~/.config/sxiv
   d_gtk-3.0:
     src: config/gtk-3.0
     dst: ~/.config/gtk-3.0
@@ -177,6 +174,12 @@ dotfiles:
   f_plug.vim:
     src: local/share/nvim/site/autoload/plug.vim
     dst: ~/.local/share/nvim/site/autoload/plug.vim
+  f_brave-flags.conf:
+    src: config/brave-flags.conf
+    dst: ~/.config/brave-flags.conf
+  d_nsxiv:
+    src: config/nsxiv
+    dst: ~/.config/nsxiv
 profiles:
   arch:
     dotfiles:
@@ -192,7 +195,6 @@ profiles:
     - d_picom
     - d_zathura
     - d_gdb
-    - d_sxiv
     - d_gtk-3.0
     - d_htop
     - d_browser_extensions_backup
@@ -219,3 +221,5 @@ profiles:
     - d_dmenu
     - d_nvim
     - f_plug.vim
+    - f_brave-flags.conf
+    - d_nsxiv

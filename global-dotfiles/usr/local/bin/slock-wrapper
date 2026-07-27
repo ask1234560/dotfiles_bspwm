@@ -14,10 +14,10 @@ current_desktop=$(bspc query -D -d focused --names)
 dunstctl set-paused true
 bspc rule -a Sxiv --one-shot desktop='^6' follow=on
 
-sxiv -bf "/home/ananthu/.cache"/lockscreen &
-sxiv_pid=$!
+nsxiv -bf "/home/ananthu/.cache"/lockscreen &
+nsxiv_pid=$!
 /usr/local/bin/slock "$@"
 
-kill $sxiv_pid
+kill $nsxiv_pid
 bspc desktop -f $current_desktop
 dunstctl set-paused false
