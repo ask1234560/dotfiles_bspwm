@@ -6,7 +6,7 @@ alias \
     gclip='xclip -selection c -o' \
     grep='grep --colour=auto' \
     la='exa -a --group-directories-first' \
-    ll='exa -alb --group-directories-first' \
+    ll='exa -albg --group-directories-first' \
     ls='exa --group-directories-first' \
     lynx='lynx -accept_all_cookies ' \
     nb='newsboat ' \
