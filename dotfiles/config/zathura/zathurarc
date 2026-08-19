@@ -55,4 +55,4 @@ set recolor-lightcolor          "#073642" # base02
 set recolor-darkcolor           "#93a1a1" # base1
 # set recolor-keephue             true      # keep original color
 
-set font 'monospace normal 12'
+set font 'Fira Code 12'

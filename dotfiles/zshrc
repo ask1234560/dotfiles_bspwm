@@ -41,7 +41,7 @@ setopt auto_cd
 setopt globdots
 
 # aliases
-alias -g -- --help="--help | less -FXi ; true "
+alias -g -- --help="--help | less -FXir ; true "
 source $XDG_CONFIG_HOME/alias_and_keybinds/aliasrc
 # load keybinds
 source $XDG_CONFIG_HOME/alias_and_keybinds/key-bindings.zsh

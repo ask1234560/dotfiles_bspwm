@@ -93,3 +93,5 @@ export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
 
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
 
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+

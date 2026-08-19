@@ -1,41 +1,42 @@
 #!/bin/sh
 while read file
 do
+        fullpath=$(readlink -fn "$file")
         case "$1" in
         "c")
-                cp "$file" ~/.cache/default_wall
+                cp "$fullpath" ~/.cache/default_wall
                 dunstify "Sxiv: set as default wall"
                 ;;
         "d")
-                trash "$file"
+                trash "$fullpath"
                 dunstify "Sxiv: trashed"
                 ;;
         "g")
-                gimp "$file" &
+                gimp "$fullpath" &
                 dunstify "Sxiv: opening in gimp"
                 ;;
         "p")
-                readlink -fn "$file" | xclip -selection clipboard
+                echo -n "$fullpath" | xclip -selection clipboard
                 dunstify "Sxiv: copied path to clipboard"
                 ;;
         "r")
-                convert -rotate 90 "$file" "$file"
+                convert -rotate 90 "$fullpath" "$fullpath"
                 dunstify "Sxiv: rotated 90 clockwise"
                 ;;
         "R")
-                convert -rotate -90 "$file" "$file"
+                convert -rotate -90 "$fullpath" "$fullpath"
                 dunstify "Sxiv: rotated 90 anti-clockwise"
                 ;;
         "t")
-                hsetroot -fill "$file"  -tint '#9ccfe6'
+                hsetroot -fill "$fullpath" -tint '#9ccfe6'
                 dunstify "Sxiv: wallpaper is set with tint"
                 ;;
         "w")
-                hsetroot -fill "$file"
+                hsetroot -fill "$fullpath"
                 dunstify "Sxiv: wallpaper is set"
                 ;;
         "y")
-                xclip -selection clipboard -t image/png "$file"
+                xclip -selection clipboard -t image/png "$fullpath"
                 dunstify "Sxiv: copied image to clipboard"
                 ;;
         esac
